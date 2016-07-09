@@ -1,0 +1,127 @@
+@import "variables";
+
+@mixin font-face($font_family, $font_path, $font_style:"normal", $font_weight:"normal"){
+  @font-face{
+      font-family: $font_family;
+      font-style: $font-style;
+      font-weight: $font_weight;
+      src: url("#{$font_path}.eot?") format("eot"), url("#{$font_path}.woff2") format("woff2"),  url("#{$font_path}.woff") format("woff"),  url("#{$font_path}.ttf") format("truetype"),  url("#{$font_path}.svg##{$font_family}") format("svg");
+  }
+}
+@mixin clear(){
+  &:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+@mixin respond-to($rule){
+  @media screen and ($rule){
+    @content
+  }
+}
+
+@mixin flex($flex-direction: row, $align-items: flex-start, $justify-content: flex-start){
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+
+  @if $flex-direction{
+    flex-direction: $flex-direction;
+  }
+
+  @if $align-items{
+    align-items: $align-items;
+  }
+
+  @if $justify-content{
+    justify-content: $justify-content;
+  }
+}
+
+@mixin placeholder{
+  &::-webkit-input-placeholder{
+    @content
+  }
+
+  &:-moz-placeholder{
+    @content
+  }
+
+  &::-moz-placeholder{
+    @content
+  }
+
+  &:-ms-input-placeholder{
+    @content
+  }
+}
+
+@mixin transition($transition: all 0.3s ease){
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -ms-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+
+@mixin transitionMultiple($transition...){
+  @include transition($transition);
+}
+
+@mixin transform($transforms){
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin animation($animation_params...){
+  -webkit-animation: $animation_params;
+  -moz-animation: $animation_params;
+  animation: $animation_params;
+}
+
+@mixin rotate ($deg){
+  @include transform(rotate(#{$deg}deg));
+}
+
+@mixin scale($scale){
+  @include transform(scale($scale));
+}
+
+@mixin translate ($x, $y){
+  @include transform(translate($x, $y));
+}
+
+@mixin skew ($x, $y){
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+@mixin translateX($position){
+  @include transform(translateX(#{$position}));
+}
+
+@mixin translateY($position){
+  @include transform(translateY(#{$position}));
+}
+
+@mixin translateZ($position){
+  @include transform(translateZ(#{$position}));
+}
+
+@mixin translate3d($x, $y, $z){
+  @include transform(translate3d(#{$x}, #{$y}, #{$z}));
+}
+
+@mixin animation($animation_params...){
+  -webkit-animation: $animation_params;
+  -moz-animation: $animation_params;
+  animation: $animation_params;
+}

@@ -1,0 +1,54 @@
+@import "core";
+@import "yui-reset";
+
+@include font-face($font-montserrat, "../fonts/montserrat-regular-webfont");
+@include font-face($font-source-sans-pro, "../fonts/SourceSansPro-Regular");
+@include font-face($font-source-sans-pro-light, "../fonts/SourceSansPro-Light");
+
+html{
+  height: 100%;
+}
+
+.general-wrapper{
+  overflow: hidden;
+}
+
+.site-wrapper{
+  @extend .container;
+  padding-left: ceil($sidebar-width + $gutter);
+}
+
+.site-wrapper-internal{
+  @extend .container;
+  padding-left: ceil($sidebar-width + 78px - $gutter);
+}
+
+div[ng-view]{
+  min-height: 100%;
+  margin-bottom: -96px;
+  &:after{
+    content: "";
+    height: 96px;
+    display: block;
+    min-height: 100%;
+   }
+}
+
+body{
+  font: normal #{$font-browser-context}px $font-montserrat;
+  background: $color-whitesmoke;
+}
+
+a{
+  text-decoration: none;
+}
+p{
+  color: #757575;
+  line-height: 1.6em;
+  font-weight: lighter;
+  margin-bottom: 1.5em;
+
+  strong{
+      font-weight: bold;
+  }
+}

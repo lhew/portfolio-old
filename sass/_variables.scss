@@ -1,0 +1,44 @@
+$color-dusty-orange:         #f26f21;
+$color-dusty-orange-two:     #f06e20;
+$color-dusty-orange-three:   #DC641D;
+$color-dusk-blue:            #2a2981;
+$color-dusk-blue-two:        #272480;
+$color-cobalt:               #26227b;
+$color-sunflower-yellow:     #fed400;
+$color-brick-orange:         #c0420f;
+$color-brick-orange-two:     #E67823;
+$color-grey:                 #d8d8d8;
+$color-darkgrey:             #A9A9A9;
+$color-darkgrey-two:         #55555C;
+$color-brownish-grey:        #646464;
+$color-warm-grey:            #757575;
+$color-warm-grey-two:        #727272;
+$color-warm-grey-three:      #979797;
+$color-white:                #ffffff;
+$color-whitesmoke:           #f5f5f5;
+$color-whitesmoke-two:       #D0D0D0;
+$color-whitesmoke-three:     #F7F7F7;
+$color-black:                #000000;
+$color-black-two:            #303030;
+
+$gutter:                     15px;
+
+$size-tablet-portrait:       768px;
+$size-tablet-landscape:      1024px;
+$size-desktop-md:            1280px;
+$size-desktop-lg:            1440px;
+$size-desktop-xl:            1920px;
+
+$tablet-portrait:            "min-width: #{$size-tablet-portrait}";
+$tablet-landscape:           "min-width: #{$size-tablet-landscape}";
+$desktop-md:                 "min-width: #{$size-desktop-md}";
+$desktop-lg:                 "min-width: #{$size-desktop-lg}";
+$desktop-xl:                 "min-width: #{$size-desktop-xl}";
+
+$font-montserrat:            "montserrat";
+$font-source-sans-pro:       "sourcesanspro";
+$font-source-sans-pro-light: "sourcesanspro-light";
+
+$font-browser-context:       18;
+
+$sidebar-width:              207px;
