@@ -24,7 +24,7 @@
   }
 }
 
-@mixin flex($flex-direction: row, $align-items: flex-start, $justify-content: flex-start){
+@mixin flex($flex-direction: row, $align-items: flex-start, $justify-content: flex-start)  {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;

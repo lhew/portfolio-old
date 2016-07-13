@@ -1,0 +1,4 @@
+.menu-container {
+  position: fixed;
+  z-index: 50;
+  display: none; }

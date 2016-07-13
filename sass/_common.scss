@@ -1,9 +1,10 @@
 @import "core";
 @import "yui-reset";
 
-@include font-face($font-montserrat, "../fonts/montserrat-regular-webfont");
-@include font-face($font-source-sans-pro, "../fonts/SourceSansPro-Regular");
-@include font-face($font-source-sans-pro-light, "../fonts/SourceSansPro-Light");
+@include font-face($font-peace-sans, "../fonts/PeaceSans");
+@include font-face($font-moon, "../fonts/Moon-Light");
+@include font-face($font-moon-bold, "../fonts/Moon-Bold");
+@include font-face($font-selima, "../fonts/Selima");
 
 html{
   height: 100%;
@@ -11,32 +12,6 @@ html{
 
 .general-wrapper{
   overflow: hidden;
-}
-
-.site-wrapper{
-  @extend .container;
-  padding-left: ceil($sidebar-width + $gutter);
-}
-
-.site-wrapper-internal{
-  @extend .container;
-  padding-left: ceil($sidebar-width + 78px - $gutter);
-}
-
-div[ng-view]{
-  min-height: 100%;
-  margin-bottom: -96px;
-  &:after{
-    content: "";
-    height: 96px;
-    display: block;
-    min-height: 100%;
-   }
-}
-
-body{
-  font: normal #{$font-browser-context}px $font-montserrat;
-  background: $color-whitesmoke;
 }
 
 a{
@@ -51,4 +26,22 @@ p{
   strong{
       font-weight: bold;
   }
+}
+
+.site-wrapper{
+  overflow: hidden;
+  @include flex();
+}
+
+.page-group{
+  @include flex(column);
+}
+
+
+.page{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  @include flex();
+  @include clear();
 }

@@ -1,0 +1,113 @@
+.main-nav{
+  position: fixed;
+  right: 46px;
+  top: 55px;
+
+  .menu-icon{
+    width: 40px;
+    height: 32px;
+    float: right;
+    display: block;
+    margin-top: -13px;
+    padding-top: 13px;
+
+    span{
+      @include transition();
+      content: "";
+      float: right;
+      display: block;
+      text-indent: -10000px;
+      width: 28px;
+      height: 4px;
+      border-radius: 30px;
+      background: $color-white;
+    }
+
+    &:after{
+      @include transition();
+      content: "";
+      display: block;
+      width: 23px;
+      height: 4px;
+      border-radius: 30px;
+      background: $color-white;
+      top: 8px;
+      right: -17px;
+      position: relative;
+    }
+
+    &:before{
+      @include transition();
+      content: "";
+      display: block;
+      width: 25px;
+      height: 4px;
+      border-radius: 30px;
+      background: $color-white;
+      top: -4px;
+      right: -15px;
+      position: relative;
+    }
+  }
+
+  nav{
+    position: fixed;
+    z-index: 51;
+    top: 52px;
+    right: 93px;
+    font: normal em(16) $font-moon;
+
+    a{
+      @include translateY(-90px);
+      position: relative;
+      z-index: 52;
+      color: $color-white;
+      display: inline-block;
+      margin-right: 25px;
+
+
+      &:nth-child(5){
+        @include transition(all 0.2s);
+      }
+      &:nth-child(4){
+        @include transition(all 0.2s ease 0.05s);
+      }
+      &:nth-child(3){
+        @include transition(all 0.2s ease 0.1s);
+      }
+      &:nth-child(2){
+        @include transition(all 0.2s ease 0.15s);
+      }
+      &:nth-child(1){
+        @include transition(all 0.2s ease 0.2s);
+      }
+
+
+      &:after{
+        @include transition();
+        content: "";
+        width: 0;
+        left:50%;
+        display: block;
+        height: 2px;
+        background: $color-white;
+        position: relative;
+        bottom: -3px;
+
+      }
+
+      &:hover, &:focus, &.current{
+        &:after{
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  &.active{
+    nav a {
+      @include translateY(0);
+    }
+  }
+}

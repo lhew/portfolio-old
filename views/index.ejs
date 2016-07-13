@@ -2,22 +2,40 @@
   <main class="site-wrapper">
     <div class="page-group">
       <div class="page page-home">
-        <div class="container">
 
-          <div class="mini-nav-container">
-            <div class="navigator-stack">
-              <a href="#" class="nav-to page-home"><span>Home</span></a>
-              <a href="#" class="nav-to page-portfolio"><span>Portfolio</span></a>
-              <a href="#" class="nav-to page-contact"><span>Contact</span></a>
-            </div>
-            <div class="navigator-stack">
-              <a href="#" class="nav-to page-skills"><span>Skills</span></a>
-            </div>
-            <div class="navigator-stack">
-              <a href="#" class="nav-to page-about"><span>About</span></a>
-            </div>
+        <div class="logo-glass-wrapper">
+          <img src="img/glass.svg" alt="">
+        </div>
+
+        <div class="main-nav">
+          <a href="javascript:;" class="menu-icon">
+            <span>Menu</span>
+          </a>
+
+          <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Skills</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+
+        <div class="mini-nav-container">
+          <div class="navigator-stack">
+            <a href="#" class="nav-to page-home"><span>Home</span></a>
+            <a href="#" class="nav-to page-portfolio"><span>Portfolio</span></a>
+            <a href="#" class="nav-to page-contact"><span>Contact</span></a>
           </div>
+          <div class="navigator-stack">
+            <a href="#" class="nav-to page-about"><span>About</span></a>
+          </div>
+          <div class="navigator-stack">
+            <a href="#" class="nav-to page-skills"><span>Skills</span></a>
+          </div>
+        </div>
 
+        <div class="container">
           <section class="main-splash-container">
             <div class="image-container">
               <img src="img/logo.svg" alt="that's me :D" class="main-logo">
@@ -30,34 +48,42 @@
               </div>
             </div>
             <div class="title-container">
-              <h1 class="base-title">
-                Hello, <br> i am <span class="fancy-title">Leo</span>
-              </h1>
+              <p class="base-title">
+                Hello,
+              </p>
+              <p class="base-title">
+                i am <span class="fancy-title">Leo.</span>
+              </p>
               <small class="base-subtitle">
                 Front-end developer @ Recife
               </small>
             </div>
             <div class="button-container">
-              <a href="#" class="more">
+              <a href="#" class="button button-more">
                 <span class="more-label">See it for yourself</span>
-                <img src="img/arrow-caret-right.svg" alt="" class="more-arrow">
+                <img src="img/arrow-caret-white.svg" alt="" class="more-arrow">
               </a>
             </div>
           </section>
 
-          <a href="#" class="button-more-content">
-            See me in action
-          </a>
-
-          <a href="http://github.com/lhew/portfolio" class="button-download-my-code">
-            <span>
-              Hey, you can <br>
-              download my code <br>
-              if you want
-            </span>
-            <img src="img/share-icon.svg" alt="Get this code at github">
-          </a>
         </div>
+
+        <a href="#" class="button-more-content">
+          <span>See me in action</span>
+          <img src="img/arrow-caret-down-white.svg" alt="" class="more-arrow">
+        </a>
+
+        <a href="http://github.com/lhew/portfolio" class="button-download-my-code">
+          <span>
+            Hey, you can <br>
+            download my  <br>
+            code if you <br>
+            want
+          </span>
+          <figure>
+            <img src="img/share-icon.svg" alt="Get this code at github">
+          </figure>
+        </a>
       </div>
       <div class="page page-portfolio">
         <div class="container">
@@ -65,25 +91,57 @@
         </div>
         <div class="swiper-container">
           <div class="swiper-wrapper">
-              <div class="swiper-slide">Transforma Recife</div>
-              <div class="swiper-slide">Wintersport/Sunweb</div>
-              <div class="swiper-slide">SUATI</div>
-              <div class="swiper-slide">Manhattan</div>
-              <div class="swiper-slide">Multi Planejamento</div>
-              <div class="swiper-slide">Radio Skol</div>
-              <div class="swiper-slide">Super con</div>
+              <div class="swiper-slide project-transforma">
+                <div class="project-container" style="background-image: url('/img/site-transforma-recife.jpg')"></div>
+                <div class="project-data">
+                  <h3 class="project-title">Transforma Recife</h3>
+                  <a href="#" class="see-it-in-action">See me in action</a>
+                </div>
+              </div>
+              <div class="swiper-slide project-wintersports">
+                <div class="project-container" style="background-image: url('/img/site-wintersport.jpg')"></div>
+                <div class="project-data">
+                  <h3 class="project-title">Sunweb Wintersports</h3>
+                  <a href="#" class="see-it-in-action">See me in action</a>
+                </div>
+              </div>
+              <div class="swiper-slide project-holidays">
+                <div class="project-container" style="background-image: url('/img/site-sunweb.jpg')"></div>
+                <div class="project-data">
+                  <h3 class="project-title">Sunweb Holidays</h3>
+                  <a href="#" class="see-it-in-action">See me in action</a>
+                </div>
+              </div>
+              <div class="swiper-slide project-suati">
+                <div class="project-container" style="background-image: url('/img/site-suati.jpg')"></div>
+                <div class="project-data">
+                  <h3 class="project-title">SUATI</h3>
+                  <a href="#" class="see-it-in-action">See me in action</a>
+                </div>
+              </div>
+              <div class="swiper-slide project-manhattan">
+                <div class="project-container" style="background-image: url('/img/site-manhattan.jpg')"></div>
+                <div class="project-data">
+                  <h3 class="project-title">Manhattan Cafe &amp; Theatro</h3>
+                  <a href="#" class="see-it-in-action">See me in action</a>
+                </div>
+              </div>
+              <div class="swiper-slide project-multi">
+                <div class="project-container" style="background-image: url('/img/site-multi.jpg')"></div>
+                <div class="project-data">
+                  <h3 class="project-title">Multi Planejamento</h3>
+                  <a href="#" class="see-it-in-action">See me in action</a>
+                </div>
+              </div>
           </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-scrollbar"></div>
+          <div class="swiper-button-prev"><img src="/img/arrow-left.svg" alt=""></div>
+          <div class="swiper-button-next"><img src="/img/arrow-right.svg" alt=""></div>
         </div>
       </div>
 
-      <div class="page page-contact">
-
-      </div>
+      <div class="page page-contact"></div>
     </div>
-    <div class="page-group">
+    <div class="page-group" id="page-group-intro">
       <div class="page page-about">
         <div class="container">
           <a href="#" class="button-back">
@@ -119,4 +177,5 @@
       </div>
     </div>
   </main>
+  <windowresizer/>
 <% include footer %>
