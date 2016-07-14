@@ -23,15 +23,15 @@
 
         <div class="mini-nav-container">
           <div class="navigator-stack">
-            <a href="#" class="nav-to page-home"><span>Home</span></a>
-            <a href="#" class="nav-to page-portfolio"><span>Portfolio</span></a>
-            <a href="#" class="nav-to page-contact"><span>Contact</span></a>
+            <a href="#" class="nav-to" data-page=".page-home"><span>Home</span></a>
+            <a href="#" class="nav-to" data-page=".page-portfolio"><span>Portfolio</span></a>
+            <a href="#" class="nav-to" data-page=".page-contact"><span>Contact</span></a>
           </div>
           <div class="navigator-stack">
-            <a href="#" class="nav-to page-about"><span>About</span></a>
+            <a href="#" class="nav-to" data-page=".page-about"><span>About</span></a>
           </div>
           <div class="navigator-stack">
-            <a href="#" class="nav-to page-skills"><span>Skills</span></a>
+            <a href="#" class="nav-to" data-page=".page-skills"><span>Skills</span></a>
           </div>
         </div>
 
@@ -88,6 +88,10 @@
       <div class="page page-portfolio">
         <div class="container">
           <h2 class="secondary-title">My Work</h2>
+        </div>
+        <div class="portfolio-detail">
+            <a href="javascript:;" class="close-button"><img src="/img/delete.svg" alt=""></a>
+            <div class="portfolio-wrapper"></div>
         </div>
         <div class="swiper-container">
           <div class="swiper-wrapper">

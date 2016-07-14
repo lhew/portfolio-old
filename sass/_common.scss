@@ -33,6 +33,18 @@ p{
   @include flex();
 }
 
+.lock-for-popup{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+  .page-home{
+    background: $color-white;
+  }
+}
+
 .page-group{
   @include flex(column);
 }
