@@ -124,6 +124,18 @@ a {
   font-weight: "normal";
   src: url("../fonts/Selima.eot?") format("eot"), url("../fonts/Selima.woff2") format("woff2"), url("../fonts/Selima.woff") format("woff"), url("../fonts/Selima.ttf") format("truetype"), url("../fonts/Selima.svg#selima") format("svg"); }
 
+@font-face {
+  font-family: "montserrat";
+  font-style: "normal";
+  font-weight: "normal";
+  src: url("../fonts/Montserrat-Regular.eot?") format("eot"), url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype"), url("../fonts/Montserrat-Regular.svg#montserrat") format("svg"); }
+
+@font-face {
+  font-family: "montserrat-bold";
+  font-style: "normal";
+  font-weight: "normal";
+  src: url("../fonts/Montserrat-bold.eot?") format("eot"), url("../fonts/Montserrat-bold.woff2") format("woff2"), url("../fonts/Montserrat-bold.woff") format("woff"), url("../fonts/Montserrat-bold.ttf") format("truetype"), url("../fonts/Montserrat-bold.svg#montserrat-bold") format("svg"); }
+
 html {
   height: 100%; }
 
@@ -151,6 +163,12 @@ p {
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start; }
+  .site-wrapper.animatable {
+    -moz-transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    -o-transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    -ms-transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    -webkit-transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
 
 .lock-for-popup {
   position: fixed;
@@ -160,6 +178,8 @@ p {
   top: 0; }
   .lock-for-popup .page-home {
     background: #ffffff; }
+    .lock-for-popup .page-home img {
+      display: none; }
 
 .page-group {
   display: -webkit-flex;
@@ -1353,6 +1373,114 @@ button.swiper-pagination-bullet {
     letter-spacing: 0.3125em;
     position: relative;
     z-index: 2; }
+
+.page-about {
+  display: none;
+  position: relative; }
+  .page-about .button-back-to-home {
+    -moz-transition: all 1.2s cubic-bezier(0.86, 0, 0.07, 1);
+    -o-transition: all 1.2s cubic-bezier(0.86, 0, 0.07, 1);
+    -ms-transition: all 1.2s cubic-bezier(0.86, 0, 0.07, 1);
+    -webkit-transition: all 1.2s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 1.2s cubic-bezier(0.86, 0, 0.07, 1);
+    position: absolute;
+    top: -52px;
+    left: 249px; }
+    .page-about .button-back-to-home span {
+      font: normal 0.8125em "moon-bold";
+      color: #3d1e39;
+      margin: 0 0 0 10px; }
+  .page-about .image-wrapper {
+    background: url("/img/this-is-me.jpg") no-repeat 39% 100%/cover;
+    width: 380px;
+    height: 580px;
+    flex: 0 0 380px; }
+  .page-about .container {
+    -moz-transition: all 1s cubic-bezier(0.86, 0, 0.07, 1);
+    -o-transition: all 1s cubic-bezier(0.86, 0, 0.07, 1);
+    -ms-transition: all 1s cubic-bezier(0.86, 0, 0.07, 1);
+    -webkit-transition: all 1s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 1s cubic-bezier(0.86, 0, 0.07, 1);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: -64px 0 0 0;
+    -moz-transform: translateX(400px);
+    -o-transform: translateX(400px);
+    -ms-transform: translateX(400px);
+    -webkit-transform: translateX(400px);
+    transform: translateX(400px);
+    position: relative; }
+  .page-about:before {
+    content: "";
+    height: 100%;
+    width: 35%;
+    max-width: 365px;
+    background: #fb385f;
+    position: absolute;
+    left: 0;
+    top: 0; }
+  .page-about .container-me {
+    margin: -10px 0 0 76px;
+    position: relative; }
+    .page-about .container-me:before {
+      content: "";
+      display: block;
+      height: 7px;
+      top: 15px;
+      width: 70px;
+      left: -98px;
+      background: #fb385f;
+      border-radius: 20px;
+      position: absolute; }
+  .page-about .main-title {
+    font: normal 2.6875em "moon";
+    color: #3d1e39;
+    letter-spacing: -0.03125em;
+    line-height: 0.9375em;
+    margin-bottom: 6px; }
+    .page-about .main-title strong {
+      font-family: "moon-bold"; }
+  .page-about .main-subtitle {
+    font: normal 0.9375em "moon-bold";
+    color: #fb385f;
+    font-weight: bold;
+    position: relative;
+    top: 16px; }
+  .page-about p {
+    font: normal 0.9375em/1.125em "montserrat";
+    margin-top: 40px;
+    line-height: 1.5;
+    max-width: 490px; }
+  .page-about .button-skills {
+    border-color: #3d1e39;
+    color: #3d1e39;
+    width: 255px; }
+    .page-about .button-skills span {
+      width: 210px;
+      font-family: "moon-bold"; }
+  .page-about.active .container {
+    -moz-transform: translateX(100px);
+    -o-transform: translateX(100px);
+    -ms-transform: translateX(100px);
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px); }
+  .page-about.active .button-back-to-home {
+    left: 129px; }
+  .page-about.ready {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start; }
 
 .text-center {
   text-align: center; }

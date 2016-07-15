@@ -2,6 +2,7 @@ $(function(){
 
   var MIN_PAGE_HEIGHT = 700;
   var isLockedForPopup = false;
+  var currentPagePos = 0;
 
   var resizePages = function(){
     $(".page").each(function(i,e){
@@ -9,6 +10,8 @@ $(function(){
       $(e).height(height);
       $(e).width($(window).width());
     });
+
+    $(".site-wrapper").css('margin-left', $(window).width() * currentPagePos * -1);
 
     $(".page-group").each(function(i,e){
       $(this).width( $(e).find(".page").length * $(window).width());
@@ -28,7 +31,45 @@ $(function(){
 
   $(".button-more").on("click", function(e){
     e.preventDefault();
-    $(".site-wrapper").animate({marginLeft : $(window).width() * -1}, 300);
+    currentPagePos = 1;
+
+    $(".page-about")
+      .addClass("ready")
+      .addClass("active");
+
+    $(".site-wrapper")
+      .addClass("animatable")
+      .css('margin-left', $(window).width() * currentPagePos * -1);
+    setTimeout(function(){
+      $(".page-about")
+        .removeClass("animatable");
+
+      $(".site-wrapper")
+        .removeClass("animatable")
+        .height($(window).height());
+    }, 800);
+  });
+
+  $(".button-back-to-home").on("click", function(e){
+    e.preventDefault();
+    currentPagePos = 0;
+    $(".page-about")
+      .removeClass("active");
+
+    $(".site-wrapper")
+      .addClass("animatable")
+      .css('margin-left', $(window).width() * currentPagePos);
+        setTimeout(function(){
+
+          $(".site-wrapper")
+            .removeClass("animatable")
+            .removeAttr("style");
+        }, 800);
+  });
+
+  $(".button-skills").on("click", function(e){
+    currentPagePos = 2;
+    $(".site-wrapper").css('margin-left', $(window).width() * currentPagePos * -1);
   });
 
    var mySwiper = new Swiper('.swiper-container',{
@@ -53,7 +94,7 @@ $(function(){
 
    $(".button-more-content").on("click", function(e){
       e.preventDefault();
-      $("body, html").animate({scrollTop: $(".page-portfolio").offset().top}, 400);
+      $("body, html").animate({scrollTop: $(".page-portfolio").offset().top}, 400, "easeInOutQuint");
    });
 
    $(".swiper-slide").on("click", function(e){
