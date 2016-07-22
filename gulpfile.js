@@ -18,6 +18,7 @@ gulp.task('watch', function() {
   gulp.watch('./sass/*.scss', ['sass']);
 });
 
+
 gulp.task('develop', function () {
   livereload.listen();
   nodemon({
@@ -34,6 +35,9 @@ gulp.task('develop', function () {
     this.stderr.pipe(process.stderr);
   });
 });
+
+
+gulp.task('build',['sass']);
 
 gulp.task('default', [
   'sass',
