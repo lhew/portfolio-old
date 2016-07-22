@@ -1,0 +1,98 @@
+body{
+  .logo-glass-wrapper{
+    @include transition(all 0.3s ease 2s);
+    top: -48px;
+
+    &:before{
+      @include transition(all 0.3s ease 2.1s);
+      top: -10px;
+    }
+
+    &:after{
+      @include transition(all 0.3s ease 2.2s);
+      top: -10px;
+    }
+  }
+
+  .menu-icon{
+    &:before{
+      @include transition(all 0.3s ease 2.1s);
+      top: -40px;
+    }
+
+      @include transition(all 0.3s ease 2.15s);
+      @include translateY(-70px);
+
+    &:after{
+      @include transition(all 0.3s ease 2.25s);
+      top: -100px;
+    }
+  }
+  &.ready{
+
+    .logo-glass-wrapper{
+      top: 42px;
+
+      &:before{
+        top: 51px;
+      }
+
+      &:after{
+        top: 45px;
+      }
+    }
+
+    .menu-icon{
+
+        &:before{
+          top: -4px;
+        }
+
+          @include translateY(0);
+
+        &:after{
+          top: 8px;
+        }
+    }
+
+    .main-logo{
+      @include translateY(0);
+      opacity: 1;
+    }
+
+    .page-home{
+      .base-title{
+        &:nth-child(1){
+          @include translateY(0);
+          opacity: 1;
+        }
+
+        &:nth-child(2){
+          @include translateY(0);
+          opacity: 1;
+        }
+      }
+      .base-subtitle{
+        @include translateY(0);
+        top: 5px;
+        opacity: 1;
+      }
+
+      .button-more{
+        @include translateX(0);
+        opacity: 1;
+      }
+
+      .button-more-content{
+        span{
+          @include translateY(0);
+          opacity: 1;
+        }
+        img{
+          @include translateY(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

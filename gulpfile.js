@@ -2,11 +2,13 @@ var gulp = require('gulp'),
   nodemon = require('gulp-nodemon'),
   plumber = require('gulp-plumber'),
   livereload = require('gulp-livereload'),
+  sourcemaps = require('gulp-sourcemaps'),
   sass = require('gulp-sass');
 
 gulp.task('sass', function () {
   gulp.src('./sass/*.scss')
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(gulp.dest('./public/css'))
     .pipe(livereload());

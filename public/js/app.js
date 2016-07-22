@@ -1,78 +1,40 @@
 $(function(){
 
-  var MIN_PAGE_HEIGHT = 700;
-  var isLockedForPopup = false;
-  var currentPagePos = 0;
+  var $mainNav = $(".main-nav-wrapper");
 
-  var resizePages = function(){
-    $(".page").each(function(i,e){
-      var height = ($(window).height() < MIN_PAGE_HEIGHT) ? 700 : $(window).height();
-      $(e).height(height);
-      $(e).width($(window).width());
-    });
+  $('#fullpage').fullpage({
+    easing: 'easeInOutCubic',
+    anchors:['home', 'portfolio', 'contact'],
+    scrollingSpeed: 700,
+    normalScrollElements: ".page-skills",
+    loopHorizontal: false,
+    keyboardScrolling: false,
+    onSlideLeave : function(anchorLink, index, slideIndex, direction, nextSlideIndex){
+      if(nextSlideIndex == 0){
+        $mainNav.removeClass("darken-logo darken-menu");
+      }else if(nextSlideIndex == 1){
+        $mainNav
+          .addClass("darken-menu")
+          .removeClass("darken-logo");
+      }else if(nextSlideIndex == 2){
+        $mainNav
+          .removeClass("darken-menu")
+          .addClass("darken-logo");
+      }
+    },
+    onLeave: function(index, nextIndex, direction){
+        $mainNav.removeClass("darken-logo darken-menu");
 
-    $(".site-wrapper").css('margin-left', $(window).width() * currentPagePos * -1);
+        if(nextIndex !== 1){
+          $mainNav
+            .addClass("darken-menu")
+            .addClass("darken-logo");
+        }
+    }
 
-    $(".page-group").each(function(i,e){
-      $(this).width( $(e).find(".page").length * $(window).width());
-    });
-  };
-
-  resizePages();
-
-  $(window).resize(function(){
-    resizePages();
   });
 
-  $(".page-home").addClass("ready");
-  $(".menu-icon").on("click", function(){
-    $(".main-nav").toggleClass("active");
-  });
-
-  $(".button-more").on("click", function(e){
-    e.preventDefault();
-    currentPagePos = 1;
-
-    $(".page-about")
-      .addClass("ready")
-      .addClass("active");
-
-    $(".site-wrapper")
-      .addClass("animatable")
-      .css('margin-left', $(window).width() * currentPagePos * -1);
-    setTimeout(function(){
-      $(".page-about")
-        .removeClass("animatable");
-
-      $(".site-wrapper")
-        .removeClass("animatable")
-        .height($(window).height());
-    }, 800);
-  });
-
-  $(".button-back-to-home").on("click", function(e){
-    e.preventDefault();
-    currentPagePos = 0;
-    $(".page-about")
-      .removeClass("active");
-
-    $(".site-wrapper")
-      .addClass("animatable")
-      .css('margin-left', $(window).width() * currentPagePos);
-        setTimeout(function(){
-
-          $(".site-wrapper")
-            .removeClass("animatable")
-            .removeAttr("style");
-        }, 800);
-  });
-
-  $(".button-skills").on("click", function(e){
-    currentPagePos = 2;
-    $(".site-wrapper").css('margin-left', $(window).width() * currentPagePos * -1);
-  });
-
-   var mySwiper = new Swiper('.swiper-container',{
+  var mySwiper = new Swiper('.swiper-container',{
     slidesPerView: 1,
     spaceBetween: 150,
     uniqueNavElements: true,
@@ -80,50 +42,86 @@ $(function(){
     prevButton: ".swiper-button-prev"
    });
 
-   var togglePopupLock = function(){
-    console.log('togglefor popup called ', isLockedForPopup);
-    if(!isLockedForPopup){
-      $(".site-wrapper, body, html").addClass("lock-for-popup");
-    }else{
-       $(".site-wrapper, body, html").removeClass("lock-for-popup");
-    }
-
-    isLockedForPopup = !isLockedForPopup;
-
-   }
-
-   $(".button-more-content").on("click", function(e){
-      e.preventDefault();
-      $("body, html").animate({scrollTop: $(".page-portfolio").offset().top}, 400, "easeInOutQuint");
-   });
-
-   $(".swiper-slide").on("click", function(e){
-      if(!$(this).hasClass("swiper-slide-active"))
-        return;
-
-      e.stopPropagation();
-      var elmPos = $(this).offset().top - $(window).scrollTop();
-      $(".portfolio-detail")
-        .find(".portfolio-wrapper")
-        .html($(this).html())
-        .parent()
-        .height(300)
-        .css("top", elmPos)
-        .addClass("portfolio-detail-expanded");
-
-      togglePopupLock();
-
-   });
-
-   $(".close-button").on("click", function(e){
-      e.preventDefault();
-      togglePopupLock();
-      $(".portfolio-detail").removeClass("portfolio-detail-expanded").height(0);
-      $("body, html").scrollTop($(".page-portfolio").offset().top);
-
+  var cascadeOpacity = function($parentRef, ratio, opacity){
+    $parentRef.find("*").each(function(i, e){
       setTimeout(function(){
-        $(".portfolio-detail")
-      }, 300);
+        $(e).fadeTo(300, opacity);
+      }, i * ratio);
+    });
+  };
 
-   });
+
+  $("body").addClass("ready");
+
+  $(".menu-icon").on("click", function(){
+    $(".main-nav").toggleClass("active");
+  });
+
+  $(".button-more").on("click", function(e){
+  e.preventDefault();
+    $.fn.fullpage.moveTo(1, 1);
+    $(".main-nav-wrapper").addClass("")
+  });
+
+  $(".main-nav nav a:first-child").on("click", function(){
+    $.fn.fullpage.moveTo(1,0);
+  });
+
+  $(".button-skills").on("click", function(e){
+    e.preventDefault();
+    $.fn.fullpage.moveTo(1,2);
+  });
+
+  $(".button-back-to-about").on("click", function(e){
+    e.preventDefault();
+    $.fn.fullpage.moveTo(1,1);
+  });
+
+  $(".button-back-to-home").on("click", function(e){
+    $.fn.fullpage.moveTo(1,0);
+  })
+
+  $(".experience-container")
+    .find(".skills-experience-header").on("click", function(e){
+      $(".page-skills")
+        .find(".content-wrapper")
+        .addClass("animating-to-skills")
+
+      $(".skills-container .scroll-content *").fadeTo(0,0);
+
+      setTimeout(function showOpacity(){
+          cascadeOpacity($(".skills-container .scroll-content"), 20, 1);
+      }, 700);
+  });
+
+
+  $(".skills-container")
+    .find(".skills-experience-header").on("click", function(e){
+      $(".page-skills")
+        .find(".content-wrapper")
+        .addClass("animating-to-experience");
+
+      setTimeout(function showOpacity(){
+          $(".content-wrapper").removeClass("animating-to-skills animating-to-experience");
+      }, 1100);
+  });
+
+
+  $(".swiper-slide").on("click", function(e){
+    if(!$(this).hasClass("swiper-slide-active"))
+      return;
+
+    e.stopPropagation();
+    var elmPos = $(this).offset().top - $(window).scrollTop();
+    $(".portfolio-detail")
+      .find(".portfolio-wrapper")
+      .html($(this).html())
+      .parent()
+      .addClass("portfolio-detail-expanded");
+  });
+
+  $(".close-button").on("click", function(e){
+    e.preventDefault();
+    $(".portfolio-detail").removeClass("portfolio-detail-expanded").height(0);
+  });
 });

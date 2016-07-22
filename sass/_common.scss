@@ -7,9 +7,17 @@
 @include font-face($font-selima, "../fonts/Selima");
 @include font-face($font-montserrat, "../fonts/Montserrat-Regular");
 @include font-face($font-montserrat-bold, "../fonts/Montserrat-bold");
+@include font-face($font-roboto-light, "../fonts/Roboto-light");
+@include font-face($font-roboto-regular, "../fonts/Roboto-regular");
+@include font-face($font-roboto-bold , "../fonts/Roboto-Bold");
 
 html{
   height: 100%;
+  font-family: $font-moon;
+}
+
+.fp-controlArrow{
+  display: none!important;
 }
 
 .general-wrapper{
@@ -58,10 +66,26 @@ p{
   @include flex(column);
 }
 
+.button-back{
+  position: absolute;
+  top: 10%;
+
+  span{
+    font: normal em(13) $font-moon-bold;
+    color: $color-grape;
+    margin: 0 0 0 10px;
+  }
+}
+
 .page{
+  position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
   @include flex();
   @include clear();
+}
+
+.scroll-container{
+  height: 100%;
 }

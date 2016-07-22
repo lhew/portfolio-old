@@ -8,6 +8,7 @@
     height: 32px;
     float: right;
     display: block;
+    position: relative;
     margin-top: -13px;
     padding-top: 13px;
 
@@ -96,9 +97,8 @@
 
       }
 
-      &:hover, &:focus, &.current{
+      &:hover, .active{
         &:after{
-          width: 100%;
           left: 0;
         }
       }
@@ -108,6 +108,36 @@
   &.active{
     nav a {
       @include translateY(0);
+    }
+  }
+}
+
+.ready{
+  .main-nav{
+    .menu-icon{
+      @include transition();
+      span, &:after, &:before{
+      }
+
+      &:hover{
+
+        span, &:after, &:before{
+          @include transition();
+        }
+
+        span{
+          width: 23px;
+        },
+
+        &:after{
+          width: 26px;
+          right: 0px;
+        }
+        &:before{
+          width: 28px;
+          right: 2px;
+        }
+      }
     }
   }
 }

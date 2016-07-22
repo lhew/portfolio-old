@@ -1,0 +1,23 @@
+.main-nav-wrapper{
+  &.darken-logo{
+    .logo-glass-wrapper{
+      &:before, &:after{
+        background: rgba($color-grape, 0.5);
+      }
+    }
+  }
+
+  &.darken-menu{
+    .main-nav{
+      a{
+        color: $color-grape;
+      }
+
+      .menu-icon{
+        span, &:before, &:after{
+          background: $color-grape;
+        }
+      }
+    }
+  }
+}
