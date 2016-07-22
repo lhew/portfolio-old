@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "bower install && gulp dev && node ./bin/www"
+    "postinstall": "bower install && gulp dev",
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
