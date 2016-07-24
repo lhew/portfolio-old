@@ -1,6 +1,11 @@
 .page-portfolio{
+  @include transition(all 0.7s);
   @include flex(column, center, center);
   background: $color-light-grey;
+
+  &.showing{
+    @include transform(scale(0.95));
+  }
 
   .container{
     max-width: 790px;

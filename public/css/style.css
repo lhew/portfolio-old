@@ -1012,11 +1012,11 @@ body .menu-icon {
     top: -100px; }
 
 body.ready .logo-glass-wrapper {
-  top: 42px; }
+  top: 22px; }
   body.ready .logo-glass-wrapper:before {
-    top: 51px; }
+    top: 34px; }
   body.ready .logo-glass-wrapper:after {
-    top: 45px; }
+    top: 29px; }
 
 body.ready .menu-icon {
   -moz-transform: translateY(0);
@@ -1245,6 +1245,11 @@ body.ready .page-home .button-more-content img {
       margin-top: 20px; }
 
 .page-portfolio {
+  -moz-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -1254,6 +1259,12 @@ body.ready .page-home .button-more-content img {
   align-items: center;
   justify-content: center;
   background: #fafafa; }
+  .page-portfolio.showing {
+    -moz-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95); }
   .page-portfolio .container {
     max-width: 790px; }
   .page-portfolio .portfolio-detail-close {
@@ -1389,20 +1400,131 @@ body.ready .page-home .button-more-content img {
     position: relative;
     z-index: 2; }
 
-.portfolio-detail {
-  -moz-transition: all 2.5s cubic-bezier(0.23, 1, 0.32, 1);
-  -o-transition: all 2.5s cubic-bezier(0.23, 1, 0.32, 1);
-  -ms-transition: all 2.5s cubic-bezier(0.23, 1, 0.32, 1);
-  -webkit-transition: all 2.5s cubic-bezier(0.23, 1, 0.32, 1);
-  transition: all 2.5s cubic-bezier(0.23, 1, 0.32, 1);
-  border-radius: 100%;
-  width: 0;
-  height: 0;
+.portfolio-wrapper {
+  display: none;
+  width: 100%;
+  height: 100%;
   background: #ffffff;
   position: fixed;
-  left: 50%;
-  top: 50%;
+  left: 0%;
+  top: 0%;
   z-index: 40; }
+  .portfolio-wrapper .close-button {
+    display: block;
+    width: 20px;
+    position: fixed;
+    right: 40px;
+    top: 27px;
+    z-index: 43; }
+    .portfolio-wrapper .close-button img {
+      width: 100%; }
+
+.portfolio-content {
+  width: 100%;
+  z-index: 41;
+  padding-bottom: 80px;
+  position: relative;
+  font-family: "roboto-light"; }
+  .portfolio-content .menu-spacer {
+    width: 100%;
+    background: #ffffff;
+    height: 120px; }
+  .portfolio-content .portfolio-presentation-container {
+    font-family: "moon";
+    z-index: 41; }
+    .portfolio-content .portfolio-presentation-container, .portfolio-content .portfolio-presentation-container a {
+      color: #000000; }
+    .portfolio-content .portfolio-presentation-container a:before {
+      background: #000000; }
+    .portfolio-content .portfolio-presentation-container nav {
+      border-top-color: rgba(0, 0, 0, 0.5); }
+    .portfolio-content .portfolio-presentation-container.filled {
+      background: #ffffff; }
+
+.portfolio-content-wrapper {
+  background: #ffffff; }
+  .portfolio-content-wrapper .container {
+    max-width: 700px; }
+
+.portfolio-presentation-container {
+  text-align: center;
+  width: 100%;
+  position: relative;
+  left: 0;
+  top: 40%;
+  overflow: hidden; }
+  .portfolio-presentation-container.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 42; }
+    .portfolio-presentation-container.fixed .main-title {
+      font-size: 1.875em; }
+    .portfolio-presentation-container.fixed .main-subtitle {
+      height: 0;
+      opacity: 0; }
+  .portfolio-presentation-container .main-title {
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    margin-top: 20px;
+    font-size: 3em; }
+  .portfolio-presentation-container .main-subtitle {
+    -moz-transition: all 0.3s ease 0.2s;
+    -o-transition: all 0.3s ease 0.2s;
+    -ms-transition: all 0.3s ease 0.2s;
+    -webkit-transition: all 0.3s ease 0.2s;
+    transition: all 0.3s ease 0.2s;
+    font-size: 1.25em;
+    overflow: hidden;
+    opacity: 1;
+    height: 30px; }
+  .portfolio-presentation-container nav {
+    margin-top: 15px;
+    padding-top: 20px;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    display: block;
+    text-align: center;
+    margin-bottom: 15px; }
+    .portfolio-presentation-container nav a {
+      color: #ffffff;
+      display: inline-block;
+      font-size: 0.8125em; }
+      .portfolio-presentation-container nav a:before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        display: inline-block;
+        border-radius: 100%;
+        margin: 0 25px;
+        position: relative;
+        top: -3px;
+        background: #ffffff; }
+      .portfolio-presentation-container nav a:first-child:before {
+        content: none; }
+
+.portfolio-bg {
+  background: url("../img/site-detail-transforma-recife.jpg") fixed no-repeat center 100%/cover;
+  z-index: 40;
+  color: #ffffff;
+  width: 100%;
+  height: 100vh; }
+
+.portfolio-detail {
+  -moz-transition: opacity 0.7s cubic-bezier(0.86, 0, 0.07, 1), width 0.7s cubic-bezier(0.86, 0, 0.07, 1);
+  -o-transition: opacity 0.7s cubic-bezier(0.86, 0, 0.07, 1), width 0.7s cubic-bezier(0.86, 0, 0.07, 1);
+  -ms-transition: opacity 0.7s cubic-bezier(0.86, 0, 0.07, 1), width 0.7s cubic-bezier(0.86, 0, 0.07, 1);
+  -webkit-transition: opacity 0.7s cubic-bezier(0.86, 0, 0.07, 1), width 0.7s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: opacity 0.7s cubic-bezier(0.86, 0, 0.07, 1), width 0.7s cubic-bezier(0.86, 0, 0.07, 1);
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  position: relative;
+  z-index: 41;
+  overflow: auto; }
   .portfolio-detail .close-button {
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;

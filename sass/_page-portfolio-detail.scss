@@ -1,13 +1,159 @@
-.portfolio-detail{
-  @include transition(all 2.5s $ease-out-quint);
-  border-radius: 100%;
-  width: 0;
-  height: 0;
+.portfolio-wrapper{
+  display: none;
+  width: 100%;
+  height: 100%;
   background: $color-white;
   position: fixed;
-  left: 50%;
-  top: 50%;
+  left: 0%;
+  top: 0%;
   z-index: 40;
+
+  .close-button{
+    display: block;
+    width: 20px;
+    position: fixed;
+    right: 40px;
+    top: 27px;
+    z-index: 43;
+
+    img{
+      width: 100%;
+    }
+  }
+}
+
+.portfolio-content{
+  width: 100%;
+  z-index: 41;
+  padding-bottom: 80px;
+  position: relative;
+  font-family: $font-roboto-light;
+
+
+  .menu-spacer{
+    width: 100%;
+    background: $color-white;
+    height: 120px;
+  }
+
+  .portfolio-presentation-container{
+    font-family: $font-moon;
+    z-index: 41;
+
+    &, a{
+      color: $color-black
+    }
+
+    a:before{
+      background: $color-black;
+    }
+    nav{
+      border-top-color: rgba($color-black, 0.5);
+    }
+
+    &.filled{
+      background: $color-white;
+    }
+  }
+}
+
+.portfolio-content-wrapper{
+  background: $color-white;
+
+  .container{
+    max-width: 700px;
+  }
+}
+
+.portfolio-presentation-container{
+  text-align: center;
+  width: 100%;
+  position: relative;
+  left: 0;
+  top: 40%;
+  overflow: hidden;
+
+  &.fixed{
+    position: fixed;
+    top: 0;
+    z-index: 42;
+
+    .main-title{
+      font-size: em(30);
+    }
+
+    .main-subtitle{
+      height: 0;
+      opacity: 0;
+    }
+  }
+
+  .main-title{
+    @include transition();
+    position: relative;
+    margin-top: 20px;
+    font-size: em(48);
+  }
+
+  .main-subtitle{
+    @include transition(all 0.3s ease 0.2s);
+    font-size: em(20);
+    overflow: hidden;
+    opacity: 1;
+    height: 30px;
+  }
+
+  nav{
+    margin-top: 15px;
+    padding-top: 20px;
+    width: 100%;
+    border-top: 1px solid rgba($color-white, 0.5);
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+
+    a{
+      color: $color-white;
+      display: inline-block;
+      font-size: em(13);
+
+      &:before{
+        content: "";
+        width: 5px;
+        height: 5px;
+        display: inline-block;
+        border-radius: 100%;
+        margin: 0 25px;
+        position: relative;
+        top: -3px;
+        background: $color-white;
+      }
+
+      &:first-child{
+        &:before{
+          content: none;
+        }
+      }
+    }
+  }
+}
+
+.portfolio-bg{
+  background: url('../img/site-detail-transforma-recife.jpg') fixed no-repeat center 100%/cover;
+  z-index: 40;
+  color: $color-white;
+  width: 100%;
+  height: 100vh;
+}
+
+.portfolio-detail{
+  @include transitionMultiple(opacity 0.7s $ease-in-out-quint, width 0.7s $ease-in-out-quint);
+  width: 100%;
+  height: 100%;
+  background: $color-white;
+  position: relative;
+  z-index: 41;
+  overflow: auto;
 
   .close-button{
     @include transition();
@@ -26,7 +172,6 @@
   }
 }
 
-
 .portfolio-detail-expanded{
   border-radius: 0;
   left: 0;
@@ -42,8 +187,6 @@
     background-position: 0 20%;
   }
 
-  .portfolio-wrapper{
-  }
 
   .project-data{
     height: 200px;
