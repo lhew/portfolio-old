@@ -1,12 +1,26 @@
 .portfolio-wrapper{
+  @include transition();
+  @include scale(1.2);
+  opacity: 0;
   display: none;
   width: 100%;
   height: 100%;
   background: $color-white;
   position: fixed;
+  overflow-x: hidden;
+  overflow-y: auto;
   left: 0%;
   top: 0%;
   z-index: 40;
+
+  &.show{
+    opacity: 1;
+    @include scale(1);
+  }
+
+  &.leave{
+    opacity: 0;
+  }
 
   .close-button{
     display: block;
@@ -20,191 +34,117 @@
       width: 100%;
     }
   }
-}
 
-.portfolio-content{
-  width: 100%;
-  z-index: 41;
-  padding-bottom: 80px;
-  position: relative;
-  font-family: $font-roboto-light;
-
-
-  .menu-spacer{
+  .portfolio-header{
+    @include flex(row, center, center);
     width: 100%;
-    background: $color-white;
-    height: 120px;
+    height: 306px;
+    background: $color-grape;
+    color: $color-white;
   }
 
-  .portfolio-presentation-container{
-    font-family: $font-moon;
-    z-index: 41;
-
-    &, a{
-      color: $color-black
-    }
-
-    a:before{
-      background: $color-black;
-    }
-    nav{
-      border-top-color: rgba($color-black, 0.5);
-    }
-
-    &.filled{
-      background: $color-white;
-    }
-  }
-}
-
-.portfolio-content-wrapper{
-  background: $color-white;
-
-  .container{
-    max-width: 700px;
-  }
-}
-
-.portfolio-presentation-container{
-  text-align: center;
-  width: 100%;
-  position: relative;
-  left: 0;
-  top: 40%;
-  overflow: hidden;
-
-  &.fixed{
-    position: fixed;
-    top: 0;
-    z-index: 42;
-
-    .main-title{
-      font-size: em(30);
-    }
-
-    .main-subtitle{
-      height: 0;
-      opacity: 0;
-    }
-  }
-
-  .main-title{
-    @include transition();
-    position: relative;
-    margin-top: 20px;
-    font-size: em(48);
-  }
-
-  .main-subtitle{
-    @include transition(all 0.3s ease 0.2s);
-    font-size: em(20);
-    overflow: hidden;
-    opacity: 1;
-    height: 30px;
-  }
-
-  nav{
-    margin-top: 15px;
-    padding-top: 20px;
-    width: 100%;
-    border-top: 1px solid rgba($color-white, 0.5);
-    display: block;
+  .portfolio-header-title{
     text-align: center;
-    margin-bottom: 15px;
 
-    a{
-      color: $color-white;
-      display: inline-block;
-      font-size: em(13);
-
-      &:before{
-        content: "";
-        width: 5px;
-        height: 5px;
-        display: inline-block;
-        border-radius: 100%;
-        margin: 0 25px;
-        position: relative;
-        top: -3px;
-        background: $color-white;
-      }
-
-      &:first-child{
-        &:before{
-          content: none;
-        }
-      }
+    span{
+      font-size: em(30);
+      display: block;
+      margin-bottom: 5px;
+    }
+    small{
+      font-size: em(15);
     }
   }
-}
 
-.portfolio-bg{
-  background: url('../img/site-detail-transforma-recife.jpg') fixed no-repeat center 100%/cover;
-  z-index: 40;
-  color: $color-white;
-  width: 100%;
-  height: 100vh;
-}
-
-.portfolio-detail{
-  @include transitionMultiple(opacity 0.7s $ease-in-out-quint, width 0.7s $ease-in-out-quint);
-  width: 100%;
-  height: 100%;
-  background: $color-white;
-  position: relative;
-  z-index: 41;
-  overflow: auto;
-
-  .close-button{
-    @include transition();
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    z-index: 41;
-    opacity: 0.5;
-    img{
-      width: 20px;
-    }
-
-    &:hover{
-      opacity: 1;
-    }
-  }
-}
-
-.portfolio-detail-expanded{
-  border-radius: 0;
-  left: 0;
-  margin: 0;
-  opacity: 1;
-  top: 0!important;
-  width: 100%;
-  height: 100%!important;
-
-  .project-container{
-    display: none;
-    height: 200px;
-    background-position: 0 20%;
+  .project-tecnologies{
+    float: right;
   }
 
+  .project-content{
 
-  .project-data{
-    height: 200px;
+    width: 50%;
+    float: left;
+
+    p{
+      font: normal em(15) $font-roboto-light;
+      line-height: 1.6;
+      text-align: justify;
+    }
+  }
+
+  .project-info{
     width: 100%;
-    padding: 0 50px;
+    max-width: 768px;
     margin: 0 auto;
   }
 
+  .portfolio-content-title{
+    margin-bottom: 20px;
+    color: $color-red-pink;
+    font: normal em(20) $font-moon-bold;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    letter-spacing: -1px;
 
-
-  .project-title{
-    @include transition(all 0.3s ease 0.6s);
-    @include translateY(0);
-    font-size: em(35);
-    opacity: 1;
+    &:after{
+      content: "";
+      position: absolute;
+      right: -68px;
+      top: 9px;
+      width: 60px;
+      height: 5px;
+      border-radius: 12px;
+      background: $color-red-pink;
+    }
   }
 
-  .see-it-in-action{
-    display: none;
+  .portfolio-details{
+    padding-top: 75px;
+    width: 100%;
+    overflow: auto;
+    position: relative;
+    background: $color-light-grey;
   }
+
+  .project-technologies{
+    float: left;
+    padding-top: 45px;
+    padding-left: 35px;
+    width: 50%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .technology{
+    font-size: 50px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+    opacity: 0.35;
+  }
+
+  .project-screenshots{
+    width: 100%;
+    float: left;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .project-on-screen-container{
+    background: url('/img/macbook-space-screen.png') no-repeat center top;
+    width: 100%;
+    max-width: 779px;
+    height: 530px;
+    margin: 50px auto 0;
+  }
+
+  .project-on-screen-base{
+    background: url('/img/macbook-space-base.png') no-repeat center top;
+    width: 100%;
+    max-width: 953px;
+    height: 30px;
+    margin: 0 auto 50px;
+  }
+
 }

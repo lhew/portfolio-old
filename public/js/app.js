@@ -95,10 +95,6 @@ $(function(){
   }
 
 
-  checkPortfolioScroll();
-  $(".portfolio-detail").scroll(checkPortfolioScroll);
-
-
   $("body").addClass("ready");
 
   $(".menu-icon").on("click", function(){
@@ -162,23 +158,33 @@ $(function(){
     if(!$(this).hasClass("swiper-slide-active"))
       return;
 
+    //$(".preloader-wrapper").addClass('preloader-wrapper-show');
+
     var $portfolioWrapper = $(".portfolio-wrapper"),
-        $pagePortfolio = $(".page-portfolio");
+        $preloaderWrapper = $(".preloader-wrapper"),
+        $pagePortfolio    = $(".page-portfolio");
 
-
-        $portfolioWrapper.fadeTo(800, 1);
         $pagePortfolio.addClass("showing");
+        $preloaderWrapper.fadeTo(300, 1);
+        $portfolioWrapper.css('display', 'block')
+        setTimeout(function(){
+          $portfolioWrapper.addClass('show');
+        }, 1700);
 
   });
 
   $(".close-button").on("click", function(e){
     e.preventDefault();
     var $portfolioWrapper = $(".portfolio-wrapper"),
+        $preloaderWrapper = $(".preloader-wrapper"),
         $pagePortfolio = $(".page-portfolio");
 
-    $portfolioWrapper.fadeTo(700,0, function(){
-      $(this).hide();
-    });
+    $preloaderWrapper.removeAttr('style');
+    $portfolioWrapper.addClass('leave');
+    setTimeout(function(){
+        $portfolioWrapper.removeClass("leave show").removeAttr('style');
+    }, 400);
+
     $pagePortfolio.removeClass("showing");
 
   });
