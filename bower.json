@@ -15,6 +15,6 @@
     "fullpage.js": "fullpage#^2.8.2",
     "jquery-custom-scrollbar": "^0.5.5",
     "devicons": "^1.8.0",
-    "PreloadJS": "^0.6.2"
+    "waitForImages": "^2.2.0"
   }
 }

@@ -40,7 +40,7 @@ gulp.task('concatjs', function() {
     './public/components/jquery.easing/js/jquery.easing.min.js',
     './public/components/Swiper/dist/js/swiper.jquery.min.js',
     './public/components/fullpage.js/dist/jquery.fullpage.min.js',
-    './public/components/PreloadJS/lib/preloadjs-0.6.2.min.js',
+    './public/components/waitForImages/dist/jquery.waitforimages.min.js',
     './public/js/app.js'
     ])
     .pipe(concat('app.min.js'))

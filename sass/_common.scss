@@ -13,6 +13,13 @@ html{
   font-family: $font-moon;
 }
 
+body{
+  overflow: hidden;
+  &.ready{
+    overflow: auto;
+  }
+}
+
 .fp-controlArrow{
   display: none!important;
 }

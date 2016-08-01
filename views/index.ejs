@@ -44,8 +44,14 @@
 <a href="javascript:;" class="close-button">
   <img src="/img/delete.svg" alt="">
 </a>
-<div class="preloader-wrapper">
-  <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<div class="preloader-wrapper" style="display:block; opacity: 1; position:fixed; left:0; top:0; width:100%; height: 100%; ">
+
+  <div class="load-wrapper typo-wait" style="position: absolute; left: 50%; top: 50%; margin: -20px -40px; text-align: center;">
+  <p style="margin-bottom: 5px; text-indent: 8px; font-family: sans-serif; text-transform: uppercase; font-size: 10px; letter-spacing: 0;">wait a sec...</p>
+  <% include glass %>
+  </div>
+
+  <svg version="1.1" id="L9" style="display:none;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" class="preloader">
       <path d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
         <animateTransform

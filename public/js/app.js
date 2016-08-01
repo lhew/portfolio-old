@@ -34,6 +34,21 @@ $(function(){
 
   });
 
+  $.waitForImages.hasImgProperties = ['backgroundImage'];
+
+  $('body').waitForImages().done(function() {
+    $("body").addClass("ready");
+      $(".preloader-wrapper").css("top", "-100vh");
+      setTimeout(function(){
+        $(".preloader-wrapper")
+          .removeAttr("style")
+          .find("svg")
+            .removeAttr("style")
+          .parent()
+            .find(".load-wrapper")
+              .remove();
+      }, 400);
+   });
 
   var mySwiper = new Swiper('.swiper-container',{
     slidesPerView: 1,
@@ -42,26 +57,21 @@ $(function(){
     nextButton: ".swiper-button-next",
     prevButton: ".swiper-button-prev",
     onSlideChangeEnd : function(){
+
       var $projectContainer = $(".swiper-slide-active").find(".project-container"),
           img = $projectContainer.attr("data-bg"),
           loaded = $projectContainer.hasClass("loaded");
 
       if(img && !loaded){
-        var queue = new createjs.LoadQueue(true);
-
-            queue.loadFile(img)
-            queue.on("complete", function(){
-                  $projectContainer
-                  .css('background-image', 'url(' + img + ')')
-                  .addClass("loaded");
-
-
-              }, this);
-            queue.load();
+        $projectContainer.waitForImages(true).done(function() {
+          $projectContainer
+            .css('background-image', 'url(' + img + ')')
+            .addClass("loaded");
+        });
       }
-    }
 
-   });
+    }
+  });
 
   var cascadeOpacity = function($parentRef, ratio, opacity){
     $parentRef.find("*").each(function(i, e){
@@ -111,8 +121,6 @@ $(function(){
 
   }
 
-
-  $("body").addClass("ready");
 
   $(".menu-icon").on("click", function(){
     $(".main-nav").toggleClass("active");
@@ -199,25 +207,13 @@ $(function(){
         var images = [];
             queue = new createjs.LoadQueue(true);
 
-        $portfolioWrapper
-          .append(response)
-          .find("img, [data-bg]").each(function(i,e){
-
-            if($(e).attr('src'))
-              queue.loadFile($(e).attr('src'));
-
-            if($(e).attr('data-bg'))
-              queue.loadFile($(e).attr('data-bg'));
-
-        });
-
-        queue.load();
-        queue.on("complete", function(){
+        $portfolioWrapper.append(response)
+        $portfolioWrapper.waitForImages().done(function() {
           $closeButton.fadeTo(1,300);
           $portfolioWrapper.css('display', 'block');
           $portfolioWrapper.addClass('show');
+        });
 
-        }, true);
       }
     });
 
