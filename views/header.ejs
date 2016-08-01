@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>I am Leo</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="components/fullpage.js/dist/jquery.fullpage.css">
     <link rel="stylesheet" href="components/devicons/css/devicons.min.css">
-    <link rel="stylesheet" href="components/jquery-custom-scrollbar/jquery.custom-scrollbar.css">
-  <% if (!ENV_DEVELOPMENT) { %>
+  <% if (ENV_DEVELOPMENT) { %>
     <link rel="stylesheet" href="/css/style.css">
     <script src="components/jquery/dist/jquery.min.js"></script>
     <script src="components/jquery.easing/js/jquery.easing.min.js"></script>
