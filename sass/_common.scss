@@ -7,9 +7,6 @@
 @include font-face($font-selima, "../fonts/Selima");
 @include font-face($font-montserrat, "../fonts/Montserrat-Regular");
 @include font-face($font-montserrat-bold, "../fonts/Montserrat-bold");
-@include font-face($font-roboto-light, "../fonts/Roboto-light");
-@include font-face($font-roboto-regular, "../fonts/Roboto-regular");
-@include font-face($font-roboto-bold , "../fonts/Roboto-Bold");
 
 html{
   height: 100%;
@@ -27,6 +24,7 @@ html{
 a{
   text-decoration: none;
 }
+
 p{
   color: #757575;
   line-height: 1.6em;
@@ -45,6 +43,20 @@ p{
     @include transition(all 0.8s $ease-in-out-quint);
   }
 }
+
+.close-button{
+  display: none;
+  width: 20px;
+  position: fixed;
+  right: 40px;
+  top: 27px;
+  z-index: 51;
+
+  img{
+    width: 100%;
+  }
+}
+
 
 .lock-for-popup{
   position: fixed;
@@ -91,12 +103,13 @@ p{
 }
 
 .preloader{
+  @include scale(0.6);
   fill: $color-red-pink;
   width: 100px;
   position: fixed;
   left: 50%;
   top: 50%;
-  z-index: 50;
+  z-index: 51;
   margin: -50px;
 }
 

@@ -1,17 +1,17 @@
 .portfolio-wrapper{
-  @include transition();
+  @include transition(all 0.6s);
   @include scale(1.2);
   opacity: 0;
   display: none;
   width: 100%;
   height: 100%;
-  background: $color-white;
   position: fixed;
   overflow-x: hidden;
   overflow-y: auto;
   left: 0%;
   top: 0%;
-  z-index: 40;
+  z-index: 50;
+  background: $color-light-grey;
 
   &.show{
     opacity: 1;
@@ -22,29 +22,36 @@
     opacity: 0;
   }
 
-  .close-button{
-    display: block;
-    width: 20px;
-    position: fixed;
-    right: 40px;
-    top: 27px;
-    z-index: 43;
-
-    img{
-      width: 100%;
-    }
+  p{
+    font: 300 em(15) $font-roboto;
+    line-height: 1.6;
+    text-align: justify;
   }
 
   .portfolio-header{
     @include flex(row, center, center);
     width: 100%;
     height: 306px;
-    background: $color-grape;
     color: $color-white;
+    position: relative;
   }
+
+  .portfolio-header-bg{
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+    background: rgba($color-grape, 0.5);
+  }
+
+
 
   .portfolio-header-title{
     text-align: center;
+    position: relative;
+    z-index: 2;
 
     span{
       font-size: em(30);
@@ -56,20 +63,8 @@
     }
   }
 
-  .project-tecnologies{
-    float: right;
-  }
-
-  .project-content{
-
-    width: 50%;
-    float: left;
-
-    p{
-      font: normal em(15) $font-roboto-light;
-      line-height: 1.6;
-      text-align: justify;
-    }
+  .internal-stage{
+    background: $color-white;
   }
 
   .project-info{
@@ -99,36 +94,75 @@
     }
   }
 
+
+
+  .project-description-wrapper{
+    margin-bottom: 50px;
+  }
+
+  .project-descriptions{
+    width: 33%;
+    float: left;
+
+    .project-technologies{
+      margin-top: 30px;
+      margin-bottom: 60px;
+    }
+
+    .description{
+      padding-top: 10px;
+      padding-bottom: 40px;
+    }
+  }
+
+  .screenshot-holder{
+    padding-top: 30px;
+    width: 740px;
+    position: absolute;
+    top: 0;
+    left: 36%;
+    margin-bottom: 80px;
+    background: url('/img/screenshot-bar.png') #d9d9d9 no-repeat left top;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 10px 46px rgba(0,0,0,0.23);
+  }
+
   .portfolio-details{
     padding-top: 75px;
+    background: url('/img/portfolio-detail-bg.svg') $color-light-grey no-repeat center top;
+    background-size: 100%;
     width: 100%;
-    overflow: auto;
     position: relative;
-    background: $color-light-grey;
+
   }
 
   .project-technologies{
-    float: left;
-    padding-top: 45px;
-    padding-left: 35px;
-    width: 50%;
-    position: relative;
-    z-index: 2;
+    width: 100%;
+    margin-left: -6px;
+    margin-bottom: 30px;
   }
 
   .technology{
-    font-size: 50px;
-    margin-right: 3px;
-    margin-bottom: 5px;
+    font-size: 30px;
+    margin-bottom: 12px;
     opacity: 0.35;
+    display: inline-block;
   }
 
   .project-screenshots{
     width: 100%;
-    float: left;
-    margin-bottom: 50px;
+    max-width: 951px;
+    margin: 0 auto 120px;
     position: relative;
     z-index: 2;
+
+    img{
+      position: absolute;
+      z-index: 1;
+      left: 118px;
+      top: 40px;
+    }
   }
 
   .project-on-screen-container{
@@ -136,6 +170,8 @@
     width: 100%;
     max-width: 779px;
     height: 530px;
+    position: relative;
+    z-index: 2;
     margin: 50px auto 0;
   }
 
@@ -144,7 +180,6 @@
     width: 100%;
     max-width: 953px;
     height: 30px;
-    margin: 0 auto 50px;
+    margin: 0 auto 120px;
   }
-
 }

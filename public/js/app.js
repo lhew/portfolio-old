@@ -34,16 +34,33 @@ $(function(){
 
   });
 
-  $.fn.fullpage.setMouseWheelScrolling(false);
-  $.fn.fullpage.setAllowScrolling(false);
-
 
   var mySwiper = new Swiper('.swiper-container',{
     slidesPerView: 1,
     spaceBetween: 150,
     uniqueNavElements: true,
     nextButton: ".swiper-button-next",
-    prevButton: ".swiper-button-prev"
+    prevButton: ".swiper-button-prev",
+    onSlideChangeEnd : function(){
+      var $projectContainer = $(".swiper-slide-active").find(".project-container"),
+          img = $projectContainer.attr("data-bg"),
+          loaded = $projectContainer.hasClass("loaded");
+
+      if(img && !loaded){
+        var queue = new createjs.LoadQueue(true);
+
+            queue.loadFile(img)
+            queue.on("complete", function(){
+                  $projectContainer
+                  .css('background-image', 'url(' + img + ')')
+                  .addClass("loaded");
+
+
+              }, this);
+            queue.load();
+      }
+    }
+
    });
 
   var cascadeOpacity = function($parentRef, ratio, opacity){
@@ -155,34 +172,78 @@ $(function(){
 
     e.stopPropagation();
 
-    if(!$(this).hasClass("swiper-slide-active"))
+    if(!$(this).hasClass("swiper-slide-active") || $(this).attr('data-detail') == undefined)
       return;
 
-    //$(".preloader-wrapper").addClass('preloader-wrapper-show');
+
+    $.fn.fullpage.setMouseWheelScrolling(false);
+    $.fn.fullpage.setAllowScrolling(false);
 
     var $portfolioWrapper = $(".portfolio-wrapper"),
         $preloaderWrapper = $(".preloader-wrapper"),
-        $pagePortfolio    = $(".page-portfolio");
+        $pagePortfolio    = $(".page-portfolio"),
+        $closeButton      = $(".close-button"),
+        $mainNav          = $(".main-nav-wrapper"),
 
-        $pagePortfolio.addClass("showing");
-        $preloaderWrapper.fadeTo(300, 1);
-        $portfolioWrapper.css('display', 'block')
-        setTimeout(function(){
+        urlPath           = "/partials/" + $(this).attr('data-detail') + ".html";
+
+
+    $mainNav.addClass("loading-content");
+    $pagePortfolio.addClass("showing");
+    $preloaderWrapper.fadeTo(300, 1);
+    $portfolioWrapper.css('display', 'block')
+
+    $.ajax(urlPath, {
+      success : function(response){
+
+        var images = [];
+            queue = new createjs.LoadQueue(true);
+
+        $portfolioWrapper
+          .append(response)
+          .find("img, [data-bg]").each(function(i,e){
+
+            if($(e).attr('src'))
+              queue.loadFile($(e).attr('src'));
+
+            if($(e).attr('data-bg'))
+              queue.loadFile($(e).attr('data-bg'));
+
+        });
+
+        queue.load();
+        queue.on("complete", function(){
+          $closeButton.fadeTo(1,300);
+          $portfolioWrapper.css('display', 'block');
           $portfolioWrapper.addClass('show');
-        }, 1700);
+
+        }, true);
+      }
+    });
 
   });
 
   $(".close-button").on("click", function(e){
     e.preventDefault();
+
+
+    $.fn.fullpage.setMouseWheelScrolling(true);
+    $.fn.fullpage.setAllowScrolling(true);
+
     var $portfolioWrapper = $(".portfolio-wrapper"),
         $preloaderWrapper = $(".preloader-wrapper"),
-        $pagePortfolio = $(".page-portfolio");
+        $pagePortfolio    = $(".page-portfolio"),
+        $closeButton      = $(".close-button"),
+        $mainNav          = $(".main-nav-wrapper");
 
+    $mainNav.removeClass("loading-content");
+    $closeButton.fadeTo(0,300, function(){ $(this).hide()});
     $preloaderWrapper.removeAttr('style');
     $portfolioWrapper.addClass('leave');
+
+
     setTimeout(function(){
-        $portfolioWrapper.removeClass("leave show").removeAttr('style');
+        $portfolioWrapper.removeClass("leave show").removeAttr('style').html("");
     }, 400);
 
     $pagePortfolio.removeClass("showing");

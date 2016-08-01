@@ -2,6 +2,7 @@
   position: fixed;
   right: 46px;
   top: 55px;
+  z-index: 40;
 
   .menu-icon{
     width: 40px;
@@ -9,7 +10,7 @@
     float: right;
     display: block;
     position: relative;
-    margin-top: -13px;
+    margin-top: -27px;
     padding-top: 13px;
 
     span{
@@ -54,7 +55,7 @@
   nav{
     position: fixed;
     z-index: 51;
-    top: 52px;
+    top: 38px;
     right: 93px;
     font: normal em(16) $font-moon;
 

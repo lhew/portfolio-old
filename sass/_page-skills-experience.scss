@@ -94,12 +94,11 @@
     color: $color-white;
     padding-left: 100px;
     padding-bottom: 7px;
-    font: normal em(10) $font-roboto-regular;
+    font: 300 em(10) $font-roboto;
     text-transform: uppercase;
     letter-spacing: em(1);
-
-
   }
+
   .skills-experience-toggle,{
     @include flex(row, center, center);
     @include transition();
@@ -141,7 +140,7 @@
   }
 
   .experience-list{
-    font: normal em(16) $font-roboto-light;
+    font: 300 em(16) $font-roboto;
     width: 100%;
     max-width: 700px;
     padding-right: 30px;
@@ -155,7 +154,7 @@
     }
 
     h3{
-      font: normal em(23) $font-roboto-regular;
+      font: 400 em(23) $font-roboto;
       margin-bottom: 15px;
     }
 
@@ -213,7 +212,8 @@
 
     dl{
       margin-bottom: 15px;
-      font-family: $font-roboto-light;
+      font-family: $font-roboto;
+      font-weight: 300;
 
       dt{
         margin-bottom: 15px;
