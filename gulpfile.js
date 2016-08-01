@@ -32,8 +32,6 @@ gulp.task('imagemin', function(){
         .pipe(gulp.dest('./public/img'))
 });
 
-
-
 gulp.task('concatjs', function() {
   return gulp.src([
     './public/components/jquery/dist/jquery.min.js',
