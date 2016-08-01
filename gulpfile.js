@@ -5,8 +5,6 @@ var gulp       = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     sass       = require('gulp-sass'),
     concat     = require('gulp-concat'),
-    cssmin     = require('gulp-cssmin'),
-    concatCss  = require('gulp-concat-css'),
     imagemin   = require('gulp-imagemin'),
     rename     = require('gulp-rename');
     svgmin     = require('gulp-svgmin');
@@ -29,22 +27,11 @@ gulp.task('svgmin', function () {
 });
 
 gulp.task('imagemin', function(){
-    gulp.src('.public/img/*')
+    gulp.src('./public/img/*')
         .pipe(imagemin())
         .pipe(gulp.dest('./public/img'))
 });
 
-
-gulp.task('concatcss', function() {
-  return gulp.src([
-      './public/components/fullpage.js/dist/jquery.fullpage.css',
-      './public/components/devicons/css/devicons.min.css',
-      './public/components/jquery-custom-scrollbar/jquery.custom-scrollbar.css',
-      './public/css/style.css'
-    ])
-    .pipe(concatCss('style.css'))
-    .pipe(gulp.dest('./public/css/'));
-});
 
 
 gulp.task('concatjs', function() {
@@ -58,13 +45,6 @@ gulp.task('concatjs', function() {
     ])
     .pipe(concat('app.min.js'))
     .pipe(gulp.dest('./public/dist/js/'));
-});
-
-gulp.task('minifycss', function () {
-    gulp.src('./public/css/style.css')
-        .pipe(cssmin())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('./public/css/'));
 });
 
 
@@ -93,7 +73,7 @@ gulp.task('develop', function () {
 });
 
 
-gulp.task('build',['sass','concatcss', 'minifycss','imagemin','svgmin','concatjs']);
+gulp.task('build',['sass', 'imagemin', 'svgmin','concatjs']);
 
 gulp.task('default', [
   'sass',
