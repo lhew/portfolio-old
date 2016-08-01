@@ -7,6 +7,7 @@ var gulp       = require('gulp'),
     concat     = require('gulp-concat'),
     cssmin     = require('gulp-cssmin'),
     concatCss  = require('gulp-concat-css'),
+    imagemin   = require('gulp-imagemin'),
     rename     = require('gulp-rename');
 
 
@@ -18,6 +19,13 @@ gulp.task('sass', function () {
     .pipe(sass({outputStyle: 'compressed'}))
     .pipe(gulp.dest('./public/css'))
     .pipe(livereload());
+});
+
+
+gulp.task('default', function(){
+    gulp.src('.public/img/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('./public/img'))
 });
 
 
