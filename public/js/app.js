@@ -3,7 +3,6 @@ $(function(){
   var $mainNav = $(".main-nav-wrapper");
 
   $('#fullpage').fullpage({
-    easing: 'easeInOutCubic',
     anchors:['home', 'portfolio', 'contact'],
     scrollingSpeed: 700,
     normalScrollElements: ".page-skills",
