@@ -9,6 +9,7 @@ var gulp       = require('gulp'),
     concatCss  = require('gulp-concat-css'),
     imagemin   = require('gulp-imagemin'),
     rename     = require('gulp-rename');
+    svgmin     = require('gulp-svgmin');
 
 
 gulp.task('sass', function () {
@@ -21,8 +22,13 @@ gulp.task('sass', function () {
     .pipe(livereload());
 });
 
+gulp.task('svgmin', function () {
+    return gulp.src('./public/img/*.svg')
+        .pipe(svgmin())
+        .pipe(gulp.dest('./public/img/'));
+});
 
-gulp.task('default', function(){
+gulp.task('imagemin', function(){
     gulp.src('.public/img/*')
         .pipe(imagemin())
         .pipe(gulp.dest('./public/img'))
@@ -87,7 +93,7 @@ gulp.task('develop', function () {
 });
 
 
-gulp.task('build',['sass','concatcss', 'minifycss','concatjs']);
+gulp.task('build',['sass','concatcss', 'minifycss','imagemin','svgmin','concatjs']);
 
 gulp.task('default', [
   'sass',

@@ -22,6 +22,7 @@
     "gulp-plumber": "^1.0.0",
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-svgmin": "^1.2.2",
     "morgan": "^1.6.1",
     "serve-favicon": "^2.3.0"
   }
