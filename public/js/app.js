@@ -204,9 +204,6 @@ $(function(){
     $.ajax(urlPath, {
       success : function(response){
 
-        var images = [];
-            queue = new createjs.LoadQueue(true);
-
         $portfolioWrapper.append(response)
         $portfolioWrapper.waitForImages().done(function() {
           $closeButton.fadeTo(1,300);
