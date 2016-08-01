@@ -6,6 +6,7 @@ var gulp       = require('gulp'),
     sass       = require('gulp-sass'),
     concat     = require('gulp-concat'),
     cssmin     = require('gulp-cssmin'),
+    concatCss  = require('gulp-concat-css'),
     rename     = require('gulp-rename');
 
 
@@ -27,8 +28,8 @@ gulp.task('concatcss', function() {
       './public/components/jquery-custom-scrollbar/jquery.custom-scrollbar.css',
       './public/css/style.css'
     ])
-    .pipe(concat('style.css'))
-    .pipe(gulp.dest('./public/dist/css/'));
+    .pipe(concatCss('style.css'))
+    .pipe(gulp.dest('./public/css/'));
 });
 
 
@@ -46,10 +47,10 @@ gulp.task('concatjs', function() {
 });
 
 gulp.task('minifycss', function () {
-    gulp.src('./public/dist/css/style.css')
+    gulp.src('./public/css/style.css')
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('./public/dist/css/'));
+        .pipe(gulp.dest('./public/css/'));
 });
 
 
