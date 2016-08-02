@@ -43,7 +43,7 @@
     top: 0;
     position: absolute;
     z-index: 1;
-    background: rgba($color-grape, 0.5);
+    background: rgba($color-grape, 0.75);
   }
 
 
@@ -126,6 +126,49 @@
     overflow: hidden;
     border-radius: 6px;
     box-shadow: 0 10px 46px rgba(0,0,0,0.23);
+
+    &.fixed{
+      position: static;
+      clear: both;
+      margin-top: 180px;
+
+    }
+
+    &.left{
+       float: left;
+    }
+
+    &.right{
+      float: right;
+    }
+
+    &.tablet{
+      width: 600px;
+      box-shadow: none;
+      background: url("/img/ipad.png") no-repeat 0 0 transparent;
+      background-size: 100%;
+      padding: 71px 69px 84px;
+      border-radius: 3px;
+      overflow: hidden;
+      margin: -510px 120px 0 0;
+      img{
+        width: 100%;
+      }
+    }
+
+    &.iphone{
+      width: 297px;
+      background: url("/img/iphone.png") no-repeat 0 0 transparent;
+      box-shadow: none;
+      background-size: 100%;
+      padding: 70px 28px;
+      margin-left: 110px;
+      margin-top: 250px;
+
+      img{
+        width: 100%;
+      }
+    }
   }
 
   .portfolio-details{
