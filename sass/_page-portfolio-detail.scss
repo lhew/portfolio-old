@@ -125,6 +125,10 @@
     border-radius: 6px;
     box-shadow: 0 10px 46px rgba(0,0,0,0.23);
 
+    img{
+      width: 100%;
+    }
+
     &.fixed{
       position: static;
       clear: both;

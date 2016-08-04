@@ -71,7 +71,7 @@ gulp.task('develop', function () {
 });
 
 
-gulp.task('build',['sass', 'imagemin', 'svgmin','concatjs']);
+gulp.task('build',['sass', 'imagemin', 'concatjs']);
 
 gulp.task('default', [
   'sass',
