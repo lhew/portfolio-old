@@ -43,6 +43,10 @@ p{
   }
 }
 
+.focus-workaround{
+  opacity: 0;
+}
+
 .site-wrapper{
   overflow: hidden;
   @include flex();

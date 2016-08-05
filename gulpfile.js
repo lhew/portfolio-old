@@ -15,7 +15,7 @@ gulp.task('sass', function () {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write())
-    .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(sass({outputStyle: 'expanded'}))
     .pipe(gulp.dest('./public/css'))
     .pipe(livereload());
 });
@@ -39,6 +39,7 @@ gulp.task('concatjs', function() {
     './public/components/Swiper/dist/js/swiper.jquery.min.js',
     './public/components/fullpage.js/dist/jquery.fullpage.min.js',
     './public/components/waitForImages/dist/jquery.waitforimages.min.js',
+    './public/components/jquery.browser/dist/jquery.browser.min.js',
     './public/js/app.js'
     ])
     .pipe(concat('app.min.js'))

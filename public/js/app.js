@@ -5,10 +5,12 @@ $(function(){
   $('#fullpage').fullpage({
     anchors:['home', 'portfolio', 'contact'],
     scrollingSpeed: 700,
-    normalScrollElements: ".page-skills",
+    normalScrollElements: "#page-skills",
     loopHorizontal: false,
     keyboardScrolling: false,
     onSlideLeave : function(anchorLink, index, slideIndex, direction, nextSlideIndex){
+      $.fn.fullpage.setAllowScrolling(true);
+
       if(nextSlideIndex == 0){
         $mainNav.removeClass("darken-logo darken-menu");
       }else if(nextSlideIndex == 1){
@@ -16,6 +18,7 @@ $(function(){
           .addClass("darken-menu")
           .removeClass("darken-logo");
       }else if(nextSlideIndex == 2){
+        $.fn.fullpage.setAllowScrolling(false);
         $mainNav
           .removeClass("darken-menu")
           .addClass("darken-logo");
@@ -23,7 +26,7 @@ $(function(){
     },
     onLeave: function(index, nextIndex, direction){
         $mainNav.removeClass("darken-logo darken-menu");
-
+        $.fn.fullpage.setAllowScrolling(true);
         if(nextIndex !== 1){
           $mainNav
             .addClass("darken-menu")
@@ -83,50 +86,18 @@ $(function(){
   $(".portfolio-presentation-container").clone().addClass("fixed").prependTo(".portfolio-content");
   $(".portfolio-presentation-container").first().addClass("main-presentation");
 
-  var checkPortfolioScroll = function(){
-
-    var $portfolioBG             = $(".portfolio-bg"),
-        $portfolioMainTitle      = $(".main-presentation").first(),
-        $portfolioMainTitleClone = $(".portfolio-presentation-container").last(),
-        $portfolioContent        = $(".portfolio-content"),
-        $portfolioContentSpacer  = $(".portfolio-content-spacer"),
-        $portfolioDetail         = $(".portfolio-detail"),
-
-        originalHeight           = $portfolioMainTitleClone.height(),
-        portfolioDetailScrollPos = $(window).height()/2 - ($portfolioMainTitle.height()/2);
-
-    if($portfolioBG.is(":visible"))
-      $portfolioBG.css('background-position', '50% -' + ($(this).scrollTop() * 0.7) + 'px');
-
-    if($portfolioDetail.scrollTop() <= portfolioDetailScrollPos)
-      $portfolioMainTitle.removeClass("fixed");
-    else
-      $portfolioMainTitle.addClass("fixed");
 
 
-    if(originalHeight >= ($(window).height() + $portfolioBG.offset().top)){
-      $portfolioMainTitle.height($(window).height() + $portfolioBG.offset().top);
-      $portfolioMainTitleClone.show();
-    }else{
-      $portfolioMainTitle.removeAttr("style");
-      $portfolioMainTitleClone.hide();
-    }
-
-
-    if($portfolioContent.offset().top <= 0)
-      $portfolioMainTitleClone.addClass("filled");
-    else
-      $portfolioMainTitleClone.removeClass("filled");
-
-  }
-
+  $(".logo-glass-wrapper").on("click", function(){
+    $.fn.fullpage.moveTo(1,0);
+  })
 
   $(".menu-icon").on("click", function(){
     $(".main-nav").toggleClass("active");
   });
 
   $(".button-more").on("click", function(e){
-  e.preventDefault();
+    e.preventDefault();
     $.fn.fullpage.moveTo(1, 1);
     $(".main-nav-wrapper").addClass("")
   });
@@ -183,7 +154,6 @@ $(function(){
       return;
 
 
-    $.fn.fullpage.setMouseWheelScrolling(false);
     $.fn.fullpage.setAllowScrolling(false);
 
     var $portfolioWrapper = $(".portfolio-wrapper"),
@@ -219,7 +189,6 @@ $(function(){
     e.preventDefault();
 
 
-    $.fn.fullpage.setMouseWheelScrolling(true);
     $.fn.fullpage.setAllowScrolling(true);
 
     var $portfolioWrapper = $(".portfolio-wrapper"),

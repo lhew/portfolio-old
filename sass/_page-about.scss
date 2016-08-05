@@ -6,17 +6,39 @@
     background: url("/img/this-is-me.jpg") $color-palatinate-purple no-repeat 39% 100%/cover;
     width: 380px;
     height: 70%;
-    max-height: 580px;
+    //max-height: 580px;
     flex: 0 0 340px;
+
+    @include tablet-landscape{
+      max-height: 500px;
+    }
+
+    @include desktop-md{
+      max-height: 580px;
+    }
+  }
+
+  .button-back{
+    left: 15.5%;
   }
 
   .container{
     @include flex(row, center, flex-start);
-    @include translateX(35%);
-    width: 60%;
+   // @include translateX(35%);
+    //width: 60%;
     margin: 0;
     height: 100%;
     position: relative;
+
+    @include tablet-landscape{
+       @include translateX(10%);
+       width: 80%;
+    }
+
+    @include desktop-md{
+       @include translateX(35%);
+       width: 60%;
+    }
   }
 
   &:before{

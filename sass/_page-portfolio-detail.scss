@@ -115,7 +115,7 @@
 
   .screenshot-holder{
     padding-top: 30px;
-    width: 740px;
+    //width
     position: absolute;
     top: 0;
     left: 36%;
@@ -125,8 +125,18 @@
     border-radius: 6px;
     box-shadow: 0 10px 46px rgba(0,0,0,0.23);
 
+
+    @include tablet-landscape{
+      width: 610px;
+    }
+
+    @include desktop-md{
+      width: 740px;
+    }
+
     img{
       width: 100%;
+      border-radius: 4px
     }
 
     &.fixed{
@@ -149,10 +159,20 @@
       box-shadow: none;
       background: url("/img/ipad.png") no-repeat 0 0 transparent;
       background-size: 100%;
-      padding: 71px 69px 84px;
+      padding: 70px 69px 84px;
       border-radius: 3px;
       overflow: hidden;
-      margin: -510px 120px 0 0;
+      //margin: -510px 120px 0 0;
+
+
+      @include tablet-landscape{
+        margin: -610px 0 0 0;
+      }
+
+      @include desktop-md{
+        margin: -510px 120px 0 0;
+      }
+
       img{
         width: 100%;
       }
@@ -164,8 +184,16 @@
       box-shadow: none;
       background-size: 100%;
       padding: 70px 28px;
-      margin-left: 110px;
-      margin-top: 250px;
+
+      @include tablet-landscape{
+        margin-left: 20px;
+        margin-top: 150px;
+      }
+
+      @include desktop-md{
+        margin-left: 110px;
+        margin-top: 250px;
+      }
 
       img{
         width: 100%;
