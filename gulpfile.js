@@ -20,6 +20,16 @@ gulp.task('sass', function () {
     .pipe(livereload());
 });
 
+gulp.task('sass_compressed', function () {
+  gulp.src('./sass/*.scss')
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write())
+    .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(gulp.dest('./public/css'))
+    .pipe(livereload());
+});
+
 gulp.task('svgmin', function () {
     return gulp.src('./public/img/*.svg')
         .pipe(svgmin())
@@ -72,7 +82,7 @@ gulp.task('develop', function () {
 });
 
 
-gulp.task('build',['sass', 'imagemin', 'concatjs']);
+gulp.task('build',['sass_compressed', 'imagemin', 'concatjs']);
 
 gulp.task('default', [
   'sass',
