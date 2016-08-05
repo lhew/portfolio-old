@@ -49,7 +49,10 @@ $(function(){
           .parent()
             .find(".load-wrapper")
               .remove();
+        $("#temp-style").remove();
       }, 400);
+
+
    });
 
   var mySwiper = new Swiper('.swiper-container',{
