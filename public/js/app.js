@@ -2,34 +2,47 @@ $(function(){
 
   var $mainNav = $(".main-nav-wrapper");
 
+  var hideOverlay = function(){
+    $(".nav-is-visible").removeClass('nav-is-visible');
+    $("#menu-overlay").fadeTo(300, 0, function(){ $(this).hide(); });
+  }
+
+  var changeMenu = function($selector){
+    var $navItem = $("nav li a");
+
+        $navItem.removeClass("active");
+        $selector.addClass("active");
+  }
+
+
   $('#fullpage').fullpage({
-    anchors:['home', 'portfolio', 'contact'],
     scrollingSpeed: 700,
     normalScrollElements: "#page-skills",
     loopHorizontal: false,
     keyboardScrolling: false,
     onSlideLeave : function(anchorLink, index, slideIndex, direction, nextSlideIndex){
+      hideOverlay();
+
       $.fn.fullpage.setAllowScrolling(true);
 
       if(nextSlideIndex == 0){
         $mainNav.removeClass("darken-logo darken-menu");
       }else if(nextSlideIndex == 1){
         $mainNav
-          .addClass("darken-menu")
           .removeClass("darken-logo");
       }else if(nextSlideIndex == 2){
+
         $.fn.fullpage.setAllowScrolling(false);
         $mainNav
-          .removeClass("darken-menu")
           .addClass("darken-logo");
       }
     },
     onLeave: function(index, nextIndex, direction){
+        hideOverlay();
         $mainNav.removeClass("darken-logo darken-menu");
         $.fn.fullpage.setAllowScrolling(true);
         if(nextIndex !== 1){
           $mainNav
-            .addClass("darken-menu")
             .addClass("darken-logo");
         }
     }
@@ -78,10 +91,18 @@ $(function(){
     }
   });
 
+
   var cascadeOpacity = function($parentRef, ratio, opacity){
+
+
+
+
     $parentRef.find("*").each(function(i, e){
       setTimeout(function(){
-        $(e).fadeTo(300, opacity);
+
+        var _opacity = ($(e).hasClass("devicons")) ? 0.65 : opacity;
+
+        $(e).fadeTo(300, _opacity);
       }, i * ratio);
     });
   };
@@ -91,28 +112,41 @@ $(function(){
 
 
 
-  $(".logo-glass-wrapper").on("click", function(){
+  $(".logo-glass-wrapper, .nav-home").on("click", function(){
     $.fn.fullpage.moveTo(1,0);
+    changeMenu($(".nav-home"));
   })
 
   $(".menu-icon").on("click", function(){
     $(".main-nav").toggleClass("active");
   });
 
-  $(".button-more").on("click", function(e){
+  $(".button-more, .nav-about").on("click", function(e){
     e.preventDefault();
-    $.fn.fullpage.moveTo(1, 1);
-    $(".main-nav-wrapper").addClass("")
+    $.fn.fullpage.moveTo(1, 1); //about
+    changeMenu($(".nav-about"));
   });
 
-  $(".main-nav nav a:first-child").on("click", function(){
-    $.fn.fullpage.moveTo(1,0);
-  });
 
-  $(".button-skills").on("click", function(e){
+  $(".button-skills, .nav-skills-experience").on("click", function(e){
     e.preventDefault();
     $.fn.fullpage.moveTo(1,2);
+    changeMenu($(".nav-skills-experience"));
   });
+
+  $(".nav-portfolio, .button-more-content").on("click", function(e){
+    e.preventDefault();
+    $.fn.fullpage.moveTo(2);
+    changeMenu($(".nav-portfolio"));
+  })
+
+    $(".nav-contact").on("click", function(e){
+    e.preventDefault();
+    changeMenu($(this));
+    $.fn.fullpage.moveTo(3);
+    changeMenu($(".nav-contact"));
+  })
+
 
   $(".button-back-to-about").on("click", function(e){
     e.preventDefault();
@@ -213,4 +247,34 @@ $(function(){
     $pagePortfolio.removeClass("showing");
 
   });
+
+
+
+
+  $("#menu-overlay, nav li a").on("click", hideOverlay);
+
+  if( $('.cd-stretchy-nav').length > 0 ) {
+    var stretchyNavs = $('.cd-stretchy-nav');
+
+    stretchyNavs.each(function(){
+      var stretchyNav = $(this),
+          stretchyNavTrigger = stretchyNav.find('.cd-nav-trigger');
+
+      stretchyNavTrigger.on('click', function(event){
+        event.preventDefault();
+        stretchyNav.toggleClass('nav-is-visible');
+
+        if(stretchyNav.hasClass('nav-is-visible'))
+          $("#menu-overlay").css('display', 'block').fadeTo(300, 1);
+        else
+          $("#menu-overlay").fadeTo(300, 0, function(){ $(this).hide(); });
+
+      });
+    });
+
+    $(document).on('click', function(event){
+      ( !$(event.target).is('.cd-nav-trigger') && !$(event.target).is('.cd-nav-trigger span') ) && stretchyNavs.removeClass('nav-is-visible');
+    });
+  }
+
 });

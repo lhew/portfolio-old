@@ -21,16 +21,26 @@
     color: $color-red-pink;
     position: relative;
     z-index: 40;
-    top: 10px;
     left: 20px;
+    top: -100px;
+    text-align: center;
+    @include tablet-landscape{
+      top: 10px;
+      text-align: right;
+    }
   }
 
   .swiper-container {
+    @include scale(0.7);
     width: 100%;
-    max-width: 790px;
     overflow: visible;
-    height: 300px;
+    height: 610px;
     margin: 0 auto;
+
+    @include tablet-landscape{
+      height: 300px;
+      @include scale(1);
+    }
   }
 
   .swiper-slide {
@@ -126,10 +136,15 @@
     @include transition(all 0.3s ease 0.3s);
     @include translateY(-60px);
     opacity: 0;
-    font: normal em(13) $font-moon-bold;
+    font: normal em(17) $font-moon-bold;
     letter-spacing: em(5);
     position: relative;
     z-index: 2;
+
+    @include tablet-landscape{
+      font: normal em(13) $font-moon-bold;
+    }
+
   }
 
   .see-it-in-action{
@@ -137,10 +152,14 @@
     @include translateY(60px);
     opacity: 0;
     margin-top: 10px;
-    font: normal em(8) $font-moon;
+    font: normal em(10) $font-moon;
     letter-spacing: em(5);
     position: relative;
     z-index: 2;
+
+    @include tablet-landscape{
+      font: normal em(8) $font-moon;
+    }
   }
 
 }

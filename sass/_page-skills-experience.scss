@@ -38,7 +38,7 @@
 
     .main-title{
       color: $color-red-pink;
-      font-size: em(43);
+      font: normal em(33) $font-moon;
       letter-spacing: em(-1);
       margin-top: 198px;
       text-align: right;
@@ -46,6 +46,11 @@
       width: 100%;
       max-width: 300px;
       float: right;
+
+      @include tablet-landscape{
+        font-size: em(43);
+      }
+
 
       strong{
         font-family: $font-moon-bold;
@@ -55,14 +60,20 @@
         content: "";
         display: block;
         height: 7px;
-        top: 42px;
-        width: 53px;
-        right: -62px;
+        top: 34px;
+        width: 36px;
+        right: -45px;
         border-radius: 87px;
         position: absolute;
         overflow: hidden;
         background: $color-grape;
         z-index: 10;
+
+        @include tablet-landscape{
+          top: 42px;
+          width: 53px;
+          right: -62px;
+        }
       }
     }
   }
@@ -142,14 +153,18 @@
   .experience-list{
     font: 300 em(16) $font-roboto;
     width: 100%;
-    padding-right: 30px;
-    margin-top: 45px;
-    margin-bottom: 100px;
-    margin-left: 100px;
     color:$color-medium-grey;
+    max-width: 93%;
+    padding-right: 40px;
+    margin-top: 28px;
+    margin-bottom: 100px;
+    margin-left: 40px;
 
     @include tablet-landscape{
       max-width: 550px;
+      padding-right: 30px;
+      margin-top: 45px;
+      margin-left: 100px;
     }
 
     @include desktop-md{
@@ -161,8 +176,12 @@
     }
 
     h3{
-      font: 400 em(23) $font-roboto;
+      font: 400 em(19) $font-roboto;
       margin-bottom: 15px;
+
+      @include tablet-landscape{
+        font: 400 em(23) $font-roboto;
+      }
     }
 
     p{

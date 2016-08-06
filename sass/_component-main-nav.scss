@@ -52,6 +52,7 @@
     }
   }
 
+  /*
   nav{
     position: fixed;
     z-index: 51;
@@ -106,11 +107,13 @@
     }
   }
 
+
   &.active{
     nav a {
       @include translateY(0);
     }
   }
+  */
 }
 
 .ready{

@@ -4,12 +4,16 @@
 
   .image-wrapper{
     background: url("/img/this-is-me.jpg") $color-palatinate-purple no-repeat 39% 100%/cover;
-    width: 380px;
-    height: 70%;
-    //max-height: 580px;
-    flex: 0 0 340px;
+    height: 40%;
+    flex: 0 0 250px;
+    margin-top: -24px;
+    margin-left: 21px;
+
 
     @include tablet-landscape{
+      width: 380px;
+      height: 70%;
+      flex: 0 0 340px;
       max-height: 500px;
     }
 
@@ -53,32 +57,48 @@
   }
 
   .title-wrapper{
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+
+    @include tablet-landscape{
+      margin-bottom: 50px;
+    }
   }
 
   .container-me{
-    margin: -10px 0 0 76px;
+    margin: -10px 30px 0 46px;
     position: relative;
+
     &:before{
       content: "";
       display: block;
       height: 7px;
-      top: 15px;
-      width: 70px;
-      left: -98px;
+      top: 12px;
+      width: 50px;
+      left: -62px;
       background: $color-red-pink;
       border-radius: 20px;
       position: absolute;
+
+
+      @include tablet-landscape{
+        top: 15px;
+        width: 70px;
+        left: -98px;
+      }
 
     }
   }
 
   .main-title{
-    font: normal em(43) $font-moon;
+    font: normal em(33) $font-moon;
     color: $color-grape;
     letter-spacing: em(-0.5);
     line-height: em(15);
     margin-bottom: 6px;
+
+    @include tablet-landscape{
+      font: normal em(43) $font-moon;
+    }
 
     strong{
       font-family: $font-moon-bold;
@@ -91,6 +111,10 @@
     font-weight: bold;
     position: relative;
     top: 16px;
+
+    @include tablet-landscape{
+      font: normal em(11) $font-moon-bold;
+    }
   }
 
   p{

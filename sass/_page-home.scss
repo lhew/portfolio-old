@@ -8,8 +8,25 @@
   }
 
   .main-splash-container{
-    @include flex(row, center, center);
+    @include flex(column, center, center);
     width: 100%;
+    text-align: center;
+
+
+    @include tablet-landscape{
+      @include flex(row, center, center);
+      text-align: left;
+    }
+  }
+
+
+  .image-container{
+    margin-left: -15px;
+    margin-bottom: 20px;
+
+    @include tablet-landscape{
+      margin: 0;
+    }
   }
 
   .scroll-group{
@@ -23,7 +40,11 @@
   }
 
   .title-container{
-    margin-left: 29px;
+    margin-left: 0;
+
+    @include tablet-landscape{
+      margin-left: 29px;
+    }
   }
 
   .base-title{
@@ -60,9 +81,14 @@
     @include transition(all 0.8s ease 1.5s);
     @include translateX(-30px);
     opacity: 0;
-    margin-top: -17px;
-    margin-left: 55px;
+    margin-top: 47px;
     min-width: 278px;
+    margin-left: 0;
+
+    @include tablet-landscape{
+      margin-left: 55px;
+      margin-top: -17px;
+    }
 
     .more-label{
       letter-spacing: em(2);

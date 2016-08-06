@@ -14,11 +14,12 @@
   <div class="logo-glass-wrapper">
     <% include glass %>
   </div>
+  <div id="menu-overlay"></div>
   <div class="main-nav">
-    <a href="javascript:;" class="menu-icon">
+   <!-- <a href="javascript:;" class="menu-icon">
       <span>Menu</span>
-    </a>
-
+    </a>-->
+<!--
     <nav>
       <a href="#">Home</a>
       <a href="#home/about">About</a>
@@ -26,7 +27,24 @@
       <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contact</a>
     </nav>
+-->
+
+    <nav class="cd-stretchy-nav">
+      <a class="cd-nav-trigger" href="javascript:void(0);">
+        Menu
+        <span aria-hidden="true"></span>
+      </a>
+      <ul>
+        <li><a href="javascript:;" class="active nav-home"><span>Home</span></a></li>
+        <li><a href="javascript:;" class="nav-about"><span>About</span></a></li>
+        <li><a href="javascript:;" class="nav-skills-experience"><span>Skills and Experience</span></a></li>
+        <li><a href="javascript:;" class="nav-portfolio"><span>Portfolio</span></a></li>
+        <li><a href="javascript:;" class="nav-contact"><span>Contact</span></a></li>
+      </ul>
+      <span aria-hidden="true" class="stretchy-nav-bg"></span>
+    </nav>
   </div>
+
 <% /*
   <a href="http://github.com/lhew/portfolio" class="button-download-my-code">
     <span>
@@ -41,6 +59,7 @@
   </a>
   */ %>
 </div>
+
 <a href="javascript:;" class="close-button">
   <img src="/img/delete.svg" alt="">
 </a>
