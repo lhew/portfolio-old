@@ -199,10 +199,17 @@ p {
   line-height: 1.6em;
   font-weight: lighter;
   margin-bottom: 1.5em;
+  font-size: 0.8em;
 }
 
 p strong {
   font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  p {
+    font-size: 1em;
+  }
 }
 
 .focus-workaround {
@@ -1493,6 +1500,151 @@ keyframes
   }
 }
 
+.devicons {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: url("/img/icons-sprite.svg") no-repeat center top;
+}
+
+.devicons-ruby_on_rails {
+  background-position: -217px 0;
+}
+
+.devicons-git {
+  background-position: -431px -43px;
+}
+
+.devicons-gulp {
+  background-position: -322px -45px;
+}
+
+.devicons-grunt {
+  background-position: -376px -43px;
+}
+
+.devicons-html5 {
+  background-position: -210px -42px;
+}
+
+.devicons-css3 {
+  background-position: 2px -61px;
+  background-size: 404px;
+}
+
+.devicons-javascript_badge {
+  background-position: -95px -35px;
+  background-size: 470px;
+}
+
+.devicons-jquery {
+  background-position: -52px -38px;
+  background-size: 490px;
+}
+
+.devicons-bootstrap {
+  background-position: -131px -68px;
+  background-size: 444px;
+}
+
+.devicons-nodejs_small {
+  background-position: -228px 4px;
+  background-size: 328px;
+}
+
+.devicons-travis {
+  background-position: -108px -1px;
+}
+
+.devicons-zend {
+  background-position: -2px 7px;
+  background-size: 450px;
+  width: 35px;
+}
+
+.devicons-angular {
+  background-position: -210px -86px;
+}
+
+.devicons-less {
+  background-position: 0 -44px;
+  width: 40px;
+}
+
+.devicons-bower {
+  background-position: -86px -70px;
+  width: 35px;
+  background-size: 440px;
+}
+
+.devicons-heroku {
+  background-position: -267px -44px;
+}
+
+.devicons-coffeescript {
+  background-position: -38px -61px;
+  background-size: 404px;
+}
+
+.devicons-postgresql {
+  background-position: -270px 1px;
+}
+
+.devicons-responsive {
+  background-position: -324px -88px;
+}
+
+.devicons-ionic {
+  background-position: -376px -88px;
+}
+
+.devicons-sass {
+  background-position: -160px 0;
+}
+
+.devicons-dotnet {
+  background-position: -346px 9px;
+  background-size: 390px;
+}
+
+.devicons-jira {
+  background-position: 0 0;
+}
+
+.devicons-phonegap {
+  background-position: -391px -81px;
+  background-size: 487px;
+}
+
+.devicons-wordpress {
+  background-position: -56px -1px;
+}
+
+.devicons-mysql {
+  background-position: -344px 1px;
+  background-size: 428px;
+}
+
+.devicons-php {
+  background-position: -211px 7px;
+  background-size: 357px;
+}
+
+.devicons-requirejs {
+  background-position: -365px -31px;
+  background-size: 408px;
+}
+
+.devicons-android {
+  background-position: -251px -81px;
+  background-size: 504px;
+}
+
+.devicons-java {
+  background-position: -138px -36px;
+  background-size: 460px;
+}
+
 .logo-glass-wrapper {
   display: -webkit-flex;
   display: -moz-flex;
@@ -1506,7 +1658,7 @@ keyframes
   z-index: 49;
   width: 50px;
   height: 50px;
-  left: 36px;
+  left: 16px;
   top: 42px;
   width: 47px;
   height: 47px;
@@ -1515,7 +1667,7 @@ keyframes
 .logo-glass-wrapper:after {
   content: "";
   background: rgba(255, 255, 255, 0.3);
-  left: 41px;
+  left: 21px;
   top: 45px;
   width: 38px;
   height: 3px;
@@ -1527,7 +1679,7 @@ keyframes
 .logo-glass-wrapper:before {
   content: "";
   background: rgba(255, 255, 255, 0.5);
-  left: 38px;
+  left: 18px;
   top: 51px;
   width: 43px;
   height: 3px;
@@ -1806,12 +1958,20 @@ keyframes
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font: normal 0.8125em "moon";
+  font: normal 0.75em "moon";
   color: #ffffff;
   border: 2px solid #ffffff;
-  min-height: 50px;
-  padding: 3px 30px 0px;
+  min-height: 42px;
+  padding: 3px 15px 0px;
   border-radius: 35px;
+}
+
+@media screen and (min-width: 768px) {
+  .button {
+    min-height: 50px;
+    padding: 3px 30px 0px;
+    font-size: 0.8125em;
+  }
 }
 
 /**
@@ -2585,7 +2745,17 @@ body.ready .page-home .button-more-content img {
   -ms-transform: translateY(80px);
   -webkit-transform: translateY(80px);
   transform: translateY(80px);
+  width: 60px;
+  margin-top: -50px;
   opacity: 0;
+  margin-left: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-home .main-logo {
+    width: auto;
+    margin-top: 0;
+  }
 }
 
 .page-home .title-container {
@@ -2599,7 +2769,7 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-home .base-title {
-  font: normal 4.4em "peace-sans";
+  font: normal 2.8125em "peace-sans";
   line-height: 1.25em;
   margin: 0;
   padding: 0;
@@ -2631,7 +2801,18 @@ body.ready .page-home .button-more-content img {
   -ms-transform: translateY(80px);
   -webkit-transform: translateY(80px);
   transform: translateY(80px);
+  margin-bottom: 20px;
   opacity: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .page-home .base-title {
+    font: normal 4.4em "peace-sans";
+    margin: 0;
+  }
+  .page-home .base-title:nth-child(2) {
+    margin-bottom: 0;
+  }
 }
 
 .page-home .base-subtitle {
@@ -2661,8 +2842,15 @@ body.ready .page-home .button-more-content img {
   transform: translateX(-30px);
   opacity: 0;
   margin-top: 47px;
-  min-width: 278px;
   margin-left: 0;
+  min-width: 208px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-home .button-more {
+    min-width: 278px;
+    margin-left: -17px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -2713,8 +2901,25 @@ body.ready .page-home .button-more-content img {
   font: normal 0.8125em "moon";
   letter-spacing: 0.125em;
   position: absolute;
-  bottom: 27px;
-  left: calc(50% - 79px);
+  bottom: 7px;
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  left: calc(50% - 70px);
+}
+
+@media screen and (min-width: 768px) {
+  .page-home .button-more-content {
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    bottom: 27px;
+    left: calc(50% - 79px);
+  }
 }
 
 .page-home .button-more-content span {
@@ -2780,37 +2985,57 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-portfolio .secondary-title {
-  font: normal 5.9375em "selima";
+  font: normal 3.4375em "selima";
   color: #fb385f;
   position: relative;
   z-index: 40;
-  left: 20px;
-  top: -100px;
   text-align: center;
+  top: -20px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-portfolio .secondary-title {
+    font: normal 5.9375em "selima";
+    top: -100px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .page-portfolio .secondary-title {
+    left: 20px;
     top: 10px;
     text-align: right;
   }
 }
 
 .page-portfolio .swiper-container {
-  -moz-transform: scale(0.7);
-  -o-transform: scale(0.7);
-  -ms-transform: scale(0.7);
-  -webkit-transform: scale(0.7);
-  transform: scale(0.7);
-  width: 100%;
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
   overflow: visible;
-  height: 610px;
-  margin: 0 auto;
+  height: 400px;
+  margin: 0 auto -100px;
+  max-width: 790px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-portfolio .swiper-container {
+    -moz-transform: scale(0.7);
+    -o-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+    margin-bottom: 0;
+    height: 610px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .page-portfolio .swiper-container {
     height: 300px;
+    max-width: 790px;
     -moz-transform: scale(1);
     -o-transform: scale(1);
     -ms-transform: scale(1);
@@ -2827,7 +3052,6 @@ body.ready .page-home .button-more-content img {
   transition: opacity 0.5s ease;
   text-align: center;
   font-size: 28px;
-  max-width: 790px;
   background: #000000;
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
   opacity: 0.6;
@@ -2881,11 +3105,17 @@ body.ready .page-home .button-more-content img {
 .page-portfolio .project-container {
   background: transparent no-repeat center top 100%/cover;
   overflow: hidden;
-  text-align: center;
   width: 100%;
   height: 100%;
   opacity: 0;
   position: relative;
+  text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+  .page-portfolio .project-container {
+    text-align: center;
+  }
 }
 
 .page-portfolio .project-container.loaded {
@@ -2905,13 +3135,27 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-portfolio .swiper-button-next {
+  display: none;
   background: none;
   right: -70px;
 }
 
+@media screen and (min-width: 768px) {
+  .page-portfolio .swiper-button-next {
+    display: block;
+  }
+}
+
 .page-portfolio .swiper-button-prev {
+  display: none;
   background: none;
   left: -90px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-portfolio .swiper-button-prev {
+    display: block;
+  }
 }
 
 .page-portfolio .project-data {
@@ -2950,6 +3194,7 @@ body.ready .page-home .button-more-content img {
   font: normal 1.0625em "moon-bold";
   letter-spacing: 0.3125em;
   position: relative;
+  padding: 0 20px;
   z-index: 2;
 }
 
@@ -3278,6 +3523,14 @@ body.ready .page-home .button-more-content img {
   flex: 0 0 250px;
   margin-top: -24px;
   margin-left: 21px;
+  position: relative;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .page-about .image-wrapper {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -3295,8 +3548,27 @@ body.ready .page-home .button-more-content img {
   }
 }
 
+.page-about .image-wrapper .button-back {
+  top: -12%;
+  left: 0;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .page-about .image-wrapper .button-back {
+    display: block;
+  }
+}
+
 .page-about .button-back {
   left: 15.5%;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .page-about .button-back {
+    display: none;
+  }
 }
 
 .page-about .container {
@@ -3338,12 +3610,18 @@ body.ready .page-home .button-more-content img {
 .page-about:before {
   content: "";
   height: 100%;
+  max-width: 75px;
   width: 100%;
-  max-width: 33%;
   background: #fb385f;
   position: absolute;
   left: 0;
   top: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .page-about:before {
+    max-width: 33%;
+  }
 }
 
 .page-about .title-wrapper {
@@ -3357,12 +3635,20 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-about .container-me {
-  margin: -10px 30px 0 46px;
+  margin: 50px 0px 0 70px;
+  width: 100%;
+  max-width: 300px;
   position: relative;
 }
 
+@media screen and (min-width: 768px) {
+  .page-about .container-me {
+    margin: -10px 30px 0 46px;
+    max-width: 400px;
+  }
+}
+
 .page-about .container-me:before {
-  content: "";
   display: block;
   height: 7px;
   top: 12px;
@@ -3375,6 +3661,7 @@ body.ready .page-home .button-more-content img {
 
 @media screen and (min-width: 1024px) {
   .page-about .container-me:before {
+    content: "";
     top: 15px;
     width: 70px;
     left: -98px;
@@ -3382,11 +3669,17 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-about .main-title {
-  font: normal 2.0625em "moon";
+  font: normal 1.4375em "moon";
   color: #3d1e39;
   letter-spacing: -0.03125em;
   line-height: 0.9375em;
   margin-bottom: 6px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-about .main-title {
+    font: normal 1.6875em "moon";
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -3414,18 +3707,32 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-about p {
-  font: 300 0.9375em/1.125em "Roboto";
+  font: 300 0.8em "Roboto";
   line-height: 1.5;
   max-width: 490px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-about p {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
 }
 
 .page-about .button-skills {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: -3px;
   border-color: #3d1e39;
   color: #3d1e39;
-  width: 255px;
+  width: 205px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-about .button-skills {
+    margin-top: 40px;
+    width: 255px;
+  }
 }
 
 .page-about .button-skills span {
@@ -3469,28 +3776,56 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-skills aside {
-  width: 100%;
   height: 100%;
   background: #fff;
-  max-width: 33%;
-  padding-right: 25px;
   position: relative;
+  width: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .page-skills aside {
+    max-width: 33%;
+    padding-right: 25px;
+  }
 }
 
 .page-skills aside .button-back {
-  right: 30px;
+  position: absolute;
+  bottom: 57px;
+  right: auto;
+  left: 9px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-skills aside .button-back {
+    right: 30px;
+    top: 10%;
+    bottom: auto;
+  }
 }
 
 .page-skills aside .main-title {
-  color: #fb385f;
-  font: normal 2.0625em "moon";
-  letter-spacing: -0.0625em;
-  margin-top: 198px;
-  text-align: right;
+  color: #ffffff;
+  margin: 113px 0 0 40px;
   position: relative;
-  width: 100%;
-  max-width: 300px;
-  float: right;
+  z-index: 10;
+  width: 100vh;
+  font: normal 1.4375em "moon";
+  letter-spacing: -0.0625em;
+}
+
+@media screen and (min-width: 768px) {
+  .page-skills aside .main-title {
+    color: #fb385f;
+    font: normal 2.0625em "moon";
+    margin-top: 198px;
+    margin-left: 0;
+    text-align: right;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    float: right;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -3504,7 +3839,6 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-skills aside .main-title:before {
-  content: "";
   display: block;
   height: 7px;
   top: 34px;
@@ -3515,6 +3849,12 @@ body.ready .page-home .button-more-content img {
   overflow: hidden;
   background: #3d1e39;
   z-index: 10;
+}
+
+@media screen and (min-width: 768px) {
+  .page-skills aside .main-title:before {
+    content: "";
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -3561,11 +3901,17 @@ body.ready .page-home .button-more-content img {
   width: 100%;
   background: #fb385f;
   color: #ffffff;
-  padding-left: 100px;
+  padding-left: 40px;
   padding-bottom: 7px;
   font: 300 0.625em "Roboto";
   text-transform: uppercase;
   letter-spacing: 0.0625em;
+}
+
+@media screen and (min-width: 1024px) {
+  .page-skills .skills-experience-header {
+    padding-left: 100px;
+  }
 }
 
 .page-skills .skills-experience-toggle {
@@ -3672,14 +4018,21 @@ body.ready .page-home .button-more-content img {
 .page-skills .skillset {
   margin-bottom: 15px;
   margin-left: -2px;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .page-skills .skillset {
+    display: block;
+  }
 }
 
 .page-skills .skillset .skill {
   display: inline-block;
   font-size: 26px;
-  margin-right: 11px;
-  margin-bottom: 0;
-  opacity: 0.8;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  opacity: 0.5;
 }
 
 .page-skills .skills-container {
@@ -3694,7 +4047,7 @@ body.ready .page-home .button-more-content img {
   left: 0;
   top: 0;
   background-color: #fb385f;
-  color: #ffffff;
+  color: #591321;
   z-index: 2;
   overflow: hidden;
 }
@@ -3721,7 +4074,13 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-skills .skills-container .scroll-content {
-  padding: 49px 102px;
+  padding: 49px 0 49px 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-skills .skills-container .scroll-content {
+    padding: 49px 102px;
+  }
 }
 
 .page-skills .skills-container h3 {
@@ -3774,13 +4133,13 @@ body.ready .page-home .button-more-content img {
   display: inline-block;
   width: 9px;
   height: 9px;
-  border: 1px solid #ffffff;
+  border: 1px solid #591321;
   margin-right: 10px;
   border-radius: 100%;
 }
 
 .page-skills .rating-item-full {
-  background: #ffffff;
+  background: #591321;
 }
 
 .page-skills .animating-to-skills .experience-container .skills-experience-header {
@@ -3807,7 +4166,13 @@ body.ready .page-home .button-more-content img {
 
 .page-skills .animating-to-skills .skills-container .skills-experience-header {
   height: 176px;
-  padding: 0 0 7px 100px;
+  padding: 0 0 7px 38px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-skills .animating-to-skills .skills-container .skills-experience-header {
+    padding: 0 0 7px 100px;
+  }
 }
 
 .page-skills .animating-to-skills .skills-container .skills-experience-header .skills-experience-toggle {

@@ -36,7 +36,15 @@
   .main-logo{
     @include transition(all 0.5s);
     @include translateY(80px);
+    width: 60px;
+    margin-top: -50px;
     opacity: 0;
+    margin-left: 12px;
+
+    @include tablet-portrait{
+      width: auto;
+      margin-top: 0;
+    }
   }
 
   .title-container{
@@ -48,7 +56,7 @@
   }
 
   .base-title{
-    font: normal em(70.4) $font-peace-sans;
+    font: normal em(45) $font-peace-sans;
     line-height: em(20);
     margin: 0;
     padding: 0;
@@ -63,7 +71,18 @@
     &:nth-child(2){
       @include transition(all 0.5s ease 0.2s);
       @include translateY(80px);
+      margin-bottom: 20px;
       opacity: 0;
+    }
+
+
+    @include tablet-portrait{
+      font: normal em(70.4) $font-peace-sans;
+      margin: 0;
+
+      &:nth-child(2){
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -82,8 +101,13 @@
     @include translateX(-30px);
     opacity: 0;
     margin-top: 47px;
-    min-width: 278px;
     margin-left: 0;
+    min-width: 208px;
+
+    @include tablet-portrait{
+      min-width: 278px;
+      margin-left: -17px;
+    }
 
     @include tablet-landscape{
       margin-left: 55px;
@@ -116,8 +140,16 @@
     font: normal em(13) $font-moon;
     letter-spacing: em(2);
     position: absolute;
-    bottom: 27px;
-    left: calc(50% - 79px);
+    bottom: 7px;
+    @include scale(0.8);
+    left: calc(50% - 70px);
+
+
+    @include tablet-portrait{
+      @include scale(1);
+      bottom: 27px;
+      left: calc(50% - 79px);
+    }
 
     span{
       @include transition(all 0.3s ease 2.6s);

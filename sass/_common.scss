@@ -37,9 +37,13 @@ p{
   line-height: 1.6em;
   font-weight: lighter;
   margin-bottom: 1.5em;
-
+  font-size: 0.8em;
   strong{
       font-weight: bold;
+  }
+
+  @include tablet-portrait{
+    font-size: 1em;
   }
 }
 

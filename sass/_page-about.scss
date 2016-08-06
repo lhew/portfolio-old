@@ -8,8 +8,14 @@
     flex: 0 0 250px;
     margin-top: -24px;
     margin-left: 21px;
+    position: relative;
+    display: none;
 
 
+
+    @include tablet-portrait{
+      display: block;
+    }
     @include tablet-landscape{
       width: 380px;
       height: 70%;
@@ -20,16 +26,29 @@
     @include desktop-md{
       max-height: 580px;
     }
+
+    .button-back{
+      top: -12%;
+      left: 0;
+      display: none;
+
+      @include tablet-portrait{
+        display: block;
+      }
+    }
   }
 
   .button-back{
     left: 15.5%;
+    display: none;
+
+      @include tablet-portrait{
+        display: none;
+      }
   }
 
   .container{
     @include flex(row, center, flex-start);
-   // @include translateX(35%);
-    //width: 60%;
     margin: 0;
     height: 100%;
     position: relative;
@@ -48,12 +67,17 @@
   &:before{
     content: "";
     height: 100%;
+    max-width: 75px;
     width: 100%;
-    max-width: 33%;
     background: $color-red-pink;
     position: absolute;
     left: 0;
     top: 0;
+
+
+    @include tablet-portrait{
+    max-width: 33%;
+    }
   }
 
   .title-wrapper{
@@ -65,11 +89,17 @@
   }
 
   .container-me{
-    margin: -10px 30px 0 46px;
+    margin: 50px 0px 0 70px;
+    width: 100%;
+    max-width: 300px;
     position: relative;
 
+    @include tablet-portrait{
+      margin: -10px 30px 0 46px;
+      max-width: 400px;
+    }
+
     &:before{
-      content: "";
       display: block;
       height: 7px;
       top: 12px;
@@ -81,20 +111,25 @@
 
 
       @include tablet-landscape{
+        content: "";
         top: 15px;
         width: 70px;
         left: -98px;
       }
-
     }
   }
 
   .main-title{
-    font: normal em(33) $font-moon;
+    font: normal em(23) $font-moon;
     color: $color-grape;
     letter-spacing: em(-0.5);
     line-height: em(15);
     margin-bottom: 6px;
+
+
+    @include tablet-portrait{
+      font: normal em(27) $font-moon;
+    }
 
     @include tablet-landscape{
       font: normal em(43) $font-moon;
@@ -118,18 +153,31 @@
   }
 
   p{
-    font: 300 em(15)/em(18) $font-roboto;
+    font: 300 0.8em $font-roboto;
     line-height: 1.5;
     max-width: 490px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+
+
+    @include tablet-portrait{
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+
   }
 
   .button-skills{
-    margin-top: 40px;
+    margin-top: 20px;
     margin-left: -3px;
     border-color: $color-grape;
     color: $color-grape;
+    width: 205px;
+
+    @include tablet-portrait{
+    margin-top: 40px;
     width: 255px;
+
+    }
 
     span{
       width: 210px;

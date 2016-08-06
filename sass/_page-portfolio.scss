@@ -17,28 +17,41 @@
   }
 
   .secondary-title{
-    font: normal em(95) $font-selima;
+    font: normal em(55) $font-selima;
     color: $color-red-pink;
     position: relative;
     z-index: 40;
-    left: 20px;
-    top: -100px;
     text-align: center;
+    top: -20px;
+
+    @include tablet-portrait{
+      font: normal em(95) $font-selima;
+      top: -100px;
+    }
+
     @include tablet-landscape{
+      left: 20px;
       top: 10px;
       text-align: right;
     }
   }
 
   .swiper-container {
-    @include scale(0.7);
-    width: 100%;
+    @include scale(0.8);
     overflow: visible;
-    height: 610px;
-    margin: 0 auto;
+    height: 400px;
+    margin: 0 auto -100px;
+    max-width: 790px;
+
+    @include tablet-portrait{
+      @include scale(0.7);
+      margin-bottom: 0;
+      height: 610px;
+    }
 
     @include tablet-landscape{
       height: 300px;
+      max-width: 790px;
       @include scale(1);
     }
   }
@@ -47,7 +60,6 @@
     @include transition(opacity 0.5s ease);
     text-align: center;
     font-size: 28px;
-    max-width: 790px;
     background: $color-black;
     box-shadow: 0 10px 50px rgba($color-black, 0.2);
     opacity: 0.6;
@@ -83,11 +95,15 @@
   .project-container{
     background: transparent no-repeat center top 100%/cover;
     overflow: hidden;
-    text-align: center;
     width: 100%;
     height: 100%;
     opacity: 0;
     position: relative;
+    text-align: left;
+
+    @include tablet-portrait{
+      text-align: center;
+    }
 
     &.loaded{
       opacity: 1;
@@ -108,14 +124,22 @@
   }
 
   .swiper-button-next{
+    display: none;
     background: none;
     right: -70px;
-
+    @include tablet-portrait{
+      display: block;
+    }
   }
 
   .swiper-button-prev{
+    display: none;
     background: none;
     left: -90px;
+
+    @include tablet-portrait{
+      display: block;
+    }
   }
 
 
@@ -139,6 +163,7 @@
     font: normal em(17) $font-moon-bold;
     letter-spacing: em(5);
     position: relative;
+    padding: 0 20px;
     z-index: 2;
 
     @include tablet-landscape{
