@@ -45,7 +45,6 @@ gulp.task('imagemin', function(){
 gulp.task('concatjs', function() {
   return gulp.src([
     './public/components/jquery/dist/jquery.min.js',
-    './public/components/jquery.easing/js/jquery.easing.min.js',
     './public/components/Swiper/dist/js/swiper.jquery.min.js',
     './public/components/fullpage.js/dist/jquery.fullpage.min.js',
     './public/components/waitForImages/dist/jquery.waitforimages.min.js',

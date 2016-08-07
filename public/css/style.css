@@ -149,13 +149,6 @@ a {
 }
 
 @font-face {
-  font-family: "selima";
-  font-style: "normal";
-  font-weight: "normal";
-  src: url("../fonts/Selima.eot?") format("eot"), url("../fonts/Selima.woff2") format("woff2"), url("../fonts/Selima.woff") format("woff"), url("../fonts/Selima.ttf") format("truetype"), url("../fonts/Selima.svg#selima") format("svg");
-}
-
-@font-face {
   font-family: "montserrat";
   font-style: "normal";
   font-weight: "normal";
@@ -190,8 +183,9 @@ body.ready {
   overflow: hidden;
 }
 
-a {
+a, a:visited {
   text-decoration: none;
+  color: #fb385f;
 }
 
 p {
@@ -360,6 +354,20 @@ p strong {
 .preloader-wrapper-show {
   display: block;
   opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 /*!
@@ -2864,6 +2872,7 @@ body.ready .page-home .button-more-content img {
   letter-spacing: 0.125em;
   width: 210px;
   text-align: center;
+  color: #ffffff;
 }
 
 .page-home .button-more .more-arrow {
@@ -2996,15 +3005,18 @@ body.ready .page-home .button-more-content img {
 @media screen and (min-width: 768px) {
   .page-portfolio .secondary-title {
     font: normal 5.9375em "selima";
-    top: -100px;
+    top: 0px;
+  }
+  .page-portfolio .secondary-title img {
+    width: 240px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .page-portfolio .secondary-title {
     left: 20px;
-    top: 10px;
-    text-align: right;
+    top: 25px;
+    text-align: left;
   }
 }
 
@@ -3349,8 +3361,14 @@ body.ready .page-home .button-more-content img {
 }
 
 .portfolio-wrapper .project-descriptions {
-  width: 33%;
+  width: 100%;
   float: left;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-wrapper .project-descriptions {
+    width: 33%;
+  }
 }
 
 .portfolio-wrapper .project-descriptions .project-technologies {
@@ -3364,19 +3382,30 @@ body.ready .page-home .button-more-content img {
 }
 
 .portfolio-wrapper .screenshot-holder {
-  padding-top: 30px;
-  position: absolute;
-  top: 0;
-  left: 36%;
-  margin-bottom: 80px;
-  background: url("/img/screenshot-bar.png") #d9d9d9 no-repeat left top;
-  overflow: hidden;
-  border-radius: 6px;
-  box-shadow: 0 10px 46px rgba(0, 0, 0, 0.23);
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-wrapper .screenshot-holder {
+    display: block;
+    padding-top: 30px;
+    position: absolute;
+    top: 5px;
+    left: 40%;
+    margin-bottom: 80px;
+    background: url("/img/screenshot-bar.png") #d9d9d9 no-repeat left top;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 10px 46px rgba(0, 0, 0, 0.23);
+    right: 15px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .portfolio-wrapper .screenshot-holder {
+    right: 0;
+    left: 37%;
+    top: 0;
     width: 610px;
   }
 }
@@ -3395,7 +3424,18 @@ body.ready .page-home .button-more-content img {
 .portfolio-wrapper .screenshot-holder.fixed {
   position: static;
   clear: both;
-  margin-top: 180px;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-wrapper .screenshot-holder.fixed {
+    margin-top: -150px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .portfolio-wrapper .screenshot-holder.fixed {
+    margin-top: 180px;
+  }
 }
 
 .portfolio-wrapper .screenshot-holder.left {
@@ -3407,17 +3447,27 @@ body.ready .page-home .button-more-content img {
 }
 
 .portfolio-wrapper .screenshot-holder.tablet {
-  width: 600px;
-  box-shadow: none;
-  background: url("/img/ipad.png") no-repeat 0 0 transparent;
-  background-size: 100%;
-  padding: 70px 69px 84px;
-  border-radius: 3px;
-  overflow: hidden;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-wrapper .screenshot-holder.tablet {
+    display: block;
+    width: 500px;
+    box-shadow: none;
+    background: url("/img/ipad.png") no-repeat 0 0 transparent;
+    background-size: 100%;
+    padding: 57px 57px 82px;
+    margin: -400px 10px 0 0;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .portfolio-wrapper .screenshot-holder.tablet {
+    width: 600px;
+    padding: 70px 69px 84px;
+    border-radius: 3px;
+    overflow: hidden;
     margin: -610px 0 0 0;
   }
 }
@@ -3433,15 +3483,24 @@ body.ready .page-home .button-more-content img {
 }
 
 .portfolio-wrapper .screenshot-holder.iphone {
-  width: 297px;
-  background: url("/img/iphone.png") no-repeat 0 0 transparent;
-  box-shadow: none;
-  background-size: 100%;
-  padding: 70px 28px;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-wrapper .screenshot-holder.iphone {
+    background: url("/img/iphone.png") no-repeat 0 0 transparent;
+    box-shadow: none;
+    background-size: 100%;
+    display: block;
+    width: 200px;
+    padding: 46px 18px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .portfolio-wrapper .screenshot-holder.iphone {
+    width: 297px;
+    padding: 70px 28px;
     margin-left: 20px;
     margin-top: 150px;
   }
@@ -3489,27 +3548,80 @@ body.ready .page-home .button-more-content img {
 
 .portfolio-wrapper .project-screenshots img {
   position: absolute;
+  display: none;
   z-index: 1;
-  left: 118px;
-  top: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-wrapper .project-screenshots img {
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+    display: block;
+    top: 27px;
+    width: 489px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .portfolio-wrapper .project-screenshots img {
+    top: 40px;
+    width: auto;
+  }
 }
 
 .portfolio-wrapper .project-on-screen-container {
-  background: url("/img/macbook-space-screen.png") no-repeat center top;
-  width: 100%;
-  max-width: 779px;
-  height: 530px;
-  position: relative;
-  z-index: 2;
-  margin: 50px auto 0;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-wrapper .project-on-screen-container {
+    display: block;
+    background: url("/img/macbook-space-screen.png") no-repeat center top;
+    height: 530px;
+    position: relative;
+    z-index: 2;
+    margin: 50px auto 0;
+    max-width: 530px;
+    width: 100%;
+    background-size: 100%;
+    height: 361px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .portfolio-wrapper .project-on-screen-container {
+    max-width: 778px;
+    height: 528px;
+  }
 }
 
 .portfolio-wrapper .project-on-screen-base {
-  background: url("/img/macbook-space-base.png") no-repeat center top;
+  display: none;
   width: 100%;
-  max-width: 953px;
-  height: 30px;
-  margin: 0 auto 120px;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-wrapper .project-on-screen-base {
+    background: url("/img/macbook-space-base.png") no-repeat center top;
+    display: block;
+    height: 30px;
+    margin: -2px auto 120px;
+    background-size: 100%;
+    max-width: 683px;
+    position: relative;
+    z-index: 5;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .portfolio-wrapper .project-on-screen-base {
+    background-size: contain;
+    max-width: 953px;
+  }
 }
 
 .page-about {
@@ -3784,6 +3896,7 @@ body.ready .page-home .button-more-content img {
 
 @media screen and (min-width: 768px) {
   .page-skills aside {
+    width: 100%;
     max-width: 33%;
     padding-right: 25px;
   }
@@ -3799,6 +3912,7 @@ body.ready .page-home .button-more-content img {
 @media screen and (min-width: 768px) {
   .page-skills aside .button-back {
     right: 30px;
+    left: auto;
     top: 10%;
     bottom: auto;
   }

@@ -99,8 +99,12 @@
   }
 
   .project-descriptions{
-    width: 33%;
+    width: 100%;
     float: left;
+
+    @include tablet-portrait{
+      width: 33%;
+    }
 
     .project-technologies{
       margin-top: 30px;
@@ -114,19 +118,29 @@
   }
 
   .screenshot-holder{
-    padding-top: 30px;
-    //width
-    position: absolute;
-    top: 0;
-    left: 36%;
-    margin-bottom: 80px;
-    background: url('/img/screenshot-bar.png') #d9d9d9 no-repeat left top;
-    overflow: hidden;
-    border-radius: 6px;
-    box-shadow: 0 10px 46px rgba(0,0,0,0.23);
+
+    display: none;
+
+    @include tablet-portrait{
+      display: block;
+      padding-top: 30px;
+      //width
+      position: absolute;
+      top: 5px;
+      left: 40%;
+      margin-bottom: 80px;
+      background: url('/img/screenshot-bar.png') #d9d9d9 no-repeat left top;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow: 0 10px 46px rgba(0,0,0,0.23);
+      right: 15px;
+    }
 
 
     @include tablet-landscape{
+      right: 0;
+      left: 37%;
+      top: 0;
       width: 610px;
     }
 
@@ -142,7 +156,13 @@
     &.fixed{
       position: static;
       clear: both;
-      margin-top: 180px;
+
+      @include tablet-portrait{
+        margin-top: -150px;
+      }
+      @include tablet-landscape{
+        margin-top: 180px;
+      }
 
     }
 
@@ -155,17 +175,26 @@
     }
 
     &.tablet{
-      width: 600px;
-      box-shadow: none;
-      background: url("/img/ipad.png") no-repeat 0 0 transparent;
-      background-size: 100%;
-      padding: 70px 69px 84px;
-      border-radius: 3px;
-      overflow: hidden;
-      //margin: -510px 120px 0 0;
+      display: none;
+
+
+      @include tablet-portrait{
+        display: block;
+        width: 500px;
+        box-shadow: none;
+        background: url("/img/ipad.png") no-repeat 0 0 transparent;
+        background-size: 100%;
+        padding: 57px 57px 82px;
+        margin: -400px 10px 0 0;
+      }
+
 
 
       @include tablet-landscape{
+        width: 600px;
+        padding: 70px 69px 84px;
+        border-radius: 3px;
+        overflow: hidden;
         margin: -610px 0 0 0;
       }
 
@@ -179,13 +208,20 @@
     }
 
     &.iphone{
-      width: 297px;
-      background: url("/img/iphone.png") no-repeat 0 0 transparent;
-      box-shadow: none;
-      background-size: 100%;
-      padding: 70px 28px;
+      display: none;
+
+      @include tablet-portrait{
+        background: url("/img/iphone.png") no-repeat 0 0 transparent;
+        box-shadow: none;
+        background-size: 100%;
+        display: block;
+        width: 200px;
+        padding: 46px 18px;
+      }
 
       @include tablet-landscape{
+        width: 297px;
+        padding: 70px 28px;
         margin-left: 20px;
         margin-top: 150px;
       }
@@ -232,27 +268,65 @@
 
     img{
       position: absolute;
+      display: none;
       z-index: 1;
-      left: 118px;
-      top: 40px;
+
+      @include tablet-portrait{
+        @include translateX(-50%);
+        left: 50%;
+        display: block;
+        top: 27px;
+        width: 489px;
+      }
+      @include tablet-landscape{
+        top: 40px;
+        width: auto;
+      }
     }
   }
 
   .project-on-screen-container{
-    background: url('/img/macbook-space-screen.png') no-repeat center top;
-    width: 100%;
-    max-width: 779px;
-    height: 530px;
-    position: relative;
-    z-index: 2;
-    margin: 50px auto 0;
+    display: none;
+
+    @include tablet-portrait{
+      display: block;
+      background: url('/img/macbook-space-screen.png') no-repeat center top;
+      height: 530px;
+      position: relative;
+      z-index: 2;
+      margin: 50px auto 0;
+      max-width: 530px;
+      width: 100%;
+      background-size: 100%;
+      height: 361px;
+    }
+
+    @include tablet-landscape{
+      max-width: 778px;
+      height: 528px;
+    }
   }
 
   .project-on-screen-base{
-    background: url('/img/macbook-space-base.png') no-repeat center top;
+    display: none;
     width: 100%;
-    max-width: 953px;
-    height: 30px;
-    margin: 0 auto 120px;
+
+
+    @include tablet-portrait{
+      background: url('/img/macbook-space-base.png') no-repeat center top;
+      display: block;
+      height: 30px;
+      margin: -2px auto 120px;
+      background-size: 100%;
+      max-width: 683px;
+      position: relative;
+      z-index: 5;
+
+    }
+
+    @include tablet-landscape{
+      background-size: contain;
+      max-width: 953px;
+    }
   }
 }

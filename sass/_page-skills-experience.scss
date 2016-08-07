@@ -31,6 +31,7 @@
     width: 0;
 
     @include tablet-portrait{
+      width: 100%;
       max-width: 33%;
       padding-right: 25px;
     }
@@ -43,6 +44,7 @@
 
       @include tablet-portrait{
       right: 30px;
+      left: auto;
       top: 10%;
       bottom: auto;
       }

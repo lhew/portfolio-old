@@ -4,7 +4,6 @@
 @include font-face($font-peace-sans, "../fonts/PeaceSans");
 @include font-face($font-moon, "../fonts/Moon-Light");
 @include font-face($font-moon-bold, "../fonts/Moon-Bold");
-@include font-face($font-selima, "../fonts/Selima");
 @include font-face($font-montserrat, "../fonts/Montserrat-Regular");
 @include font-face($font-montserrat-bold, "../fonts/Montserrat-bold");
 
@@ -29,7 +28,10 @@ body{
 }
 
 a{
-  text-decoration: none;
+  &, &:visited{
+    text-decoration: none;
+    color: $color-red-pink;
+  }
 }
 
 p{
@@ -154,4 +156,22 @@ p{
 .preloader-wrapper-show{
   display: block;
   opacity: 1;
+}
+
+
+::-webkit-scrollbar
+{
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }

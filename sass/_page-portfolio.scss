@@ -26,13 +26,16 @@
 
     @include tablet-portrait{
       font: normal em(95) $font-selima;
-      top: -100px;
+      top: 0px;
+      img{
+        width: 240px;
+      }
     }
 
     @include tablet-landscape{
       left: 20px;
-      top: 10px;
-      text-align: right;
+      top: 25px;
+      text-align: left;
     }
   }
 
