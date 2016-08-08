@@ -3002,6 +3002,10 @@ body.ready .page-home .button-more-content img {
   top: -20px;
 }
 
+.page-portfolio .secondary-title img {
+  width: 240px;
+}
+
 @media screen and (min-width: 768px) {
   .page-portfolio .secondary-title {
     font: normal 5.9375em "selima";
@@ -3850,6 +3854,135 @@ body.ready .page-home .button-more-content img {
 .page-about .button-skills span {
   width: 210px;
   font-family: "moon-bold";
+}
+
+.page-contact {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-contact img {
+  display: block;
+  margin: 60px auto 0px;
+  width: 95%;
+  max-width: 300px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-contact img {
+    max-width: 360px;
+  }
+}
+
+.page-contact .container {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.page-contact form {
+  padding: 30px 0 0;
+  box-sizing: border-box;
+}
+
+.page-contact label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.page-contact label.error {
+  display: none !important;
+}
+
+.page-contact input, .page-contact textarea, .page-contact button {
+  box-sizing: border-box;
+  border: 2px solid #fb385f;
+  color: #fb385f;
+  border-radius: 20px;
+  padding: 13px 10px;
+  width: 100%;
+  max-width: 320px;
+  font-size: 0.875em;
+  max-width: 320px;
+}
+
+.page-contact input.error, .page-contact textarea.error, .page-contact button.error {
+  background: rgba(251, 56, 95, 0.1);
+}
+
+.page-contact input.error::-webkit-input-placeholder, .page-contact textarea.error::-webkit-input-placeholder, .page-contact button.error::-webkit-input-placeholder {
+  color: #fb385f;
+}
+
+.page-contact input.error:-moz-placeholder, .page-contact textarea.error:-moz-placeholder, .page-contact button.error:-moz-placeholder {
+  color: #fb385f;
+}
+
+.page-contact input.error::-moz-placeholder, .page-contact textarea.error::-moz-placeholder, .page-contact button.error::-moz-placeholder {
+  color: #fb385f;
+}
+
+.page-contact input.error:-ms-input-placeholder, .page-contact textarea.error:-ms-input-placeholder, .page-contact button.error:-ms-input-placeholder {
+  color: #fb385f;
+}
+
+.page-contact input::-webkit-input-placeholder, .page-contact textarea::-webkit-input-placeholder, .page-contact button::-webkit-input-placeholder {
+  color: rgba(251, 56, 95, 0.5);
+}
+
+.page-contact input:-moz-placeholder, .page-contact textarea:-moz-placeholder, .page-contact button:-moz-placeholder {
+  color: rgba(251, 56, 95, 0.5);
+}
+
+.page-contact input::-moz-placeholder, .page-contact textarea::-moz-placeholder, .page-contact button::-moz-placeholder {
+  color: rgba(251, 56, 95, 0.5);
+}
+
+.page-contact input:-ms-input-placeholder, .page-contact textarea:-ms-input-placeholder, .page-contact button:-ms-input-placeholder {
+  color: rgba(251, 56, 95, 0.5);
+}
+
+@media screen and (min-width: 768px) {
+  .page-contact input, .page-contact textarea, .page-contact button {
+    max-width: 380px;
+  }
+}
+
+.page-contact textarea {
+  border-radius: 12px;
+  height: 60px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-contact textarea {
+    height: 100px;
+  }
+}
+
+.page-contact .label-sended, .page-contact .label-loading {
+  display: none;
+}
+
+.page-contact button {
+  background: #fb385f;
+  color: #ffffff;
+  max-width: 200px;
+  border-radius: 30px;
+  font-family: "moon";
+  margin: 0 auto;
+  display: block;
 }
 
 .page-skills {

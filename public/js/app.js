@@ -271,4 +271,32 @@ $(function(){
     });
   }
 
+
+    $("#sendmail").validate({
+      rules: {
+        name : "required",
+        email: {required: true, email: true},
+        message: "required"
+      },
+      submitHandler : function(form){
+        var dados = $(form).serialize();
+          $.ajax({
+            type: 'POST',
+            url: 'http://www.manhattancafetheatro.com.br/faca-seu-evento/enviar-email.php',
+            dataType: 'json',
+            data: dados,
+            success: function(retorno){
+              if( retorno.tipo == 'sucesso' ){
+                $('#formEvento')[0].reset();
+                alert(retorno.mensagem);
+              }
+            },
+            error: function(){
+              alert('Ocorreu um erro no envio do formulário. Tente novamente mais tarde.')
+            }
+          });
+        return false;
+      }
+    });
+
 });

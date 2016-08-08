@@ -1,0 +1,86 @@
+.page-contact{
+  @include flex(row, center, center);
+
+
+  img{
+    display: block;
+    margin: 60px auto 0px;
+    width: 95%;
+    max-width: 300px;
+
+    @include tablet-portrait{
+      max-width: 360px;
+    }
+
+  }
+
+  .container{
+    @include flex(column, center, center);
+    height: 100%;
+  }
+
+  form{
+    padding: 30px 0 0;
+    box-sizing: border-box;
+  }
+
+  label{
+    display: block;
+    margin-bottom: 15px;
+
+    &.error{
+      display: none!important;
+    }
+  }
+
+  input, textarea, button{
+    box-sizing: border-box;
+    border: 2px solid $color-red-pink;
+    color: $color-red-pink;
+    border-radius: 20px;
+    padding: 13px 10px;
+    width: 100%;
+    max-width: 320px;
+    font-size: em(14);
+    max-width: 320px;
+
+    &.error{
+      background: rgba($color-red-pink, 0.1);
+      @include placeholder{
+        color: $color-red-pink;
+      }
+
+    }
+
+    @include placeholder{
+      color: rgba($color-red-pink, 0.5);
+    }
+
+    @include tablet-portrait{
+      max-width: 380px;
+    }
+  }
+
+  textarea{
+    border-radius: 12px;
+    height: 60px;
+
+    @include tablet-portrait{
+      height: 100px;
+    }
+  }
+
+  .label-sended, .label-loading{
+    display: none;
+  }
+
+  button{
+    background: $color-red-pink;
+    color: $color-white;
+    max-width: 200px;
+    border-radius: 30px;
+    font-family: $font-moon;
+    margin: 0 auto;
+    display: block;
+  }
+}
