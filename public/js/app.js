@@ -282,17 +282,17 @@ $(function(){
         var dados = $(form).serialize();
           $.ajax({
             type: 'POST',
-            url: 'http://www.manhattancafetheatro.com.br/faca-seu-evento/enviar-email.php',
+            url: '',
             dataType: 'json',
             data: dados,
             success: function(retorno){
               if( retorno.tipo == 'sucesso' ){
-                $('#formEvento')[0].reset();
-                alert(retorno.mensagem);
+                $('#sendmail')[0].reset();
+               // alert(retorno.mensagem);
               }
             },
             error: function(){
-              alert('Ocorreu um erro no envio do formulário. Tente novamente mais tarde.')
+              alert('An error occurred while sending your form. Try again later.')
             }
           });
         return false;
