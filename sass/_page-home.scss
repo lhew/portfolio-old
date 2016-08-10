@@ -67,7 +67,6 @@
   .main-logo{
     @include transition(all 0.5s);
     width: 125px;
-    opacity: 0.6;
 
     @include tablet-portrait{
       width: 200px;

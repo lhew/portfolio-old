@@ -37,9 +37,10 @@ $(function(){
         $mainNav
           .removeClass("darken-logo");
       }else if(nextSlideIndex == 2){
-
         changeMenu($(".nav-skills-experience"));
-        $.fn.fullpage.setAllowScrolling(false);
+        setTimeout(function(){
+          $.fn.fullpage.setAllowScrolling(false);
+        }, 100);
         $mainNav
           .addClass("darken-logo");
       }
