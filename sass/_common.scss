@@ -75,13 +75,19 @@ p{
 }
 
 #menu-overlay{
+  @include transition();
   position: fixed;
   display: none;
   width: 100%;
   height: 100vh;
   left: 0;
   top: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.8);
+  opacity: 0;
+
+  &.showing{
+    opacity: 1;
+  }
 }
 
 

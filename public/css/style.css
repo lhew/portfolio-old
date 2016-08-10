@@ -244,13 +244,23 @@ p strong {
 }
 
 #menu-overlay {
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   position: fixed;
   display: none;
   width: 100%;
   height: 100vh;
   left: 0;
   top: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+}
+
+#menu-overlay.showing {
+  opacity: 1;
 }
 
 .lock-for-popup {
@@ -2624,7 +2634,6 @@ body.ready .main-logo {
   -ms-transform: translateY(0);
   -webkit-transform: translateY(0);
   transform: translateY(0);
-  opacity: 1;
 }
 
 body.ready .page-home .base-title:nth-child(1) {
@@ -2696,7 +2705,7 @@ body.ready .page-home .button-more-content img {
   align-items: center;
   justify-content: center;
   height: 100%;
-  position: static;
+  position: relative;
   max-width: 990px;
 }
 
@@ -2708,9 +2717,27 @@ body.ready .page-home .button-more-content img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  justify-content: flex-start;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  height: 125px;
   text-align: center;
+}
+
+.page-home .main-splash-container.loaded {
+  width: 100%;
+  height: 78%;
+}
+
+@media screen and (min-width: 768px) {
+  .page-home .main-splash-container.loaded {
+    height: 68%;
+    padding-top: 15%;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -2723,18 +2750,38 @@ body.ready .page-home .button-more-content img {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    width: 200px;
+    padding-left: 160px;
+    padding-top: 22px;
+    padding-top: 0;
     text-align: left;
+  }
+  .page-home .main-splash-container.loaded {
+    height: 260px;
+    width: 100%;
+    padding-top: 0;
   }
 }
 
 .page-home .image-container {
-  margin-left: -15px;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-left: 0;
   margin-bottom: 20px;
 }
 
 @media screen and (min-width: 1024px) {
   .page-home .image-container {
-    margin: 0;
+    position: absolute;
+    left: -10px;
+    top: -40px;
+  }
+  .page-home .image-container.loaded {
+    left: 0;
+    top: 22px;
   }
 }
 
@@ -2748,22 +2795,26 @@ body.ready .page-home .button-more-content img {
   -ms-transition: all 0.5s;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  -moz-transform: translateY(80px);
-  -o-transform: translateY(80px);
-  -ms-transform: translateY(80px);
-  -webkit-transform: translateY(80px);
-  transform: translateY(80px);
-  width: 60px;
-  margin-top: -50px;
-  opacity: 0;
-  margin-left: 12px;
+  width: 125px;
+  opacity: 0.6;
 }
 
 @media screen and (min-width: 768px) {
   .page-home .main-logo {
-    width: auto;
+    width: 200px;
     margin-top: 0;
   }
+}
+
+@media screen and (min-width: 1024px) {
+  .page-home .main-logo {
+    position: absolute;
+    left: 0;
+  }
+}
+
+.page-home .main-logo.loaded {
+  margin-top: 0;
 }
 
 .page-home .title-container {
@@ -2785,11 +2836,11 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-home .base-title:nth-child(1) {
-  -moz-transition: all 0.5s ease 0.1s;
-  -o-transition: all 0.5s ease 0.1s;
-  -ms-transition: all 0.5s ease 0.1s;
-  -webkit-transition: all 0.5s ease 0.1s;
-  transition: all 0.5s ease 0.1s;
+  -moz-transition: all 0.8s ease 0.1s;
+  -o-transition: all 0.8s ease 0.1s;
+  -ms-transition: all 0.8s ease 0.1s;
+  -webkit-transition: all 0.8s ease 0.1s;
+  transition: all 0.8s ease 0.1s;
   -moz-transform: translateY(80px);
   -o-transform: translateY(80px);
   -ms-transform: translateY(80px);
@@ -2799,11 +2850,11 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-home .base-title:nth-child(2) {
-  -moz-transition: all 0.5s ease 0.2s;
-  -o-transition: all 0.5s ease 0.2s;
-  -ms-transition: all 0.5s ease 0.2s;
-  -webkit-transition: all 0.5s ease 0.2s;
-  transition: all 0.5s ease 0.2s;
+  -moz-transition: all 0.8s ease 0.2s;
+  -o-transition: all 0.8s ease 0.2s;
+  -ms-transition: all 0.8s ease 0.2s;
+  -webkit-transition: all 0.8s ease 0.2s;
+  transition: all 0.8s ease 0.2s;
   -moz-transform: translateY(80px);
   -o-transform: translateY(80px);
   -ms-transform: translateY(80px);
@@ -2824,11 +2875,11 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-home .base-subtitle {
-  -moz-transition: all 0.5s ease 0.8s;
-  -o-transition: all 0.5s ease 0.8s;
-  -ms-transition: all 0.5s ease 0.8s;
-  -webkit-transition: all 0.5s ease 0.8s;
-  transition: all 0.5s ease 0.8s;
+  -moz-transition: all 0.8s ease 0.8s;
+  -o-transition: all 0.8s ease 0.8s;
+  -ms-transition: all 0.8s ease 0.8s;
+  -webkit-transition: all 0.8s ease 0.8s;
+  transition: all 0.8s ease 0.8s;
   opacity: 0;
   font: normal 0.79375em "moon-bold";
   color: #3d1e39;
@@ -2838,11 +2889,11 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-home .button-more {
-  -moz-transition: all 0.8s ease 1.5s;
-  -o-transition: all 0.8s ease 1.5s;
-  -ms-transition: all 0.8s ease 1.5s;
-  -webkit-transition: all 0.8s ease 1.5s;
-  transition: all 0.8s ease 1.5s;
+  -moz-transition: all 1.3s ease 1.5s;
+  -o-transition: all 1.3s ease 1.5s;
+  -ms-transition: all 1.3s ease 1.5s;
+  -webkit-transition: all 1.3s ease 1.5s;
+  transition: all 1.3s ease 1.5s;
   -moz-transform: translateX(-30px);
   -o-transform: translateX(-30px);
   -ms-transform: translateX(-30px);

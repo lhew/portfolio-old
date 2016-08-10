@@ -4,15 +4,17 @@ $(function(){
 
   var hideOverlay = function(){
     $(".nav-is-visible").removeClass('nav-is-visible');
-    $("#menu-overlay").fadeTo(300, 0, function(){ $(this).hide(); });
+    $("#menu-overlay").removeClass("showing");
+    setTimeout(function(){ $("#menu-overlay").removeAttr('style'); },300);
   }
 
   var changeMenu = function($selector){
-    var $navItem = $("nav li a");
+    var $navItem = $("nav");
 
-        $navItem.removeClass("active");
+        $navItem.find(".active").removeClass("active");
         $selector.addClass("active");
-  }
+  };
+
 
 
   $('#fullpage').fullpage({
@@ -23,10 +25,6 @@ $(function(){
     onSlideLeave : function(anchorLink, index, slideIndex, direction, nextSlideIndex){
       hideOverlay();
 
-
-
-
-//changeMenu($(".nav-contact"));
 
       $.fn.fullpage.setAllowScrolling(true);
 
@@ -66,18 +64,32 @@ $(function(){
   $.waitForImages.hasImgProperties = ['backgroundImage'];
 
   $('body').waitForImages().done(function() {
-    $("body").addClass("ready");
-      $(".preloader-wrapper").css("top", "-100vh");
-      setTimeout(function(){
-        $(".preloader-wrapper")
+
+    var $img = $(".page-home .image-container");
+
+    $(".preloader-wrapper").css("top", "-100vh");
+
+    setTimeout(function(){
+      $(".preloader-wrapper")
+        .removeAttr("style")
+        .find("svg")
           .removeAttr("style")
-          .find("svg")
-            .removeAttr("style")
-          .parent()
-            .find(".load-wrapper")
-              .remove();
-        $("#temp-style").remove();
-      }, 400);
+        .parent()
+          .find(".load-wrapper")
+            .remove();
+
+      $("#temp-style").remove();
+      var src = $img.find("img").attr("src");
+      $img.find("img").removeAttr("src").delay(100).attr("src", src);
+
+    }, 400);
+
+    setTimeout(function(){
+      $("body").addClass("ready");
+      $("#main-splash-container").addClass("loaded");
+      $img.addClass("loaded");
+    }, 3000);
+
    });
 
   var mySwiper = new Swiper('.swiper-container',{
@@ -259,9 +271,11 @@ $(function(){
         stretchyNav.toggleClass('nav-is-visible');
 
         if(stretchyNav.hasClass('nav-is-visible'))
-          $("#menu-overlay").css('display', 'block').fadeTo(300, 1);
+          $("#menu-overlay").css('display', 'block').addClass("showing");
         else
-          $("#menu-overlay").fadeTo(300, 0, function(){ $(this).hide(); });
+          hideOverlay();
+
+
 
       });
     });
