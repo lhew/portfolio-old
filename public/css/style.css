@@ -652,6 +652,35 @@ Stretchy Nav style - common to:
  - edit-content navigation
 
 -------------------------------- */
+.transform-nav {
+  -moz-transition: all 0.3s ease 1.6s;
+  -o-transition: all 0.3s ease 1.6s;
+  -ms-transition: all 0.3s ease 1.6s;
+  -webkit-transition: all 0.3s ease 1.6s;
+  transition: all 0.3s ease 1.6s;
+  -moz-transform: translateY(-80px);
+  -o-transform: translateY(-80px);
+  -ms-transform: translateY(-80px);
+  -webkit-transform: translateY(-80px);
+  transform: translateY(-80px);
+}
+
+.ready .transform-nav {
+  -moz-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+.ready.iphone .transform-nav, .ready.ipad .transform-nav {
+  -moz-transform: translateY(56px);
+  -o-transform: translateY(56px);
+  -ms-transform: translateY(56px);
+  -webkit-transform: translateY(56px);
+  transform: translateY(56px);
+}
+
 .cd-stretchy-nav {
   position: fixed;
   z-index: 2;
@@ -695,7 +724,6 @@ Stretchy Nav style - common to:
   text-indent: 9000px;
   border-radius: 50%;
   /* replace text with image */
-  overflow: hidden;
   white-space: nowrap;
   color: transparent;
   pointer-events: auto;
@@ -704,6 +732,7 @@ Stretchy Nav style - common to:
 .cd-nav-trigger span, .cd-nav-trigger span::after, .cd-nav-trigger span::before {
   /* this is the hamburger icon */
   position: absolute;
+  z-index: 30;
   width: 16px;
   height: 2px;
   background-color: #ffffff;
@@ -713,6 +742,7 @@ Stretchy Nav style - common to:
   /* middle line of the hamburger icon */
   left: 50%;
   top: 50%;
+  z-index: 50;
   bottom: auto;
   right: auto;
   -webkit-transform: translateX(-50%) translateY(-50%);
@@ -730,6 +760,7 @@ Stretchy Nav style - common to:
   content: '';
   top: 0;
   left: 0;
+  z-index: 50;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transition: -webkit-transform 0.2s;
@@ -2612,6 +2643,18 @@ body.ready .logo-glass-wrapper:after {
   top: 25px;
 }
 
+body.ready.iphone .logo-glass-wrapper, body.ready.ipad .logo-glass-wrapper {
+  top: 75px;
+}
+
+body.ready.iphone .logo-glass-wrapper:before, body.ready.ipad .logo-glass-wrapper:before {
+  top: 84px;
+}
+
+body.ready.iphone .logo-glass-wrapper:after, body.ready.ipad .logo-glass-wrapper:after {
+  top: 78px;
+}
+
 body.ready .menu-icon {
   -moz-transform: translateY(0);
   -o-transform: translateY(0);
@@ -2736,7 +2779,7 @@ body.ready .page-home .button-more-content img {
 @media screen and (min-width: 768px) {
   .page-home .main-splash-container.loaded {
     height: 68%;
-    padding-top: 15%;
+    padding-top: 0%;
   }
 }
 
@@ -2795,8 +2838,7 @@ body.ready .page-home .button-more-content img {
   -ms-transition: all 0.5s;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  width: 125px;
-  opacity: 0.6;
+  width: 95px;
 }
 
 @media screen and (min-width: 768px) {
@@ -2828,7 +2870,7 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-home .base-title {
-  font: normal 2.8125em "peace-sans";
+  font: normal 2.1875em "peace-sans";
   line-height: 1.25em;
   margin: 0;
   padding: 0;
@@ -2862,6 +2904,13 @@ body.ready .page-home .button-more-content img {
   transform: translateY(80px);
   margin-bottom: 20px;
   opacity: 0;
+}
+
+@media screen and (min-width: 360px) {
+  .page-home .base-title {
+    font: normal 2.8125em "peace-sans";
+    line-height: 1.25em;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -2899,6 +2948,7 @@ body.ready .page-home .button-more-content img {
   -ms-transform: translateX(-30px);
   -webkit-transform: translateX(-30px);
   transform: translateX(-30px);
+  background: #fb385f;
   opacity: 0;
   margin-top: 47px;
   margin-left: 0;
@@ -2957,6 +3007,7 @@ body.ready .page-home .button-more-content img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: #fb385f;
   color: #ffffff;
   font: normal 0.8125em "moon";
   letter-spacing: 0.125em;

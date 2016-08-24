@@ -1,6 +1,23 @@
 $(function(){
 
+
+  (function addClassName(){
+    var classname = "";
+
+    if($.browser.ipad){
+      classname+= " ipad";
+    }
+
+    if($.browser.iphone){
+      classname+= " iphone";
+    }
+
+    $("body").addClass(classname);
+
+  })();
+
   var $mainNav = $(".main-nav-wrapper");
+
 
   var hideOverlay = function(){
     $(".nav-is-visible").removeClass('nav-is-visible');

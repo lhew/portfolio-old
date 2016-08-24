@@ -234,6 +234,20 @@ Stretchy Nav style - common to:
  - edit-content navigation
 
 -------------------------------- */
+
+.transform-nav{
+  @include transition(all 0.3s ease 1.6s);
+  @include translateY(-80px);
+}
+
+.ready .transform-nav{
+  @include translateY(0px);
+}
+
+.ready.iphone .transform-nav, .ready.ipad .transform-nav{
+  @include translateY(56px);
+}
+
 .cd-stretchy-nav {
   position: fixed;
   z-index: 2;
@@ -274,14 +288,16 @@ Stretchy Nav style - common to:
   text-indent: 9000px;
   border-radius: 50%;
   /* replace text with image */
-  overflow: hidden;
   white-space: nowrap;
   color: transparent;
   pointer-events: auto;
 }
+
+
 .cd-nav-trigger span, .cd-nav-trigger span::after, .cd-nav-trigger span::before {
   /* this is the hamburger icon */
   position: absolute;
+  z-index: 30;
   width: 16px;
   height: 2px;
   background-color: #ffffff;
@@ -290,6 +306,7 @@ Stretchy Nav style - common to:
   /* middle line of the hamburger icon */
   left: 50%;
   top: 50%;
+  z-index: 50;
   bottom: auto;
   right: auto;
   -webkit-transform: translateX(-50%) translateY(-50%);
@@ -306,6 +323,7 @@ Stretchy Nav style - common to:
   content: '';
   top: 0;
   left: 0;
+  z-index: 50;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transition: -webkit-transform 0.2s;
@@ -328,7 +346,10 @@ Stretchy Nav style - common to:
 }
 .no-touch .cd-nav-trigger:hover ~ .stretchy-nav-bg {
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+
 }
+
+
 .nav-is-visible .cd-nav-trigger span {
   background-color: transparent;
 }
@@ -559,6 +580,8 @@ add-content navigation style
   -webkit-transition: width 0.2s, box-shadow 0.2s;
   -moz-transition: width 0.2s, box-shadow 0.2s;
   transition: width 0.2s, box-shadow 0.2s;
+
+
 }
 .cd-stretchy-nav.add-content.nav-is-visible .stretchy-nav-bg {
   width: 100%;

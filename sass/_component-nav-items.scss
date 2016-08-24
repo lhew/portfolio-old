@@ -42,6 +42,21 @@ body{
       }
     }
 
+    &.iphone, &.ipad{
+
+      .logo-glass-wrapper{
+        top: 75px;
+
+        &:before{
+          top: 84px;
+        }
+
+        &:after{
+          top: 78px;
+        }
+      }
+    }
+
     .menu-icon{
 
         &:before{

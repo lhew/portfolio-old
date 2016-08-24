@@ -46,6 +46,7 @@ gulp.task('concatjs', function() {
   return gulp.src([
     './public/components/jquery/dist/jquery.min.js',
     './public/components/Swiper/dist/js/swiper.jquery.min.js',
+    './public/components/jquery.browser/dist/jquery.browser.min.js',
     './public/components/fullpage.js/dist/jquery.fullpage.min.js',
     './public/components/waitForImages/dist/jquery.waitforimages.min.js',
     './public/components/jquery-validation/dist/jquery.validate.min.js',

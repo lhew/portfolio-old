@@ -22,7 +22,7 @@
     @include tablet-portrait{
       &.loaded{
         height: 68%;
-        padding-top: 15%;
+        padding-top: 0%;
       }
     }
 
@@ -66,7 +66,7 @@
 
   .main-logo{
     @include transition(all 0.5s);
-    width: 125px;
+    width: 95px;
 
     @include tablet-portrait{
       width: 200px;
@@ -94,7 +94,7 @@
     }
   }
   .base-title{
-    font: normal em(45) $font-peace-sans;
+    font: normal em(35) $font-peace-sans;
     line-height: em(20);
     margin: 0;
     padding: 0;
@@ -113,6 +113,11 @@
       opacity: 0;
     }
 
+
+    @media screen and (min-width: 360px){
+      font: normal em(45) $font-peace-sans;
+      line-height: em(20);
+    }
 
     @include tablet-portrait{
       font: normal em(70.4) $font-peace-sans;
@@ -137,6 +142,7 @@
   .button-more{
     @include transition(all 1.3s ease 1.5s);
     @include translateX(-30px);
+    background: $color-red-pink;
     opacity: 0;
     margin-top: 47px;
     margin-left: 0;
@@ -175,6 +181,7 @@
 
   .button-more-content{
     @include flex(column, center, center);
+    background: $color-red-pink;
     color: $color-white;
     font: normal em(13) $font-moon;
     letter-spacing: em(2);
