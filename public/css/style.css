@@ -2750,6 +2750,7 @@ body.ready .page-home .button-more-content img {
   height: 100%;
   position: relative;
   max-width: 990px;
+  padding: 0;
 }
 
 .page-home .main-splash-container {
@@ -3060,6 +3061,22 @@ body.ready .page-home .button-more-content img {
   transform: translateY(50px);
   opacity: 0;
   margin-top: 20px;
+}
+
+.ipad .page-home .title-container,
+.ipad .page-home .button-container,
+.iphone .page-home .title-container,
+.iphone .page-home .button-container {
+  -moz-transform: translateX(10px);
+  -o-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+.ipad .page-home .button-more-content,
+.iphone .page-home .button-more-content {
+  left: calc(50% - 70px);
 }
 
 .page-portfolio {

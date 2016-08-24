@@ -5,6 +5,7 @@
     height: 100%;
     position: relative;
     max-width: 990px;
+    padding: 0;
   }
 
   .main-splash-container{
@@ -209,5 +210,18 @@
       opacity: 0;
       margin-top: 20px;
     }
+  }
+}
+
+
+.ipad .page-home,
+.iphone .page-home{
+  .title-container,
+  .button-container{
+    @include translateX(10px);
+  }
+
+  .button-more-content{
+    left: calc(50% - 70px);
   }
 }
