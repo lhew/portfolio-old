@@ -33,6 +33,7 @@ module.exports = {
   },
 
   "about": {
+    "back": "Voltar",
     "role" : "Desenvolvedor Front-end",
     "text_paragraph_1": "Carioca de origem e recifense de coração, trabalho com TI há 10 anos e desde 2008, desenvolvo interfaces ricas e integrações em front-end em diversas tecnologias, como PHP, .net e Java.",
     "text_paragraph_2": "Entusiasta em design e programação, desde que conheci o desenvolvimento front-end, senti que podia a partir dali juntar estas duas paixões e assim, colaborar de maneira criativa para o desenvolvimento de conexões humanas ricas através do desenvolvimento web.",
