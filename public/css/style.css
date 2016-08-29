@@ -875,13 +875,13 @@ Stretchy Nav style - common to:
 
 .cd-stretchy-nav ul li:nth-of-type(2) a::after {
   background-position: -90px 0;
-  width: 23px;
-  right: 12px;
+  width: 21px;
+  right: 13px;
 }
 
 .cd-stretchy-nav ul li:nth-of-type(3) a::after {
   background-position: -45px 0;
-  width: 21px;
+  width: 20px;
   right: 15px;
 }
 
@@ -894,7 +894,13 @@ Stretchy Nav style - common to:
 .cd-stretchy-nav ul li:nth-of-type(5) a::after {
   background-position: -66px 0;
   width: 24px;
-  right: 14px;
+  right: 13px;
+}
+
+.cd-stretchy-nav ul li:nth-of-type(6) a::after {
+  background-position: -94px 0;
+  background-size: 117px;
+  right: 13px;
 }
 
 .cd-stretchy-nav ul span {
@@ -1011,6 +1017,13 @@ Stretchy Nav style - common to:
   -webkit-animation-delay: 0.25s;
   -moz-animation-delay: 0.25s;
   animation-delay: 0.25s;
+}
+
+.cd-stretchy-nav.nav-is-visible ul li:nth-of-type(6) a::after,
+.cd-stretchy-nav.nav-is-visible ul li:nth-of-type(6) span {
+  -webkit-animation-delay: 0.30s;
+  -moz-animation-delay: 0.30s;
+  animation-delay: 0.30s;
 }
 
 /* --------------------------------
@@ -2875,7 +2888,17 @@ body.ready .page-home .button-more-content img {
   line-height: 1.25em;
   margin: 0;
   padding: 0;
+  height: 62px;
   color: #eff4d6;
+  margin-top: -10px;
+}
+
+.page-home .base-title img {
+  -moz-transform: scale(0.6);
+  -o-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
 }
 
 .page-home .base-title:nth-child(1) {
@@ -2912,12 +2935,27 @@ body.ready .page-home .button-more-content img {
     font: normal 2.8125em "peace-sans";
     line-height: 1.25em;
   }
+  .page-home .base-title img {
+    -moz-transform: scale(0.7);
+    -o-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+  }
 }
 
 @media screen and (min-width: 768px) {
   .page-home .base-title {
     font: normal 4.4em "peace-sans";
     margin: 0;
+    height: 90px;
+  }
+  .page-home .base-title img {
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
   .page-home .base-title:nth-child(2) {
     margin-bottom: 0;
@@ -3122,7 +3160,16 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-portfolio .secondary-title img {
-  width: 240px;
+  width: 170px;
+  position: relative;
+  top: 50px;
+}
+
+@media screen and (min-width: 360px) {
+  .page-portfolio .secondary-title img {
+    width: 240px;
+    top: auto;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -3269,28 +3316,72 @@ body.ready .page-home .button-more-content img {
   background: rgba(0, 0, 0, 0.7);
 }
 
-.page-portfolio .swiper-button-next {
-  display: none;
-  background: none;
-  right: -70px;
-}
-
-@media screen and (min-width: 768px) {
-  .page-portfolio .swiper-button-next {
-    display: block;
-  }
-}
-
 .page-portfolio .swiper-button-prev {
-  display: none;
+  display: block;
   background: none;
-  left: -90px;
+  left: -20px;
 }
 
-@media screen and (min-width: 768px) {
-  .page-portfolio .swiper-button-prev {
-    display: block;
-  }
+.page-portfolio .swiper-button-prev:after {
+  content: "";
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: 3px;
+  height: 27px;
+  top: 0;
+  background: #fb385f;
+  position: absolute;
+}
+
+.page-portfolio .swiper-button-prev:before {
+  content: "";
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  width: 3px;
+  height: 27px;
+  bottom: 0;
+  background: #fb385f;
+  position: absolute;
+}
+
+.page-portfolio .swiper-button-next {
+  display: block;
+  background: none;
+  right: -50px;
+}
+
+.page-portfolio .swiper-button-next:after {
+  content: "";
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  width: 3px;
+  height: 27px;
+  top: 0;
+  background: #fb385f;
+  position: absolute;
+}
+
+.page-portfolio .swiper-button-next:before {
+  content: "";
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: 3px;
+  height: 27px;
+  bottom: 0;
+  background: #fb385f;
+  position: absolute;
 }
 
 .page-portfolio .project-data {
@@ -3860,13 +3951,7 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-about .title-wrapper {
-  margin-bottom: 30px;
-}
-
-@media screen and (min-width: 1024px) {
-  .page-about .title-wrapper {
-    margin-bottom: 50px;
-  }
+  margin-bottom: 35px;
 }
 
 .page-about .container-me {
@@ -3904,22 +3989,22 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-about .main-title {
-  font: normal 1.4375em "moon";
+  font: normal 1.25em "moon";
   color: #3d1e39;
   letter-spacing: -0.03125em;
-  line-height: 0.9375em;
-  margin-bottom: 6px;
+  line-height: 0.625em;
+  margin-bottom: -15px;
 }
 
 @media screen and (min-width: 768px) {
   .page-about .main-title {
-    font: normal 1.6875em "moon";
+    font: normal 1.4375em "moon";
   }
 }
 
 @media screen and (min-width: 1024px) {
   .page-about .main-title {
-    font: normal 2.6875em "moon";
+    font: normal 2.1875em "moon";
   }
 }
 
@@ -3928,7 +4013,7 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-about .main-subtitle {
-  font: normal 0.9375em "moon-bold";
+  font: normal 0.625em "moon-bold";
   color: #fb385f;
   font-weight: bold;
   position: relative;
@@ -3937,7 +4022,7 @@ body.ready .page-home .button-more-content img {
 
 @media screen and (min-width: 1024px) {
   .page-about .main-subtitle {
-    font: normal 0.6875em "moon-bold";
+    font: normal 0.75em "moon-bold";
   }
 }
 
@@ -3965,7 +4050,7 @@ body.ready .page-home .button-more-content img {
 
 @media screen and (min-width: 768px) {
   .page-about .button-skills {
-    margin-top: 40px;
+    margin-top: 30px;
     width: 255px;
   }
 }

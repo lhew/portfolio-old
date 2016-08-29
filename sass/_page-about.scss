@@ -11,8 +11,6 @@
     position: relative;
     display: none;
 
-
-
     @include tablet-portrait{
       display: block;
     }
@@ -81,10 +79,10 @@
   }
 
   .title-wrapper{
-    margin-bottom: 30px;
+
+    margin-bottom: 35px;
 
     @include tablet-landscape{
-      margin-bottom: 50px;
     }
   }
 
@@ -120,19 +118,19 @@
   }
 
   .main-title{
-    font: normal em(23) $font-moon;
+    font: normal em(20) $font-moon;
     color: $color-grape;
     letter-spacing: em(-0.5);
-    line-height: em(15);
-    margin-bottom: 6px;
+    line-height: em(10);
+    margin-bottom: -15px;
 
 
     @include tablet-portrait{
-      font: normal em(27) $font-moon;
+      font: normal em(23) $font-moon;
     }
 
     @include tablet-landscape{
-      font: normal em(43) $font-moon;
+      font: normal em(35) $font-moon;
     }
 
     strong{
@@ -141,14 +139,14 @@
   }
 
   .main-subtitle{
-    font: normal em(15) $font-moon-bold;
+    font: normal em(10) $font-moon-bold;
     color: $color-red-pink;
     font-weight: bold;
     position: relative;
     top: 16px;
 
     @include tablet-landscape{
-      font: normal em(11) $font-moon-bold;
+      font: normal em(12) $font-moon-bold;
     }
   }
 
@@ -174,7 +172,7 @@
     width: 205px;
 
     @include tablet-portrait{
-    margin-top: 40px;
+    margin-top: 30px;
     width: 255px;
 
     }

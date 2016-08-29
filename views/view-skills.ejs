@@ -1,13 +1,12 @@
-<div class="page page-skills slide" id="page-skills">
+<div class="page page-skills slide">
   <div class="page-wrapper">
     <aside>
       <a href="#home" class="button-back button-back-to-about">
-        <img src="img/arrow-left.svg" alt="Back to About">
-        <span>Back</span>
+        <img data-src="img/arrow-left.svg" alt="Back to About">
+        <span><%=lang.skills.back %></span>
       </a>
       <h2 class="main-title">
-        Skills and
-        <strong>Experience</strong>
+        <%-lang.skills.title %>
       </h2>
     </aside>
     <div class="content-wrapper">
@@ -15,15 +14,15 @@
           <header class="content skills-experience-header">
             <a href="javascript:;" class="skills-experience-toggle">
               <span class="back-arrow"></span>
-              <span>Back to Experience</span>
+              <span><%=lang.skills.experience %> </span>
             </a>
           </header>
           <div class="scroll-container default-skin">
             <div class="scroll-content">
               <div class="experience-group">
-                <h3>Idioms</h3>
+                <h3><%=lang.skills.idioms_title%></h3>
                 <dl>
-                  <dt class="idiom-list">Portuguese</dt>
+                  <dt class="idiom-list"><%=lang.skills.idioms.portuguese%></dt>
                   <dt>
                     <span class="rating-item rating-item-full"></span>
                     <span class="rating-item rating-item-full"></span>
@@ -31,7 +30,7 @@
                     <span class="rating-item rating-item-full"></span>
                     <span class="rating-item rating-item-full"></span>
                   </dt>
-                  <dt class="idiom-list">English</dt>
+                  <dt class="idiom-list"><%=lang.skills.idioms.english%></dt>
                   <dt>
                     <span class="rating-item rating-item-full"></span>
                     <span class="rating-item rating-item-full"></span>
@@ -39,7 +38,7 @@
                     <span class="rating-item rating-item-full"></span>
                     <span class="rating-item"></span>
                   </dt>
-                  <dt class="idiom-list">Spanish</dt>
+                  <dt class="idiom-list"><%=lang.skills.idioms.spanish%></dt>
                   <dt>
                     <span class="rating-item rating-item-full"></span>
                     <span class="rating-item rating-item-full"></span>
@@ -50,7 +49,7 @@
                 </dl>
               </div>
               <div class="experience-group">
-                <h3>Expert at</h3>
+                <h3><%=lang.skills.expert_at%></h3>
                 <div class="technologies-group">
                   <span class="devicons devicons-html5"></span>
                   <span class="devicons devicons-css3"></span>
@@ -60,7 +59,7 @@
                 </div>
               </div>
               <div class="experience-group">
-                <h3>Proficient at</h3>
+                <h3><%=lang.skills.proficient_at%></h3>
                 <div class="technologies-group">
                   <span class="devicons devicons-php"></span>
                   <span class="devicons devicons-angular"></span>
@@ -78,12 +77,11 @@
                 </div>
               </div>
               <div class="experience-group">
-                <h3>Familiar with</h3>
+                <h3><%=lang.skills.familiar_with%></h3>
                 <div class="technologies-group">
                   <span class="devicons devicons-heroku"></span>
                   <span class="devicons devicons-coffeescript"></span>
                   <span class="devicons devicons-zend"></span>
-                  <span class="devicons devicons-laravel"></span>
                   <span class="devicons devicons-dotnet"></span>
                   <span class="devicons devicons-ruby_on_rails"></span>
                   <span class="devicons devicons-travis"></span>
@@ -96,7 +94,7 @@
           <header class="content skills-experience-header">
             <a href="javascript:;" class="skills-experience-toggle">
               <span class="back-arrow"></span>
-              <span>View full Skillset</span>
+              <span><%=lang.skills.full_skillset%></span>
             </a>
           </header>
           <div class="scroll-container default-skin">
@@ -120,17 +118,7 @@
                   <li class="skill devicons devicons-ionic" data-desc="Ionic"></li>
 
                 </ul>
-                <p>
-                  At Bemind i could develop projects with cutting edge technologies
-                  and help the team with my front-end skills while i  got helped during
-                  development of some nodejs and ruby on rails code.
-                </p>
-                <p>
-                  It was a great experience work with bemind guys due their great
-                  sence of collaboration and willingnes for develop new things with
-                  new technologies, which caused positive impact in both company and
-                  programmers.
-                </p>
+               <%-lang.skills.bemind %>
               </li>
               <li>
                 <h3>Altran España</h3>
@@ -140,17 +128,7 @@
                   <li class="skill devicons devicons-responsive" data-desc="Responsive Web Development"></li>
                   <li class="skill devicons devicons-git"></li>
                 </ul>
-                <p>
-                  In Altran i was able to work with great programmers and learn
-                  incredible programming techniques such as SOLID and apply some
-                  javascript patterns while i was demanded to work in a very fast-paced
-                  environment with sprints of 15 days.
-                </p>
-                <p>
-                  The outcome of my participation was the decrease of opened
-                  front-end issues and the development of new features for some of
-                  their new websites.
-                </p>
+                <%-lang.skills.altran %>
               </li>
               <li>
                 <h3>
@@ -161,17 +139,7 @@
                   <li class="skill devicons devicons-angular" data-desc="AngularJS"></li>
                   <li class="skill devicons devicons-responsive" data-desc="Responsive Web Development"></li>
                 </ul>
-                <p>
-                  SUATI has a very tough selection process that ensures the company
-                  the best professionals of their fields. The results
-                  of this intense selection process is a high qualified IT team
-                  which assures the company's great software quality.
-                </p>
-                <p>
-                  There, i could work with the whole microsoft technology stack,
-                  developed their website and fixing bugs on front-end issues of their
-                  web-based systems.
-                </p>
+                <%-lang.skills.suati %>
               </li>
               <li>
                 <h3>
@@ -191,19 +159,7 @@
                   <li class="skill devicons devicons-git"></li>
                   <li class="skill devicons devicons-ionic" data-desc="Ionic"></li>
                 </ul>
-                <p>
-                  Caju is a Web agency based on Recife which develop solutions for
-                  several local and international clients.
-                </p>
-                <p>
-                  There i was free to suggest and implement all kinds of innovative
-                  solutions regarding to front-end and mobile development.
-                </p>
-                <p>
-                  My collaboration for the company was increase speed to the project
-                  deliver such as implement some new technologies to their web projects
-                  assuring the quality and consistency of project deliverables.
-                </p>
+                <%-lang.skills.caju %>
               </li>
               <li>
                 <h3>Fingertips(Pontomobi)</h3>
@@ -213,15 +169,7 @@
                   <li class="skill devicons devicons-git"></li>
                   <li class="skill devicons devicons-php"></li>
                 </ul>
-                <p>
-                  Fingertips(Pontomobi) was a company specialized on develop mobile
-                  solutions for their clients.
-                </p>
-                <p>
-                  There, i developed some mobile websites and helped the team to
-                  keep the quality of web-based systems by using the latest technologies
-                  at that time.
-                </p>
+               <%-lang.skills.fingertips %>
               </li>
               <li>
                 <h3>C.E.S.A.R</h3>
@@ -234,21 +182,10 @@
                   <li class="skill devicons devicons-php"></li>
                   <li class="skill devicons devicons-responsive" data-desc="Responsive Web Development"></li>
                 </ul>
-                <p>
-                  CESAR is an reference innovation center in Brazil which count with
-                  very tallented developers in their staff. Leading projects of
-                  companies like Motorola pushes them to develop high level
-                  products and guarantee their reputation of awarded noon-profit company
-                  in Brazil and worldwide.
-                </p>
-                <p>
-                  My participation on CESAR is related to develop android applications to
-                  and several different clients and deliver internal systems in an agile environment.
-                </p>
+                <%-lang.skills.cesar%>
               </li>
               <li>
-                You can check the full list of companies i worked at my <a href="https://br.linkedin.com/in/lalmeida1985
-  " rel="external">LinkedIn profile</a>
+                <%-lang.skills.full_portfolio%>
               </li>
             </ul>
           </div>

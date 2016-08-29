@@ -99,7 +99,13 @@
     line-height: em(20);
     margin: 0;
     padding: 0;
+    height: 62px;
     color: $color-rum-swizzle;
+    margin-top: -10px;
+
+    img{
+      @include scale(0.6);
+    }
 
     &:nth-child(1){
       @include transition(all 0.8s ease 0.1s);
@@ -114,15 +120,22 @@
       opacity: 0;
     }
 
-
     @media screen and (min-width: 360px){
       font: normal em(45) $font-peace-sans;
+      img{
+        @include scale(0.7)
+      }
       line-height: em(20);
     }
 
     @include tablet-portrait{
       font: normal em(70.4) $font-peace-sans;
       margin: 0;
+      height: 90px;
+
+      img{
+        @include scale(1);
+      }
 
       &:nth-child(2){
         margin-bottom: 0;

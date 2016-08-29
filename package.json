@@ -21,6 +21,8 @@
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-svgmin": "^1.2.2",
+    "i18n": "^0.8.3",
+    "i18n-express": "^1.0.3",
     "morgan": "^1.6.1",
     "serve-favicon": "^2.3.0"
   }

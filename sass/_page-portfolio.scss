@@ -26,7 +26,14 @@
     top: -20px;
 
     img{
-      width: 240px;
+      width: 170px;
+      position: relative;
+      top: 50px;
+
+      @media screen and (min-width: 360px){
+        width: 240px;
+        top: auto;
+      }
     }
 
 
@@ -132,25 +139,58 @@
     }
   }
 
-  .swiper-button-next{
-    display: none;
-    background: none;
-    right: -70px;
-    @include tablet-portrait{
-      display: block;
-    }
-  }
-
   .swiper-button-prev{
-    display: none;
+    display: block;
     background: none;
-    left: -90px;
+    left: -20px;
 
-    @include tablet-portrait{
-      display: block;
+    &:after{
+      content: "";
+      @include rotate(45);
+      width: 3px;
+      height: 27px;
+      top: 0;
+      background: $color-red-pink;
+      position: absolute;
+    }
+
+    &:before{
+      content: "";
+      @include rotate(-45);
+      width: 3px;
+      height: 27px;
+      bottom: 0;
+      background: $color-red-pink;
+      position: absolute;
     }
   }
 
+
+  .swiper-button-next{
+    display: block;
+    background: none;
+    right: -50px;
+
+    &:after{
+      content: "";
+      @include rotate(-45);
+      width: 3px;
+      height: 27px;
+      top: 0;
+      background: $color-red-pink;
+      position: absolute;
+    }
+
+    &:before{
+      content: "";
+      @include rotate(45);
+      width: 3px;
+      height: 27px;
+      bottom: 0;
+      background: $color-red-pink;
+      position: absolute;
+    }
+  }
 
   .project-data{
     @include flex(column, center, center);

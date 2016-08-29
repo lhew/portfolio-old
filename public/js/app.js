@@ -1,23 +1,19 @@
 $(function(){
 
-
   (function addClassName(){
     var classname = "";
 
-    if($.browser.ipad){
+    if($.browser.ipad)
       classname+= " ipad";
-    }
 
-    if($.browser.iphone){
+    if($.browser.iphone)
       classname+= " iphone";
-    }
 
     $("body").addClass(classname);
 
   })();
 
   var $mainNav = $(".main-nav-wrapper");
-
 
   var hideOverlay = function(){
     $(".nav-is-visible").removeClass('nav-is-visible');
@@ -41,7 +37,6 @@ $(function(){
     keyboardScrolling: false,
     onSlideLeave : function(anchorLink, index, slideIndex, direction, nextSlideIndex){
       hideOverlay();
-
 
       $.fn.fullpage.setAllowScrolling(true);
 
@@ -81,7 +76,17 @@ $(function(){
 
   $.waitForImages.hasImgProperties = ['backgroundImage'];
 
-  $('body').waitForImages().done(function() {
+  var $images = $("[data-src]");
+
+
+  $images.each(function(i, e){
+    $(e).attr('src', $(e).attr('data-src'))
+  });
+
+
+
+
+  $images.waitForImages().done(function() {
 
     var $img = $(".page-home .image-container");
 
@@ -97,8 +102,8 @@ $(function(){
             .remove();
 
       $("#temp-style").remove();
-      var src = $img.find("img").attr("src");
-      $img.find("img").removeAttr("src").delay(100).attr("src", src);
+      //var src = $img.find("img").attr("src");
+      //$img.find("img").removeAttr("src").delay(100).attr("src", src);
 
     }, 400);
 

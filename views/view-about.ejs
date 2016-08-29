@@ -2,37 +2,31 @@
       <div class="container">
         <div class="image-wrapper">
           <a href="javascript:;" class="button-back button-back-to-home">
-            <img src="img/arrow-left-white.svg" alt="Back to Home">
+            <img data-src="img/arrow-left-white.svg" alt="Back to Home">
             <span>Back</span>
           </a>
         </div>
         <a href="javascript:;" class="button-back button-back-to-home">
-          <img src="img/arrow-left-white.svg" alt="Back to Home">
+          <img data-src="img/arrow-left-white.svg" alt="Back to Home">
           <span>Back</span>
         </a>
         <section class="container-me">
             <div class="title-wrapper">
               <h2 class="main-title">Leonardo <br><strong>Almeida</strong></h2>
-              <small class="main-subtitle">Front-end Developer</small>
+              <small class="main-subtitle"><%= lang.about.role %></small>
             </div>
 
             <p>
-              I'm from Brazil and i work with IT for 10 years and
-              since 2008, i provide front-end development and
-              wordpress/mobile integrations.
+              <%- lang.about.text_paragraph_1%>
             </p>
 
             <p>
-              Passioned by design and programming, since i met
-              front-end development i felt i could bring these
-              two passions together and then, collaborate in a
-              creative way to develop better human connections
-              through web development.
+              <%= lang.about.text_paragraph_2%>
             </p>
 
             <a href="#" class="button button-skills">
-              <span>Skills and Experience</span>
-              <img src="img/arrow-caret-right.svg" alt="">
+              <span><%=lang.about.skills_experience_button %></span>
+              <img data-src="img/arrow-caret-right.svg" alt="">
             </a>
         </section>
       </div>
