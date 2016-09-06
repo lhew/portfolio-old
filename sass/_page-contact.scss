@@ -14,11 +14,10 @@
   }
 
   .social-networks{
-    margin-top: 40px;
     @include flex(row, center, center);
     img{
       margin: 0 10px;
-      width: 0;
+      width: 40px;
     }
   }
 
