@@ -27,12 +27,15 @@
 
     img{
       width: 170px;
-      position: relative;
-      top: 50px;
+      position: absolute;
+      top: calc(50% - -21px);
+      left: 50%;
+      margin-left: -80px;
 
       @media screen and (min-width: 360px){
         width: 240px;
-        top: auto;
+        margin-left: -120px;
+        top: calc(50% - -6px);
       }
     }
 
@@ -41,7 +44,9 @@
       font: normal em(95) $font-selima;
       top: 0px;
       img{
-        width: 240px;
+        width: 280px;
+        margin-left: -140px;
+        top: 26px;
       }
     }
 
@@ -49,6 +54,11 @@
       left: 20px;
       top: 25px;
       text-align: left;
+
+      img{
+        position: relative;
+        top: 2px;
+      }
     }
   }
 

@@ -25,7 +25,7 @@ module.exports = {
   "home" : {
     "subtitle" : "Desenvolvedor Front-end @ Recife",
     "see_it": "Sobre mim",
-    "portfolio": "Veja meu Portfolio"
+    "portfolio": "&nbsp;&nbsp; Meu Portfolio"
   },
 
   "portfolio": {
@@ -70,5 +70,8 @@ module.exports = {
   "portfolio" : {
     "title": "meu-trabalho.svg",
     "see_more": "Veja +"
+  },
+  "contact" : {
+    "headline" : "<p>Gostou do meu portfolio e tem um projeto legal em mente? Manda um email pra mim no leonardoalmeidamarques [at] gmail .com</p> <p class='or'>Ou</p> <p>Me siga nas redes sociais.</p></p>"
   }
 }

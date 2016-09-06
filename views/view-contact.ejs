@@ -1,30 +1,18 @@
 <div class="section page page-contact">
 
   <div class="container">
-    <img data-src="/img/header-get-in-touch.svg" alt="">
-    <form action="send-mail" method="post" id="sendmail">
-      <label for="contact-name">
-        <input type="text" id="contact-name" name="name" placeholder="Your name">
-      </label>
-
-      <label for="contact-email">
-        <input type="email" id="contact-email" name="email" placeholder="Your email">
-      </label>
-
-      <label for="contact-phone">
-        <input type="phone" id="contact-phone" name="phone" placeholder="Your telephone">
-      </label>
-
-      <label for="contact-message">
-        <textarea name="message" cols="30" rows="10" id="contact-message" placeholder="Leave a message"></textarea>
-      </label>
-
-      <button type="submit">
-        <span class="label-sended">Sent!</span>
-        <span class="label-loading"></span>
-        <span class="label-send">Send</span>
-      </button>
-    </form>
+    <img data-src="/img/<%=lang.idiom.current%>-header-get-in-touch.svg" alt="">
+    <div class="contact-headline">
+      <%-lang.contact.headline%>
+    </div>
+    <div class="social-networks">
+      <a href="https://www.facebook.com/lhew.marques" rel="external" target="_blank">
+        <img src="/img/icon-facebook.svg" alt="">
+      </a>
+      <a href="https://br.linkedin.com/in/lalmeida1985" rel="external" target="_blank">
+        <img src="/img/icon-linkedin.svg" alt="">
+      </a>
+    </div>
   </div>
 
 </div>

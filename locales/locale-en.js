@@ -70,5 +70,9 @@ module.exports = {
   "portfolio" : {
     "title": "my-work.svg",
     "see_more": "See me in action"
+  },
+
+  "contact": {
+        "headline" : "<p>You like my portfolio and have a good project in mind? Drop me a line at leonardoalmeidamarques [at] gmail .com</p> <p class='or'>Or</p> <p>Follow me on social networks</p></p>"
   }
 }
