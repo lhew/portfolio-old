@@ -1,6 +1,5 @@
 Portfolio
 ------------
---------
 
 It was done under the following technologies:
 
