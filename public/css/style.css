@@ -234,8 +234,8 @@ p strong {
   display: none;
   width: 20px;
   position: fixed;
-  right: 40px;
-  top: 27px;
+  right: 25px;
+  top: 23px;
   z-index: 51;
 }
 
@@ -4094,7 +4094,6 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-contact .social-networks {
-  margin-top: 40px;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -4246,7 +4245,7 @@ body.ready .page-home .button-more-content img {
 
 .page-skills .scroll-container {
   width: 100%;
-  height: calc(100vh - 176px);
+  height: calc(100vh - 216px);
   overflow: auto;
   opacity: 1;
   overflow-x: hidden;
@@ -4264,14 +4263,18 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-skills aside {
-  height: 100%;
-  background: #fff;
-  position: relative;
-  width: 0;
+  width: 100px;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 @media screen and (min-width: 768px) {
   .page-skills aside {
+    height: 100%;
+    position: relative;
+    background: #fff;
     width: 100%;
     max-width: 33%;
     padding-right: 25px;
@@ -4279,24 +4282,56 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-skills aside .button-back {
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
   position: absolute;
-  bottom: 57px;
   right: auto;
-  left: 9px;
+  left: 7px;
+  top: 142px;
+  width: 146px;
+  z-index: 3;
+}
+
+.page-skills aside .button-back img {
+  display: none;
+}
+
+.page-skills aside .button-back .mobile-only {
+  display: inline-block;
+}
+
+.page-skills aside .button-back .tablet {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
   .page-skills aside .button-back {
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    width: auto;
+    bottom: 57px;
     right: 30px;
     left: auto;
     top: 10%;
     bottom: auto;
   }
+  .page-skills aside .button-back .mobile-only {
+    display: none;
+  }
+  .page-skills aside .button-back .tablet {
+    display: inline-block;
+  }
 }
 
 .page-skills aside .main-title {
   color: #ffffff;
-  margin: 113px 0 0 40px;
+  margin: 113px 0 0 20px;
   position: relative;
   z-index: 10;
   width: 100vh;
@@ -4387,20 +4422,20 @@ body.ready .page-home .button-more-content img {
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-start;
-  height: 176px;
+  height: 216px;
   width: 100%;
   background: #fb385f;
   color: #ffffff;
-  padding-left: 40px;
+  padding-left: 20px;
   padding-bottom: 7px;
   font: 300 0.625em "Roboto";
   text-transform: uppercase;
   letter-spacing: 0.0625em;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .page-skills .skills-experience-header {
-    padding-left: 100px;
+    padding-left: 40px;
   }
 }
 
@@ -4429,17 +4464,18 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-skills .skills-experience-toggle .back-arrow {
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
   position: relative;
   display: inline-block;
   width: 25px;
   height: 25px;
-  margin-right: -10px;
-  margin-left: 8px;
+  margin-right: 0px;
+  margin-left: -2px;
+  top: -13px;
 }
 
 .page-skills .skills-experience-toggle .back-arrow:after {
@@ -4465,10 +4501,16 @@ body.ready .page-home .button-more-content img {
   width: 100%;
   color: #707170;
   max-width: 93%;
-  padding-right: 40px;
+  padding-right: 20px;
   margin-top: 28px;
   margin-bottom: 100px;
-  margin-left: 40px;
+  margin-left: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-skills .experience-list {
+    margin-left: 40px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -4476,7 +4518,7 @@ body.ready .page-home .button-more-content img {
     max-width: 550px;
     padding-right: 30px;
     margin-top: 45px;
-    margin-left: 100px;
+    margin-left: 20px;
   }
 }
 
@@ -4569,7 +4611,7 @@ body.ready .page-home .button-more-content img {
 
 @media screen and (min-width: 768px) {
   .page-skills .skills-container .scroll-content {
-    padding: 49px 102px;
+    padding: 49px 40px;
   }
 }
 
@@ -4655,13 +4697,13 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-skills .animating-to-skills .skills-container .skills-experience-header {
-  height: 176px;
-  padding: 0 0 7px 38px;
+  height: 216px;
+  padding: 0 0 7px 18px;
 }
 
 @media screen and (min-width: 768px) {
   .page-skills .animating-to-skills .skills-container .skills-experience-header {
-    padding: 0 0 7px 100px;
+    padding: 0 0 7px 40px;
   }
 }
 
@@ -4727,7 +4769,7 @@ body.ready .page-home .button-more-content img {
   -ms-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  height: 176px;
+  height: 216px;
 }
 
 .page-skills .animating-to-experience .experience-container .skills-experience-header .skills-experience-toggle {

@@ -84,13 +84,12 @@ $(function(){
   });
 
 
-
-
   $images.waitForImages().done(function() {
 
     var $img = $(".page-home .image-container");
 
     $(".preloader-wrapper").css("top", "-100vh");
+
 
     setTimeout(function(){
       $(".preloader-wrapper")
@@ -113,8 +112,9 @@ $(function(){
       $img.addClass("loaded");
     }, 3000);
 
-   });
+  });
 
+/*
   var mySwiper = new Swiper('.swiper-container',{
     slidesPerView: 1,
     spaceBetween: 150,
@@ -136,7 +136,7 @@ $(function(){
       }
     }
   });
-
+*/
   var cascadeOpacity = function($parentRef, ratio, opacity){
 
     $parentRef.find("*").each(function(i, e){
@@ -178,7 +178,7 @@ $(function(){
     $.fn.fullpage.moveTo(2);
   });
 
-    $(".nav-contact").on("click", function(e){
+  $(".nav-contact").on("click", function(e){
     e.preventDefault();
     changeMenu($(this));
     $.fn.fullpage.moveTo(3);
@@ -298,8 +298,6 @@ $(function(){
         else
           hideOverlay();
 
-
-
       });
     });
 
@@ -307,33 +305,4 @@ $(function(){
       ( !$(event.target).is('.cd-nav-trigger') && !$(event.target).is('.cd-nav-trigger span') ) && stretchyNavs.removeClass('nav-is-visible');
     });
   }
-
-
-    $("#sendmail").validate({
-      rules: {
-        name : "required",
-        email: {required: true, email: true},
-        message: "required"
-      },
-      submitHandler : function(form){
-        var dados = $(form).serialize();
-          $.ajax({
-            type: 'POST',
-            url: '',
-            dataType: 'json',
-            data: dados,
-            success: function(retorno){
-              if( retorno.tipo == 'sucesso' ){
-                $('#sendmail')[0].reset();
-               // alert(retorno.mensagem);
-              }
-            },
-            error: function(){
-              alert('An error occurred while sending your form. Try again later.')
-            }
-          });
-        return false;
-      }
-    });
-
 });
