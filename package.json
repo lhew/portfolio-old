@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "postinstall": "bower install && gulp build",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "karma start karma.conf.js"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
@@ -21,7 +22,17 @@
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-svgmin": "^1.2.2",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-jasmine": "^0.3.6",
+    "karma-jasmine-ajax": "^0.1.13",
+    "karma-jasmine-jquery": "^0.1.1",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-safari-launcher": "^0.1.1",
     "morgan": "^1.6.1",
+    "phantomjs": "^2.1.7",
     "serve-favicon": "^2.3.0"
   }
 }
