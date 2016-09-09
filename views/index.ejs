@@ -1,0 +1,89 @@
+<% include header %>
+
+<div id="fullpage">
+
+  <div class="section">
+    <% include view-home %>
+    <% include view-about %>
+    <% include view-skills %>
+  </div>
+  <% include view-portfolio %>
+  <% include view-contact %>
+</div>
+<div class="main-nav-wrapper">
+  <div class="logo-glass-wrapper">
+    <% include glass %>
+  </div>
+  <div id="menu-overlay"></div>
+  <nav class="cd-stretchy-nav transform-nav">
+    <a class="cd-nav-trigger" href="javascript:void(0);">
+      Menu
+      <span></span>
+    </a>
+    <ul>
+      <li><a href="javascript:;" class="active nav-home"><span><%= lang.menu.home %></span></a></li>
+      <li><a href="javascript:;" class="nav-about"><span><%= lang.menu.about %></span></a></li>
+      <li><a href="javascript:;" class="nav-skills-experience"><span><%= lang.menu.skills_experience %></span></a></li>
+      <li><a href="javascript:;" class="nav-portfolio"><span><%= lang.menu.portfolio %></span></a></li>
+      <li><a href="javascript:;" class="nav-contact"><span><%= lang.menu.contact %></span></a></li>
+      <li><a href="/<%= lang.idiom.oppositeIdiom.link %>" class="nav-language-<%=lang.idiom.oppositeIdiom.link%>"><span><%= lang.idiom.oppositeIdiom.label %></span></a></li>
+    </ul>
+    <span aria-hidden="true" class="stretchy-nav-bg"></span>
+  </nav>
+  <div class="main-nav">
+   <!-- <a href="javascript:;" class="menu-icon">
+      <span>Menu</span>
+    </a>-->
+<!--
+    <nav>
+      <a href="#">Home</a>
+      <a href="#home/about">About</a>
+      <a href="#home/skills-and-experience">Skills</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+-->
+
+  </div>
+
+<% /*
+  <a href="http://github.com/lhew/portfolio" class="button-download-my-code">
+    <span>
+      Hey, you can <br>
+      download my  <br>
+      code if you <br>
+      want
+    </span>
+    <figure>
+      <img src="img/share-icon.svg" alt="Get this code at github">
+    </figure>
+  </a>
+  */ %>
+</div>
+
+<a href="javascript:;" class="close-button">
+  <img src="/img/delete.svg" alt="">
+</a>
+<div class="preloader-wrapper" style="display:block; opacity: 1; position:fixed; left:0; top:0; width:100%; height: 100%; ">
+
+  <div class="load-wrapper typo-wait" style="position: absolute; left: 50%; top: 50%; margin: -20px -40px; text-align: center;">
+  <p style="margin-bottom: 5px; text-indent: 8px; font-family: sans-serif; text-transform: uppercase; font-size: 10px; letter-spacing: 0;">wait a sec...</p>
+  <% include glass %>
+  </div>
+
+  <svg version="1.1" id="L9" style="display:none;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" class="preloader">
+      <path d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+        <animateTransform
+           attributeName="transform"
+           attributeType="XML"
+           type="rotate"
+           dur="0.6s"
+           from="0 50 50"
+           to="360 50 50"
+           repeatCount="indefinite" />
+    </path>
+  </svg>
+</div>
+<% include view-portfolio-detail %>
+<% include footer %>

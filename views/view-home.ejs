@@ -1,0 +1,47 @@
+    <div class="page page-home slide" >
+
+        <div class="mini-nav-container">
+          <div class="navigator-stack">
+            <a href="#" class="nav-to" data-page=".page-home"><span><%= lang.menu.home %></span></a>
+            <a href="#" class="nav-to" data-page=".page-portfolio"><span><%= lang.menu.portfolio %></span></a>
+            <a href="#" class="nav-to" data-page=".page-contact"><span><%= lang.menu.contact %></span></a>
+          </div>
+          <div class="navigator-stack">
+            <a href="#" class="nav-to" data-page=".page-about"><span><%= lang.menu.about %></span></a>
+          </div>
+          <div class="navigator-stack">
+            <a href="#" class="nav-to" data-page=".page-skills"><span><%= lang.menu.skills_experience %></span></a>
+          </div>
+        </div>
+
+        <div class="container" id="main-container">
+          <section class="main-splash-container" id="main-splash-container">
+            <div class="image-container">
+              <img data-src="img/logo.gif" alt="that's me :D" class="main-logo" id="main-logo">
+            </div>
+            <div class="title-container">
+              <p class="base-title">
+                <img data-src="/img/title-hello-<%=lang.idiom.current%>.svg" alt="">
+              </p>
+              <p class="base-title">
+                <img data-src="/img/title-i-am-leo-<%=lang.idiom.current%>.svg" alt="">
+              </p>
+              <small class="base-subtitle">
+                <%= lang.home.subtitle %>
+              </small>
+            </div>
+            <div class="button-container">
+              <a href="#" class="button button-more">
+                <span class="more-label"><%= lang.home.see_it %></span>
+                <img data-src="img/arrow-caret-white.svg" alt="" class="more-arrow">
+              </a>
+            </div>
+          </section>
+
+        </div>
+
+        <a href="javascript:;" class="button-more-content">
+          <span><%- lang.home.portfolio %></span>
+          <img data-src="img/arrow-caret-down-white.svg" alt="" class="more-arrow">
+        </a>
+    </div>

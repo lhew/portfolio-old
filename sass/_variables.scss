@@ -1,0 +1,53 @@
+//App Colors
+$color-white:                #ffffff;
+$color-black:                #000000;
+$color-red-pink:             #fb385f;
+$color-old-rose:             #aa2742;
+$color-grape:                #3d1e39;
+$color-disco:                #822746;
+$color-palatinate-purple:    #8e3a83;
+$color-medium-grey:          #707170;
+$color-light-grey:           #fafafa;
+$color-rum-swizzle:          #eff4d6;
+$color-bordeaux:             #591321;
+
+//Responsive gutter helper
+$gutter:                     15px;
+
+
+//Breakpoint sizes
+$size-tablet-portrait:       768px;
+$size-tablet-landscape:      1024px;
+$size-desktop-md:            1280px;
+$size-desktop-lg:            1440px;
+$size-desktop-xl:            1920px;
+
+
+//Breakpoint limits
+$tablet-portrait:            "min-width: #{$size-tablet-portrait}";
+$tablet-landscape:           "min-width: #{$size-tablet-landscape}";
+$desktop-md:                 "min-width: #{$size-desktop-md}";
+$desktop-lg:                 "min-width: #{$size-desktop-lg}";
+$desktop-xl:                 "min-width: #{$size-desktop-xl}";
+
+
+//Fonts
+$font-peace-sans:            "peace-sans";
+$font-moon:                  "moon";
+$font-moon-bold:             "moon-bold";
+$font-selima:                "selima";
+$font-montserrat:            "montserrat";
+$font-montserrat-bold:       "montserrat-bold";
+$font-roboto-light:          "roboto-light";
+$font-roboto-regular:        "roboto-regular";
+$font-roboto-bold:           "roboto-bold";
+$font-roboto:                "Roboto";
+
+
+//Easings
+$ease-out-quint:             cubic-bezier(0.230, 1.000, 0.320, 1.000);
+$ease-in-out-quint:          cubic-bezier(0.860, 0.000, 0.070, 1.000);
+
+
+//Font context (for em() calculation)
+$font-browser-context:       16;

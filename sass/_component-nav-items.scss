@@ -1,0 +1,112 @@
+body{
+  .logo-glass-wrapper{
+    @include transition(all 0.3s ease 1s);
+    top: -48px;
+
+    &:before{
+      @include transition(all 0.3s ease 1.1s);
+      top: -10px;
+    }
+
+    &:after{
+      @include transition(all 0.3s ease 1.2s);
+      top: -10px;
+    }
+  }
+
+  .menu-icon{
+    &:before{
+      @include transition(all 0.3s ease 1.1s);
+      top: -40px;
+    }
+
+      @include transition(all 0.3s ease 1.15s);
+      @include translateY(-70px);
+
+    &:after{
+      @include transition(all 0.3s ease 1.25s);
+      top: -100px;
+    }
+  }
+  &.ready{
+
+    .logo-glass-wrapper{
+      top: 22px;
+
+      &:before{
+        top: 31px;
+      }
+
+      &:after{
+        top: 25px;
+      }
+    }
+
+    &.iphone, &.ipad{
+
+      .logo-glass-wrapper{
+        top: 75px;
+
+        &:before{
+          top: 84px;
+        }
+
+        &:after{
+          top: 78px;
+        }
+      }
+    }
+
+    .menu-icon{
+
+        &:before{
+          top: -4px;
+        }
+
+          @include translateY(0);
+
+        &:after{
+          top: 8px;
+        }
+    }
+
+    .main-logo{
+      @include translateY(0);
+    }
+
+    .page-home{
+      .base-title{
+        &:nth-child(1){
+          @include translateY(0);
+          opacity: 1;
+        }
+
+        &:nth-child(2){
+          @include translateY(0);
+          opacity: 1;
+        }
+      }
+      .base-subtitle{
+        @include translateY(0);
+        top: 5px;
+        opacity: 1;
+      }
+
+      .button-more{
+        @include translateX(0);
+        opacity: 1;
+      }
+
+      .button-more-content{
+        span{
+          @include translateY(0);
+          opacity: 1;
+        }
+        img{
+          @include translateY(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

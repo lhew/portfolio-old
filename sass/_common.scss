@@ -1,0 +1,183 @@
+@import "core";
+@import "yui-reset";
+
+@include font-face($font-peace-sans, "../fonts/PeaceSans");
+@include font-face($font-moon, "../fonts/Moon-Light");
+@include font-face($font-moon-bold, "../fonts/Moon-Bold");
+@include font-face($font-montserrat, "../fonts/Montserrat-Regular");
+@include font-face($font-montserrat-bold, "../fonts/Montserrat-bold");
+
+html{
+  height: 100%;
+  font-family: $font-moon;
+}
+
+body{
+  overflow: hidden;
+  &.ready{
+    overflow: auto;
+  }
+}
+
+.fp-controlArrow{
+  display: none!important;
+}
+
+.general-wrapper{
+  overflow: hidden;
+}
+
+a{
+  &, &:visited{
+    text-decoration: none;
+    color: $color-red-pink;
+  }
+}
+
+p{
+  color: #757575;
+  line-height: 1.6em;
+  font-weight: lighter;
+  margin-bottom: 1.5em;
+  font-size: 0.8em;
+  strong{
+      font-weight: bold;
+  }
+
+  @include tablet-portrait{
+    font-size: 1em;
+  }
+}
+
+.focus-workaround{
+  opacity: 0;
+}
+
+.site-wrapper{
+  overflow: hidden;
+  @include flex();
+  &.animatable{
+    @include transition(all 0.8s $ease-in-out-quint);
+  }
+}
+
+.close-button{
+  display: none;
+  width: 20px;
+  position: fixed;
+  right: 40px;
+  top: 27px;
+  z-index: 51;
+
+  img{
+    width: 100%;
+  }
+}
+
+#menu-overlay{
+  @include transition();
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background: rgba(0,0,0,0.8);
+  opacity: 0;
+
+  &.showing{
+    opacity: 1;
+  }
+}
+
+
+.lock-for-popup{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+  .page-home{
+    background: $color-white;
+
+    img{
+      display: none;
+    }
+  }
+}
+
+.page-group{
+  @include flex(column);
+}
+
+.button-back{
+  position: absolute;
+  top: 10%;
+
+  span{
+    font: normal em(13) $font-moon-bold;
+    color: $color-grape;
+    margin: 0 0 0 10px;
+  }
+}
+
+.page{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  @include flex();
+  @include clear();
+}
+
+.scroll-container{
+  height: 100%;
+}
+
+.preloader{
+  @include scale(0.6);
+  fill: $color-red-pink;
+  width: 100px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 51;
+  margin: -50px;
+}
+
+.preloader-wrapper{
+  @include transition();
+  background: $color-white;
+  position: fixed;
+  display: none;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 39;
+}
+
+.preloader-wrapper-show{
+  display: block;
+  opacity: 1;
+}
+
+
+::-webkit-scrollbar
+{
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
