@@ -1,1 +1,5 @@
-var About = {}
+var About = function(){
+  this.init = function(){
+
+  }
+}

@@ -30,6 +30,7 @@ $(function(){
 
 
 
+/*
   $('#fullpage').fullpage({
     scrollingSpeed: 700,
     normalScrollElements: "#page-skills",
@@ -73,6 +74,22 @@ $(function(){
     }
 
   });
+  */
+
+
+  var navigation       = Navigation.getInstance();
+  var utils            = new Utils();
+  var fullpage         = new FullPage();
+  var home             = new Home();
+  var about            = new About();
+  var skills           = new Skills();
+  var portfolio        = new Portfolio();
+  var site             = new SiteBootstrap(utils, fullpage, navigation, home, about, skills, portfolio);
+
+  site.registerNavigationTriggers();
+  site.bindMenuEvents();
+  site.initFullPage();
+  site.initPortfolioSwiper();
 
   $.waitForImages.hasImgProperties = ['backgroundImage'];
 
@@ -114,6 +131,7 @@ $(function(){
 
   });
 
+
 /*
   var mySwiper = new Swiper('.swiper-container',{
     slidesPerView: 1,
@@ -151,6 +169,7 @@ $(function(){
 
   $(".portfolio-presentation-container").clone().addClass("fixed").prependTo(".portfolio-content");
   $(".portfolio-presentation-container").first().addClass("main-presentation");
+
 
   $(".logo-glass-wrapper, .nav-home").on("click", function(){
     $.fn.fullpage.moveTo(1,0);
@@ -217,7 +236,7 @@ $(function(){
           $(".content-wrapper").removeClass("animating-to-skills animating-to-experience");
       }, 1100);
   });
-
+/*
   $(".swiper-slide").on("click", function(e){
 
     e.stopPropagation();
@@ -279,7 +298,7 @@ $(function(){
     $pagePortfolio.removeClass("showing");
 
   });
-
+*/
   $("#menu-overlay, nav li a").on("click", hideOverlay);
 
   if( $('.cd-stretchy-nav').length > 0 ) {

@@ -1,1 +1,5 @@
-var Home = {}
+var Home = function(){
+  this.init = function(){
+
+  }
+}
