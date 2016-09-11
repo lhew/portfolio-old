@@ -35,7 +35,7 @@ module.exports = {
   "about": {
     "back": "Back",
     "role" : "Front-end Developer",
-    "text_paragraph_1": "<em>Carioca</em> by birth and <em>Recifense</em> by heart, i work with IT over 10 years and since 2008, provide front-end development integrations amongst several technologies such as PHP, .net and  Java.",
+    "text_paragraph_1": "<em>Carioca</em> by birth and <em>Recifense</em> by heart, i work with IT over 10 years and since 2008, provide front-end integrations amongst several technologies such as PHP, .net and  Java.",
     "text_paragraph_2": "Passioned by design and programming, since i met front-end development i felt capable to bring these two passions together and then, collaborate in a creative way to develop better human connections through web development.",
     "skills_experience_button": "Skills and Experience"
   },
