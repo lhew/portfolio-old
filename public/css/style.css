@@ -165,10 +165,12 @@ a {
 html {
   height: 100%;
   font-family: "moon";
+  position: fixed;
 }
 
 body {
   overflow: hidden;
+  position: fixed;
 }
 
 body.ready {
@@ -1803,6 +1805,10 @@ keyframes
   -ms-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.main-nav-wrapper .logo-glass-wrapper {
+  cursor: pointer;
 }
 
 .main-nav-wrapper.darken-logo .logo-glass-wrapper path {
@@ -4250,6 +4256,7 @@ body.ready .page-home .button-more-content img {
   opacity: 1;
   overflow-x: hidden;
   position: relative;
+  padding-bottom: 40px;
 }
 
 .page-skills .scroll-container:after {
@@ -4435,7 +4442,7 @@ body.ready .page-home .button-more-content img {
 
 @media screen and (min-width: 768px) {
   .page-skills .skills-experience-header {
-    padding-left: 40px;
+    padding-left: 70px;
   }
 }
 
@@ -4509,7 +4516,7 @@ body.ready .page-home .button-more-content img {
 
 @media screen and (min-width: 768px) {
   .page-skills .experience-list {
-    margin-left: 40px;
+    margin-left: 70px;
   }
 }
 
@@ -4518,7 +4525,6 @@ body.ready .page-home .button-more-content img {
     max-width: 550px;
     padding-right: 30px;
     margin-top: 45px;
-    margin-left: 20px;
   }
 }
 
@@ -4606,12 +4612,12 @@ body.ready .page-home .button-more-content img {
 }
 
 .page-skills .skills-container .scroll-content {
-  padding: 49px 0 49px 40px;
+  padding: 49px 0 49px 70px;
 }
 
 @media screen and (min-width: 768px) {
   .page-skills .skills-container .scroll-content {
-    padding: 49px 40px;
+    padding: 49px 70px;
   }
 }
 
@@ -4703,7 +4709,7 @@ body.ready .page-home .button-more-content img {
 
 @media screen and (min-width: 768px) {
   .page-skills .animating-to-skills .skills-container .skills-experience-header {
-    padding: 0 0 7px 40px;
+    padding: 0 0 7px 70px;
   }
 }
 

@@ -2,41 +2,39 @@ var Portfolio = function(){
 
   var _this = this;
   _this.bindDetailEvents = function(){
-      $(".swiper-slide").on("click", function(e){
+    $(".swiper-slide").on("click", function(e){
 
-    e.stopPropagation();
+      e.stopPropagation();
 
-    if(!$(this).hasClass("swiper-slide-active") || $(this).attr('data-detail') == undefined)
-      return;
+      if(!$(this).hasClass("swiper-slide-active") || $(this).attr('data-detail') == undefined)
+        return;
 
-    $.fn.fullpage.setAllowScrolling(false);
+      $.fn.fullpage.setAllowScrolling(false);
 
-    var $portfolioWrapper = $(".portfolio-wrapper"),
-        $preloaderWrapper = $(".preloader-wrapper"),
-        $pagePortfolio    = $(".page-portfolio"),
-        $closeButton      = $(".close-button"),
-        $mainNav          = $(".main-nav-wrapper"),
+      var $portfolioWrapper = $(".portfolio-wrapper"),
+          $preloaderWrapper = $(".preloader-wrapper"),
+          $pagePortfolio    = $(".page-portfolio"),
+          $closeButton      = $(".close-button"),
+          $mainNav          = $(".main-nav-wrapper"),
+          urlPath           = "/partials/" + $(this).attr('data-detail') + ".html";
 
-        urlPath           = "/partials/" + $(this).attr('data-detail') + ".html";
+      $mainNav.addClass("loading-content");
+      $pagePortfolio.addClass("showing");
+      $preloaderWrapper.fadeTo(300, 1);
+      $portfolioWrapper.css('display', 'block')
 
-    $mainNav.addClass("loading-content");
-    $pagePortfolio.addClass("showing");
-    $preloaderWrapper.fadeTo(300, 1);
-    $portfolioWrapper.css('display', 'block')
+      $.ajax(urlPath, {
+        success : function(response){
 
-    $.ajax(urlPath, {
-      success : function(response){
-
-        $portfolioWrapper.append(response)
-        $portfolioWrapper.waitForImages().done(function() {
-          $closeButton.fadeTo(1,300);
-          $portfolioWrapper.css('display', 'block');
-          $portfolioWrapper.addClass('show');
-        });
-
-      }
+          $portfolioWrapper.append(response)
+          $portfolioWrapper.waitForImages().done(function() {
+            $closeButton.fadeTo(1,300);
+            $portfolioWrapper.css('display', 'block');
+            $portfolioWrapper.addClass('show');
+          });
+        }
+      });
     });
-  });
   }
 
 

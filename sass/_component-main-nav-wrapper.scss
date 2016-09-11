@@ -2,6 +2,10 @@
   @include translateY(-100vh);
   @include transition();
 
+  .logo-glass-wrapper{
+    cursor: pointer;
+  }
+
   &.darken-logo{
     .logo-glass-wrapper{
 

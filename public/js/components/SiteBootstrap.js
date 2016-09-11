@@ -1,14 +1,16 @@
 var SiteBootstrap = function(utils, fullPage, navigation, home, about, skills, portfolio){
 
   var $mainNav = $(".main-nav-wrapper");
+  var _this = this;
 
-  this.registerNavigationTriggers = function(){
+  _this.registerNavigationTriggers = function(){
     navigation.registerAction('home', function(){
       utils.changeMenu($(".nav-home"));
       $mainNav.removeClass("darken-logo darken-menu");
     });
 
     navigation.registerAction('about', function(){
+
       utils.changeMenu($(".nav-about"));
       $mainNav.removeClass("darken-logo");
     });
@@ -22,51 +24,71 @@ var SiteBootstrap = function(utils, fullPage, navigation, home, about, skills, p
     });
 
     navigation.registerAction('portfolio', function(){
-      $mainNav.removeClass("darken-logo darken-menu");
+      $mainNav.addClass("darken-logo");
       utils.changeMenu($(".nav-portfolio"));
     });
 
     navigation.registerAction('contact', function(){
       utils.changeMenu($(".nav-contact"));
+      $mainNav.addClass("darken-logo");
     });
   };
 
-  this.bindMenuEvents = function(){
-    $(document).on('click', ".nav-home", 'home', navigation.goto);
-    $(document).on("click", ".nav-about", 'about', navigation.goto);
-    $(document).on("click", ".nav-skills-experience", 'skills', navigation.goto);
-    $(document).on("click", ".nav-portfolio", 'portfolio', navigation.goto);
-    $(document).on("click", ".nav-contact", 'contact', navigation.goto);
-  }
-
-
-  this.initFullPage = function(){
-
-    fullPage.addScreenTransition('slides', 0, function(){
+  _this.bindMenuEvents = function(){
+    $(document).on('click', ".nav-home", function(){
+      $.fn.fullpage.moveTo(1,1);
       navigation.goto('home');
+    });
+    $(document).on("click", ".nav-about", function(){
+      $.fn.fullpage.moveTo(1,2)
+      navigation.goto('about');
+    });
+    $(document).on("click", ".nav-skills-experience", function(){
+      $.fn.fullpage.moveTo(1,3)
+      navigation.goto('skills');
+    });
+    $(document).on("click", ".nav-portfolio", function(){
+      $.fn.fullpage.moveTo(2);
+      navigation.goto('portfolio');
+    });
+    $(document).on("click", ".nav-contact", function(){
+      $.fn.fullpage.moveTo(3);
+      navigation.goto('contact');
+    });
+  };
+
+  _this.initFullPage = function(){
+
+    fullPage.addScreenTransition('sections', 1, function(){
+      navigation.goto({data: 'home'});
     });
 
     fullPage.addScreenTransition('slides', 1, function(){
-      navigation.goto('about');
+      navigation.goto({data: 'about'});
     });
 
     fullPage.addScreenTransition('slides', 2, function(){
-      navigation.goto('skills');
-    });
-
-    fullPage.addScreenTransition('sections', 1, function(){
-      navigation.goto('portfolio');
+      navigation.goto({data: 'skills'});
     });
 
     fullPage.addScreenTransition('sections', 2, function(){
-      navigation.goto('contact');
+      navigation.goto({data: 'portfolio'});
     });
 
+    fullPage.addScreenTransition('sections', 3, function(){
+      navigation.goto({data: 'contact'});
+    });
 
     fullPage.initFullPage($("#fullpage"));
-  }
+  };
 
-  this.initPortfolioSwiper = function(){
+  _this.initUtils = function(){
+    utils.addMobileClasses();
+    utils.hideOverlay();
+    utils.startMenuBehavior();
+  };
+
+  _this.initPortfolioSwiper = function(){
     var mySwiper = new Swiper('.swiper-container',{
       slidesPerView: 1,
       spaceBetween: 150,
@@ -75,7 +97,6 @@ var SiteBootstrap = function(utils, fullPage, navigation, home, about, skills, p
       prevButton: ".swiper-button-prev",
       onInit: portfolio.init,
       onSlideChangeEnd : function(){
-
         var $projectContainer = $(".swiper-slide-active").find(".project-container"),
             img = $projectContainer.attr("data-bg"),
             loaded = $projectContainer.hasClass("loaded");
@@ -91,8 +112,24 @@ var SiteBootstrap = function(utils, fullPage, navigation, home, about, skills, p
     });
   }
 
+  _this.init = function(){
+    var $images = $("[data-src]");
 
-  this.init = function(){
+    $images.each(function(i, e){
+      $(e).attr('src', $(e).attr('data-src'))
+    });
 
+    $images.waitForImages().done(function() {
+
+      _this.registerNavigationTriggers();
+      _this.bindMenuEvents();
+      _this.initFullPage();
+      _this.initPortfolioSwiper();
+      _this.initUtils();
+      home.init();
+      about.init();
+      skills.init();
+
+    });
   }
 }

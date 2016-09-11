@@ -13,6 +13,7 @@
     opacity: 1;
     overflow-x: hidden;
     position: relative;
+    padding-bottom: 40px;
 
     &:after{
       content: "";
@@ -170,7 +171,7 @@
     letter-spacing: em(1);
 
     @include tablet-portrait{
-      padding-left: 40px;
+      padding-left: 70px;
     }
   }
 
@@ -226,14 +227,13 @@
     margin-left: 20px;
 
     @include tablet-portrait{
-      margin-left: 40px;
+      margin-left: 70px;
     }
 
     @include tablet-landscape{
       max-width: 550px;
       padding-right: 30px;
       margin-top: 45px;
-      margin-left: 20px;
     }
 
     @include desktop-md{
@@ -303,10 +303,10 @@
     }
 
     .scroll-content{
-      padding: 49px 0 49px 40px;
+      padding: 49px 0 49px 70px;
 
       @include tablet-portrait{
-        padding: 49px 40px;
+        padding: 49px 70px;
       }
     }
 
@@ -391,7 +391,7 @@
         padding: 0 0 7px 18px;
 
         @include tablet-portrait{
-          padding: 0 0 7px 40px;
+          padding: 0 0 7px 70px;
 
         }
 

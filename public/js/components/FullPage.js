@@ -17,6 +17,7 @@ var FullPage = function(){
   };
 
   _this.triggerScreenLeaveAt = function(screenType, index){
+    $.fn.fullpage.setAllowScrolling(true);
     if(checkScreenInput(screenType) && typeof(index) == "number"){
       screens[screenType].map(function(slideLeaveAction){
         if(slideLeaveAction.index == index)
