@@ -1,5 +1,5 @@
 
-describe("Site tests", function(){
+describe("Navigation Tests", function(){
   it("should return the same intance of Navigation (singleton)", function(){
     var navInstance1 = new Navigation.getInstance();
     var navInstance2 = new Navigation.getInstance();
@@ -14,12 +14,9 @@ describe("Site tests", function(){
     expect(mockObj.actionName).toEqual(returningObj.actionName);
 
   });
-
-  it("should return an Swiper Instance", function(){
-    var p = new Portfolio();
-      expect(p.startSwiper(".swiper-container")).not.toBe(undefined);
-  });
+})
 
 
-});
+
+
 

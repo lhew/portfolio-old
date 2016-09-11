@@ -13,28 +13,24 @@ var Navigation = (function(){
 
   var createInstance = function (argument) {
     return {
-
       registerAction : function(actionName, callback){
         var found = false;
         searchAction(actionName, function(){
           found = true;
         });
 
-        if(!found)
+        if(!found){
           actions.push({actionName : actionPrefix + actionName, actionCallback: callback});
+          $(document).on(actionPrefix + actionName, callback);
+        }
 
         return actions;
       },
 
-      goto: function(actionName){
+      goto: function(event){
+        var actionName = actionPrefix + event.data;
         searchAction(actionName, function(){
-          $(document).trigger(actionPrefix + actionName);
-        });
-      },
-
-      dispatchEvents : function(){
-        actions.map(function(action){
-          $(document).on(actionPrefix + action.actionName, action.callback);
+          $(document).trigger(actionName);
         });
       }
     }

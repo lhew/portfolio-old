@@ -1,7 +1,7 @@
 var FullPage = function(){
 
   var checkScreenInput = function(arg){
-    return (arg == 'screens' || arg == 'slides');
+    return (arg == 'sections' || arg == 'slides');
   }
   var screens = {
     slides : [],
@@ -9,16 +9,17 @@ var FullPage = function(){
   };
   var _this = this;
 
-  _this.setupOnSlideLeave = function(screenType, index, onSlideLeaveCallback){
+  _this.addScreenTransition = function(screenType, index, onSlideLeaveCallback){
     if(checkScreenInput(screenType) && typeof(index) == "number" && typeof(onSlideLeaveCallback) == "function"){
-      slides.push({index: index, action: onSlideLeaveCallback});
-      return slides;
+      screens[screenType].push({index: index, action: onSlideLeaveCallback});
+      return screens;
     }
   };
 
-  _this.triggerSlideLeaveAt = function(screenType, index){
+  _this.triggerScreenLeaveAt = function(screenType, index){
+    $.fn.fullpage.setAllowScrolling(true);
     if(checkScreenInput(screenType) && typeof(index) == "number"){
-      slides.map(function(slideLeaveAction){
+      screens[screenType].map(function(slideLeaveAction){
         if(slideLeaveAction.index == index)
             slideLeaveAction.action();
       });
@@ -34,11 +35,11 @@ var FullPage = function(){
       keyboardScrolling: false,
 
       onSlideLeave : function(anchorLink, index, slideIndex, direction, nextSlideIndex){
-        _this.triggerSlideLeaveAt('slides', nextSlideIndex);
+        _this.triggerScreenLeaveAt('slides', nextSlideIndex);
       },
 
       onLeave: function(index, nextIndex, direction){
-        _this.triggerSlideLeaveAt('slides', nextSlideIndex);
+        _this.triggerScreenLeaveAt('sections', nextIndex);
       }
     });
   }
