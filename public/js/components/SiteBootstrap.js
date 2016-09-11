@@ -36,15 +36,15 @@ var SiteBootstrap = function(utils, fullPage, navigation, home, about, skills, p
 
   _this.bindMenuEvents = function(){
     $(document).on('click', ".nav-home", function(){
-      $.fn.fullpage.moveTo(1,1);
+      $.fn.fullpage.moveTo(1);
       navigation.goto('home');
     });
     $(document).on("click", ".nav-about", function(){
-      $.fn.fullpage.moveTo(1,2)
+      $.fn.fullpage.moveTo(1,1)
       navigation.goto('about');
     });
     $(document).on("click", ".nav-skills-experience", function(){
-      $.fn.fullpage.moveTo(1,3)
+      $.fn.fullpage.moveTo(1,2)
       navigation.goto('skills');
     });
     $(document).on("click", ".nav-portfolio", function(){
