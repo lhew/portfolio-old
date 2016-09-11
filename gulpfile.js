@@ -50,6 +50,14 @@ gulp.task('concatjs', function() {
     './public/components/fullpage.js/dist/jquery.fullpage.min.js',
     './public/components/waitForImages/dist/jquery.waitforimages.min.js',
     './public/components/jquery.browser/dist/jquery.browser.min.js',
+    './public/js/components/Utils.js',
+    './public/js/components/Navigation.js',
+    './public/js/components/FullPage.js',
+    './public/js/components/Home.js',
+    './public/js/components/About.js',
+    './public/js/components/Portfolio.js',
+    './public/js/components/Skills.js',
+    './public/js/components/SiteBootstrap.js',
     './public/js/app.js'
     ])
     .pipe(concat('app.min.js'))
