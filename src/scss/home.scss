@@ -1,0 +1,18 @@
+.hero {
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 3em;
+    line-height: 1em;
+    br {
+      @media screen and (min-width: 400px) {
+        display: none;
+      }
+    }
+  }
+
+  p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+  }
+}
