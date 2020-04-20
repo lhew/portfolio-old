@@ -1,2 +1,1 @@
-import file from "./scss/essential.scss"
-console.log('loaded essential')
+import "./scss/core/essential.scss"

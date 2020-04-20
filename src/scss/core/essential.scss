@@ -1,0 +1,85 @@
+@import "core";
+
+body {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.2em 0;
+  text-align: center;
+  height: 100vh;
+  padding: 10em 1.5em 0;
+  justify-content: center;
+
+  @media screen and(min-width: 768px) {
+    margin-top: -7em;
+  }
+
+  h1, p {
+    margin: 0.2em 0;
+    color: #3c3c3c;
+  }
+}
+
+.img-wrapper {
+  opacity: 0.6;
+  display: grid;
+  grid-template: auto / auto auto auto;
+  gap: 0.5em;
+  margin-bottom: 1.7em;
+  margin-top: -16em;
+  
+  img {
+    width: 3em;
+    &:nth-child(2) {
+      width: 2.8em;
+      align-self: end;
+      margin: 0 0.7em 0 1em;
+    }
+
+
+    @include bp() {
+      width: 4em;
+      &:nth-child(2) {
+        width: 3.8em;
+      }
+    }
+  }
+
+  @include bp() {
+    margin-top: 0;
+  }
+
+  
+}
+.menu-wrapper {
+  $root: &;
+  position: fixed;
+  right: 1em;
+  top: -4em;
+  border-radius: 100%;
+  background: $color-primary;
+  color: white;
+  width: 3em;
+  height: 3em;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.15, 0.13, 0.2, 1.33);
+  z-index: 4;
+}
+
+main {
+  display: grid;
+}
+
+.home {
+  overflow: hidden;
+}

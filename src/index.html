@@ -6,20 +6,34 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <style id="fonts"></style>
-    <style>
-      inline_css_plugin{}
+    <style id="essential">
+    /*essential*/
     </style>
   </head>
   <body>
-    <div class="hero">
-      <div class="img-wrapper">
-        <img width="40" src="<%=require('./img/leo.svg')%>" alt="hello! i am leo" />
-        <img width="40" src="<%=require('./img/code.svg')%>" alt="a front-end engineer" />
-        <img width="40" src="<%=require('./img/holland.svg')%>" alt="Based in Utrecht, Netherlands." />
+    <div class="menu-wrapper">
+      <div class="menu-wrapper--blend"></div>
+      <div class="menu-toggler">
+      <a href="#" alt="Menu" aria-label="menu" onclick="event.preventDefault();" class="m_button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
       </div>
-      <h1 class="type-primary">Hello! <br />I am Leo</h1>
-      <p>Front-end developer based in Utrecht, NL</p>
+
+      <ul class="menu-list">
+        <li><a href="">Bio</a></li>
+        <li><a href="">Projects</a></li>
+        <li><a href="">Talks</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
     </div>
+    <main>
+      <%=require("html-loader?interpolate!./templates/home.html") %>
+      <%=require("html-loader?interpolate!./templates/bio.html") %>
+      <%=require("html-loader?interpolate!./templates/projects.html") %>
+      <%=require("html-loader?interpolate!./templates/talks.html") %>
+    </main>
   </body>
 </html>

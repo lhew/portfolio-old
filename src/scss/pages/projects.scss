@@ -1,0 +1,79 @@
+@keyframes dash {
+  to {
+    stroke-dashoffset: 100;
+  }
+}
+$bgcolor: darken($color-primary, 15%);
+
+:root {
+  --bg: 255,0,0
+}
+
+.page.projects {
+  .svg-wrapper {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: -100px;
+    z-index: 5;
+    height: 300px;
+
+    div {
+      background: url('../img/dashed-1.svg') repeat-x 420px 0;
+      width: 100%; 
+      height: 190px;
+      position: absolute;
+      transform: scaleY(-1);
+
+      &:nth-child(2) {
+        background-image: url('../img/dashed-2.svg');
+        top: 40px;
+      }
+
+      &:nth-child(3) {
+        background-image: url('../img/dashed-3.svg');
+        top: 90px;
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 198px;
+    background: url("../img/wave-red.svg") repeat-x 100% 0;
+    position: absolute;
+    top: -93px;
+    left: 0;
+  }
+  background: #FF5722;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+  h2 {
+    font-size: 3em;
+    line-height: 1;
+    @include bp() {
+      font-size: 4em;
+    }
+  }
+  
+  .text-container {
+    position: relative;
+    z-index: 3;
+
+    @include bp() {
+      width: 50%;
+      max-width: 620px;
+    }
+
+    p {
+      font-size: 1.3em;
+      line-height: 1.8;
+    }
+  }
+  
+}

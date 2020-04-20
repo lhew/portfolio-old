@@ -1,0 +1,17 @@
+@mixin clearfix() {
+  &::after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: ' ';
+      clear: both;
+      height: 0;
+  }
+}
+
+
+@mixin bp($size: 768px ) {
+  @media screen and (min-width: $size) {
+      @content;
+  }
+}

@@ -1,0 +1,5 @@
+    <svg width="1600" height="123" xmlns="http://www.w3.org/2000/svg">
+      <path fill-opacity="0" stroke="#fff" stroke-dasharray="5,5" class="dashed" d="m1599.995,122.21254c-310.995,0 -429.995,-128 -819.995,-95c-390,33 -491,95 -780,95" fill-rule="evenodd">
+      <animate attributeType="CSS" attributeName="stroke-dashoffset" from="0" repeatCount="indefinite" to="100"  dur="5s" begin="0"/>
+      </path>
+    </svg>  

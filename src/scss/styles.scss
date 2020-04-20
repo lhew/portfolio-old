@@ -1,3 +1,9 @@
-@import "./reset";
-@import "./core";
-@import "./home"
+@import "./core/core.scss";
+@import "./core/reset";
+@import './core/scaffolding';
+@import "./components/menu";
+@import "./misc/waves";
+@import "./pages/home";
+@import "./pages/bio";
+@import "./pages/projects";
+@import "./pages/talks";

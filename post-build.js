@@ -7,7 +7,10 @@ fs.readFile(index, 'utf8', function (err,data) {
   if (err) {
     return console.log(err);
   }
-  var result = data.replace("inline_css_plugin{}", cssContent.replace(/\n\s{1,}/gim, ''));
+  var result = data
+    .replace('/*essential*/', cssContent.replace(/\n\s{1,}/gim, ''))
+    .replace('<link href="/css/style.css" rel="stylesheet">', '');
+
 
   fs.writeFile(index, result, 'utf8', function (err) {
      if (err) return console.log(err);

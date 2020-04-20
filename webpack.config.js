@@ -26,10 +26,9 @@ module.exports = (env, argv) => {
   var config = {
     devtool: process.env.NODE_ENV === 'development' ?  "source-map" : "none",
     entry: {
-      bundle: ["./src/main.js"],
-      essential: ["./src/essential.js"],
-      styles: ["./src/styles.js"],
-      // styles: ["./src/main.js", "./src/scss/styles.scss"],
+      bundle: "./src/main.js",
+      essential: "./src/essential.js",
+      style: "./src/styles.js"
     },
     output: {
       path: path.resolve(__dirname, "public"),
@@ -63,6 +62,9 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.scss$/,
+          resolve: {
+            extensions: [".css", ".scss"],
+          },
           use: [
               MiniCssExtractPlugin.loader,
             {

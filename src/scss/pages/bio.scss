@@ -1,0 +1,72 @@
+@keyframes dash {
+  to {
+    stroke-dashoffset: 100;
+  }
+}
+
+.page.bio {
+  .svg-wrapper {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: -120px;
+    z-index: 5;
+    height: 300px;
+
+    div {
+      background: url('../img/dashed-1.svg') repeat-x 0 0;
+      width: 100%; 
+      height: 190px;
+      position: absolute;
+      transform: scaleY(-1);
+
+      &:nth-child(2) {
+        background-image: url('../img/dashed-2.svg');
+        top: 40px;
+      }
+
+      &:nth-child(3) {
+        background-image: url('../img/dashed-3.svg');
+        top: 90px;
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 6em;
+    background: #ffbe45;
+    background: linear-gradient(180deg, rgba(255, 190, 69, 0) 0%, #ff9800 72%);
+    position: absolute;
+    top: -5em;
+    left: 0;
+  }
+  background: #FF9800;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+  h2 {
+    font-size: 3em;
+    @include bp() {
+      font-size: 4em;
+    }
+  }
+  
+  .text-container {
+
+    @include bp() {
+      width: 50%;
+      max-width: 620px;
+    }
+
+    p {
+      font-size: 1.3em;
+      line-height: 1.8;
+    }
+  }
+  
+}

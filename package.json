@@ -5,6 +5,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --hot --inline --progress --port 3000 --host 0.0.0.0 --compress",
     "build": "webpack -p",
+    "pub": "rm -rf public && npm run build && node post-build.js && http-server -c10293802939 -g=true ./public",
     "prettier": "prettier --write **/src/**/**.scss **/src/**/*.js  **/src/**/*.jsx"
   },
   "browserslist": [
